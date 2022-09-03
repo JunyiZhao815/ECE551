@@ -1,12 +1,10 @@
-Grading at 09/03/2022:22:04:11.980881
-For commit ID 16fbce875b4f7967bfdaa4001057f8e6128d70d8
-Grading at Sat Sep  3 06:04:11 PM EDT 2022
+Grading at 09/03/2022:22:21:45.434391
+For commit ID b0692c3ec70703d639cac6122c449d0b9cddb72b
+Grading at Sat Sep  3 06:21:45 PM EDT 2022
 Reading your quiz answers from answers.txt
-You got 3 questions incorrect.
+You got 1 questions incorrect.
 You might want to review these concepts:
 ------------
-The basic of casting
-The basics of data types
 The custom data types
 ------------
 
