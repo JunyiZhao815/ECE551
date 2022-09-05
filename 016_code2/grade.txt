@@ -1,6 +1,6 @@
-Grading at 09/05/2022:23:43:45.322667
-For commit ID a005797d93b9769996b3b50bf830561a039dcfe4
-Grading at Mon Sep  5 07:43:45 PM EDT 2022
+Grading at 09/05/2022:23:47:55.739330
+For commit ID 3151725e7c96fb8a94d92c367616db10427f7f88
+Grading at Mon Sep  5 07:47:55 PM EDT 2022
 Checking code2.c for legal syntax
 Checking for int printTriangle (int size)
 Found on line 4, column 1 
@@ -8,7 +8,6 @@ Checking for int main(void)
 Found on line 32, column 1 
 Trying to run the code..
 Line_8_did_not_match
-Line_16_did_not_match
 Your file did not match the expected ouput
 Here is what you printed
 Here is a triangle with height 4
@@ -26,5 +25,5 @@ Here is a triangle with height 7
 ******
 *******
 That triangle had 28 total stars
-, such that the 28 prints the value of stars
+
 Overall Grade: F
