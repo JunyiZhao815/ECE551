@@ -34,9 +34,10 @@ int main(void) {
   printf("That triangle had %d total stars\n", numStars);
   //now print "Here is a triangle with height 7\n"
   printf("Here is a triangle with height 7\n: ");
+  int num = printTriangle(7);
   printf("That triangle had %d total stars\n, such that the %d prints the value of stars",
-         printTriangle(7),
-         printTriangle(7));
+         num,
+         num);
 
   //then call printTriangle, passing in 7, and assign the result to numStars
 
