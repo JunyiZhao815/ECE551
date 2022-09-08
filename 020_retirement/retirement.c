@@ -12,7 +12,7 @@ double calculate_total(int startAge, int initial, retire_info status) {
   int year = startAge / 12;
   int month = startAge % 12;
   while (status.months--) {
-    printf("Age %3d month %2d you have $%.2f\n", year, month, balance);
+    printf("Age %3d month %2d you have $%.2lf\n", year, month, balance);
     balance = balance * (1 + status.rate_of_return) + status.contribution;
     month++;
     if (month == 12) {
