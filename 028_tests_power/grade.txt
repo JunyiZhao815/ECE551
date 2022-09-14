@@ -1,0 +1,53 @@
+Grading at 09/14/2022:04:46:06.424848
+For commit ID a0a025d4fec1ea0f0531ad296a418c0937244d52
+Grading at Wed Sep 14 12:46:05 AM EDT 2022
+**Testing broken implementation 10 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 11 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 1 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 2 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 3 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 4 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 5 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 6 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 7 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 8 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing broken implementation 9 **
+-------------------------------------
+
+The output of power function is not correct!
+**Testing correct implementation **
+-------------------------------------
+
+The output of power function is not correct!Your test program falsely failed the correct implementation!
+
+Overall Grade: FAILED
