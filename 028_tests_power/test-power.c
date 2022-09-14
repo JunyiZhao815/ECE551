@@ -16,6 +16,6 @@ int main() {
   power_check(2, 3, 8);
   power_check(3, 2, 9);
   power_check(10, 0, 1);
-  power_check(5, 5, 25);
+  power_check(-100, 1, -100);
   return EXIT_SUCCESS;
 }
