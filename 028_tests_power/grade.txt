@@ -1,6 +1,6 @@
-Grading at 09/14/2022:05:03:38.386938
-For commit ID a4bd766da367c7160470eda423204d941922b6c2
-Grading at Wed Sep 14 01:03:37 AM EDT 2022
+Grading at 09/14/2022:14:05:12.991757
+For commit ID eef0eb229118040e0b0c1f2bc53def39fac262fb
+Grading at Wed Sep 14 10:05:12 AM EDT 2022
 **Testing broken implementation 10 **
 -------------------------------------
 
@@ -48,6 +48,8 @@ The output of power function is not correct!
 **Testing correct implementation **
 -------------------------------------
 
-The output of power function is not correct!Your test program falsely failed the correct implementation!
 
-Overall Grade: FAILED
+All tests were ok.
+
+
+Overall Grade: PASSED
