@@ -16,5 +16,5 @@ int main() {
   helper((int[]){1, 2}, 2, 2);
   helper((int[]){2, 5, 1, 2, 3, 53, 2, 2, 3}, 9, 4);
   helper((int[]){-2147483648, 2147483647}, 2, 2);
-  return EXIT_SUCCESS;
+  return 0;
 }
