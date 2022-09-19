@@ -10,7 +10,7 @@ void helper(int array[], size_t n, size_t ans) {
   }
 }
 int main() {
-  helper((int[]){}, 0, 0);
+  helper((int[]){0}, 0, 0);
   helper((int[]){1}, 1, 1);
   helper((int[]){1, 1}, 2, 1);
   helper((int[]){2, 1}, 2, 1);
