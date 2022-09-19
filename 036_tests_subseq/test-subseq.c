@@ -15,8 +15,9 @@ int main() {
   helper((int[]){1, 1}, 2, 1);
   helper((int[]){2, 1}, 2, 1);
   helper((int[]){1, 2}, 2, 2);
-  helper((int[]){-2, -3, -1, 0, 1, 0}, 6, 5);
+  helper((int[]){-2, -3, -1, 0, 1, 0}, 6, 4);
   helper((int[]){1, 2, 1}, 3, 2);
+  helper((int[]){-1, -1}, 2, 1);
   helper((int[]){2, 5, 1, 2, 3, 53, 2, 2, 3}, 9, 4);
   helper((int[]){-2147483648, 2147483647}, 2, 2);
   return EXIT_SUCCESS;
