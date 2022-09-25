@@ -6,15 +6,17 @@ size_t maxSeq(int * array, size_t n) {
     return n;
   }
   size_t maxLen = 0;
+  size_t left = 0;
   size_t right = 1;
-  for (int i = 0; i < n; i++) {
-    while (array[right] > array[i] && right < n) {
+  while (right < n) {
+    if (array[left] < array[right]) {
       right++;
     }
-    right++;
-    if (right - i > maxLen) {
-      maxLen = right - i;
+    if (right - left > maxLen) {
+      maxLen = right - left;
     }
+    left = right + 1;
+    right = right + 1;
   }
   return maxLen;
 }
