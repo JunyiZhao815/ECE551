@@ -3,8 +3,8 @@ C
 B
 D
 C
-A
-E
+B
+D
 D
 F
 E
