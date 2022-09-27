@@ -4,8 +4,11 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  if (str == NULL) {
+    return;
+  }
   int left = 0;
-  int right = strlen(str);
+  int right = strlen(str) - 1;
   while (left < right) {
     char temp = str[left];
     str[left] = str[right];
