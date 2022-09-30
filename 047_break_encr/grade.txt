@@ -1,7 +1,17 @@
-Grading at 09/30/2022:17:37:58.358621
-For commit ID cc5b1a22964f76c7ef126c8e68e5bfd4789b1450
-Grading at Fri Sep 30 01:37:58 PM EDT 2022
+Grading at 09/30/2022:17:42:04.016311
+For commit ID f6d11f90902eabc85b1ec12f09092a223161db53
+Grading at Fri Sep 30 01:41:58 PM EDT 2022
 Attempting to compile breaker.c 
-The code did not compile!
+gcc -Wall -Werror -pedantic -std=gnu99 -o breaker breaker.c
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
 
-Overall Grade: F
+Overall Grade: A
