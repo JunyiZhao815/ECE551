@@ -14,8 +14,8 @@ int main(int argc, char * argv[]) {
     return EXIT_FAILURE;
   }
   int key = getKey(f);
-  fclose(f);
   fprintf(stdout, "%d\n", key);
+  fclose(f);
   return EXIT_SUCCESS;
 }
 
