@@ -15,7 +15,7 @@ int main(int argc, char * argv[]) {
   }
   int key = getKey(f);
   fclose(f);
-  printf("%d\n", key);
+  fprintf(stdout, "%d\n", key);
   return EXIT_SUCCESS;
 }
 
