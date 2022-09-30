@@ -27,10 +27,10 @@ int getKey(FILE * f) {
   while ((c = fgetc(f)) != EOF) {
     if (isalpha(c)) {
       map[tolower(c) - 'a']++;
-    }
-    if (map[tolower(c) - 'a'] > max) {
-      key = tolower(c) - 'a';
-      max = map[tolower(c) - 'a'];
+      if (map[tolower(c) - 'a'] > max) {
+        key = tolower(c) - 'a';
+        max = map[tolower(c) - 'a'];
+      }
     }
   }
   return (key + 22) % 26;
