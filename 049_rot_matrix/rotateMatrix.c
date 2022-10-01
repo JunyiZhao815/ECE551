@@ -41,9 +41,9 @@ void rotate_matrix(FILE * f) {
     fprintf(stderr, "The size of matrix is not correct!\n");
     exit(EXIT_FAILURE);
   }
-  for (int j = 0; j < 10; j++) {
-    for (int i = 9; i >= 0; i--) {
-      fprintf(stdout, "%c", matrix[i][j]);
+  for (int i = 0; i < 10; i++) {
+    for (int j = 9; j >= 0; j--) {
+      fprintf(stdout, "%c", matrix[j][i]);
     }
     fprintf(stdout, "\n");
   }
