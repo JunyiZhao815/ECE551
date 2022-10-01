@@ -17,20 +17,12 @@ void rotate_matrix(FILE * f) {
   int c;
   while ((c = fgetc(f)) != EOF) {
     if (c != '\n') {
-      if (column == 10 || row == 10) {
-        fprintf(stderr, "Matrix length is out of range\n");
+      if (c < 10 || c > 255) {
+        fprintf(stderr, "Expected a valid character\n");
         exit(EXIT_FAILURE);
       }
-      else {
-        if (c < 0 || c > 255) {
-          fprintf(stderr, "Expected a valid character\n");
-          exit(EXIT_FAILURE);
-        }
-        else {
-          matrix[row][column] = c;
-          column++;
-        }
-      }
+      matrix[row][column] = c;
+      column++;
     }
     else {
       column = 0;
