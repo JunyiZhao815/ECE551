@@ -1,12 +1,12 @@
+
 input1.txt
 input2.txt
 input3.txt
 input4.txt
+input6.txt
 input5.txt
-test6.txt
 input7.txt
 input8.txt
 input10.txt
-
 a input11.txt
 aaa
