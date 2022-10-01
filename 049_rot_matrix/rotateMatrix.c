@@ -1,20 +1,19 @@
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 void rotate_matrix(FILE * f) {
   int row = 0;
   int column = 0;
-  char matrix[10][10] = {"0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000",
-                         "0000000000"};
+  char matrix[10][10] = {"aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa",
+                         "aaaaaaaaaa"};
   int c;
   while ((c = fgetc(f)) != EOF) {
     if (c != '\n') {
@@ -48,6 +47,7 @@ void rotate_matrix(FILE * f) {
     }
     fprintf(stdout, "\n");
   }
+  fclose(f);
 }
 
 int main(int argc, char ** argv) {
@@ -61,6 +61,5 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   rotate_matrix(f);
-  fclose(f);
   return 0;
 }
