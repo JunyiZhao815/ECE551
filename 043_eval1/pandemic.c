@@ -31,29 +31,43 @@ country_t parseLine(char * line) {
 
   // In order to get population, we use memory allocation "digits", and copy the value from line to digits.
 
-  char * digits = malloc(8 * sizeof(*digits));
-  char * p1 = digits;  // p1 stands for the pointer on digits
-  char * p2 = line;    // p2 stands for the pointer on line
-  while ((c = *p2) != '\n') {
+  uint64_t sum = 0;
+
+  while ((c = *line) != '\n') {
     if (isdigit(c) != 0) {
-      *p1 = *p2;
-      p1++;
-      p2++;
+      sum = sum * 10;
+      sum = sum + (int)c - 48;
+      // convert character to integer by ASCII table, where '0' is 48
+      line++;
     }
     else {
       fprintf(stderr, "Invalid number for population");
       exit(EXIT_FAILURE);
     }
   }
-
-  ans.population = atoi(digits);  // Using atoi to convert string to int
-
-  free(digits);  // free memory
+  ans.population = sum;
   return ans;
 }
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
+  if (n_days < 7) {
+    fprintf(stderr, "The number of days is less than 7");
+    exit(EXIT_FAILURE);
+  }
+  double * p = avg;
+  for (size_t i = 0; i < n_days - 6; i++) {
+    unsigned sum = *data;
+    for (size_t j = 0; j < 6; j++) {
+      data++;
+      sum += *data;
+    }
+    for (size_t h = 0; h < 5; h++) {
+      data--;
+    }
+    *p = (double)(sum / (double)7);
+    p++;
+  }
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
