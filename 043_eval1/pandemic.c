@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 country_t parseLine(char * line) {
   //WRITE ME
   country_t ans;
