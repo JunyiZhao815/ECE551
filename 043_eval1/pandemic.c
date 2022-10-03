@@ -1,24 +1,23 @@
 #include "pandemic.h"
 
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 country_t parseLine(char * line) {
   //WRITE ME
   country_t ans;
-  char c;          // c represents the current character in the line.
-  int i_name = 0;  // i_name is the index for getting the name.
+  char c;              // c represents the current character in the line.
+  int name_index = 0;  // i_name is the index for getting the name.
 
   //First while is for getting the country name, ending before comma.
   while ((c = *line) != ',') {
     // Checking if the length of country name exceeds our limitaion.
-    if (i_name == 63) {
+    if (name_index == 63) {
       fprintf(stderr, "Country name is too long");
       exit(EXIT_FAILURE);
     }
     // Checking illegal character
-    if ((isalpha(c)) || c == ' ') {
-      ans.name[i_name++] = c;
+    if (c != 44) {
+      ans.name[name_index++] = c;
     }
     else {
       fprintf(stderr, "Invalid character input for country name");
@@ -26,7 +25,7 @@ country_t parseLine(char * line) {
     }
     line++;
   }
-  ans.name[i_name] = '\0';
+  ans.name[name_index] = '\0';
   line++;  // We want line points to the first digit.
 
   // In order to get population, we use memory allocation "digits", and copy the value from line to digits.
@@ -78,32 +77,13 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     fprintf(stderr, "The number of days is less than 7");
     exit(EXIT_FAILURE);
   }
-  double * p = cum;
-
-  // The first two for loop is to get the sum for the first 6 days. Like the README lists
-  uint64_t sum_6 = 0;
-  for (int i = 0; i < 6; i++) {
-    sum_6 = *data + sum_6;
+  double * p = cum;  // p is the pointer that moves on cum.
+  unsigned sum = 0;
+  for (size_t i = 0; i < n_days; i++) {
+    sum += *data;
+    *p = (double)(sum * (double)100000 / pop);
+    p++;
     data++;
-    *p = (double)(sum_6 * (double)100000 / pop);
-    p++;
-  }
-  //We have to go back 5 steps
-  for (int i = 0; i < 5; i++) {
-    data--;
-  }
-  // The following for loops are for get the sum of 7 days.
-  for (size_t i = 0; i < n_days - 6; i++) {
-    unsigned sum = *data;
-    for (size_t j = 0; j < 6; j++) {
-      data++;
-      sum += *data;
-    }
-    for (size_t h = 0; h < 5; h++) {
-      data--;
-    }
-    *p = (double)((sum) * (double)100000 / pop);
-    p++;
   }
 }
 
