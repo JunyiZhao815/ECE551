@@ -1,6 +1,6 @@
-Grading at 10/03/2022:21:21:02.585168
-For commit ID dd085171e057afb2803317c4a03a2dce0435d36b
-Grading at Mon Oct  3 05:20:59 PM EDT 2022
+Grading at 10/03/2022:21:27:35.912077
+For commit ID dbe2a7ea62d90e1361ad18817034c50d9f5d3ecb
+Grading at Mon Oct  3 05:27:32 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,18 +11,22 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
