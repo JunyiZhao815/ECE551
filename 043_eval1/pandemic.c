@@ -10,7 +10,7 @@ country_t parseLine(char * line) {
   int name_index = 0;  // i_name is the index for getting the name.
 
   //First while is for getting the country name, ending before comma.
-  while ((c = *line) != (',')) {
+  while ((c = *line) != ',') {
     // Checking if the length of country name exceeds our limitaion.
     if (name_index == 64) {
       fprintf(stderr, "Country name is too long");
@@ -20,7 +20,7 @@ country_t parseLine(char * line) {
       fprintf(stderr, "No population input");
       exit(EXIT_FAILURE);
     }
-    // Checking illegal character
+    // fill the answer of name
     if (c != 44) {
       ans.name[name_index++] = c;
     }
@@ -39,7 +39,6 @@ country_t parseLine(char * line) {
   // In order to get population, we use memory allocation "digits", and copy the value from line to digits.
 
   uint64_t sum = 0;
-
   while ((c = *line) != '\n') {
     if (c >= 48 && c <= 57) {
       sum = sum * 10;
@@ -52,6 +51,7 @@ country_t parseLine(char * line) {
       exit(EXIT_FAILURE);
     }
   }
+
   ans.population = sum;
   return ans;
 }
