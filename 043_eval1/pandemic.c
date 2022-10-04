@@ -29,7 +29,9 @@ country_t parseLine(char * line) {
   }
   line++;  // We want line points to the first digit.
   // If there is a comma after name, then checking if the next character is digit
-
+  while (*line == 32) {
+    line++;
+  }
   if (line == NULL || *line == '\0') {
     fprintf(stderr, "There is no population input!");
     exit(EXIT_FAILURE);
@@ -40,9 +42,6 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   while ((c = *line) != '\n') {
-    if (c == 32) {
-      continue;
-    }
     if (c >= 48 && c <= 57) {
       sum = sum * 10;
       sum = sum + (int)c - 48;
