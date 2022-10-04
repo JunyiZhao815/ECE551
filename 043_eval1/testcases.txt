@@ -2,4 +2,4 @@
 printCountries test.csv
 
 #success
-printCountries test_succ.csv
+printCountries population.csv
