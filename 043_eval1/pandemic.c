@@ -39,7 +39,10 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   while ((c = *line) != '\n') {
-    if ((c >= 48 && c <= 57) || c == ' ') {
+    if (c == ' ') {
+      continue;
+    }
+    if (c >= 48 && c <= 57) {
       sum = sum * 10;
       sum = sum + (int)c - 48;
       // convert character to integer by ASCII table, where '0' is 48
