@@ -29,7 +29,7 @@ country_t parseLine(char * line) {
   }
   line++;  // We want line points to the first digit.
   // If there is a comma after name, then checking if the next character is digit
-  while (*line == 32) {
+  while (*line == '\t') {
     line++;
   }
   if (line == NULL || *line == '\0') {
