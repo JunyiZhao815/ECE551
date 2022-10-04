@@ -67,6 +67,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     unsigned sum = *data;
     for (size_t j = 0; j < 6; j++) {
       data++;
+      if (*data < 0) {
+        fprintf(stderr, "The value of data cannot be negative!");
+        exit(EXIT_FAILURE);
+      }
       sum += *data;
     }
     //Go back 5 step
@@ -80,6 +84,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
+  if (pop < 0) {
+    fprintf(stderr, "The value of population cannot be negative!");
+    exit(EXIT_FAILURE);
+  }
   if (n_days < 7) {
     fprintf(stderr, "The number of days is less than 7");
     exit(EXIT_FAILURE);
@@ -91,6 +99,10 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     *p = (double)(sum * (double)100000 / pop);
     p++;
     data++;
+    if (*data < 0) {
+      fprintf(stderr, "The value of data cannot be negative!");
+      exit(EXIT_FAILURE);
+    }
   }
 }
 
@@ -103,6 +115,10 @@ void printCountryWithMax(country_t * countries,
   unsigned number_cases = 0;
   for (size_t i = 0; i < n_countries; i++) {
     for (size_t j = 0; j < n_days; j++) {
+      if (data[i][j] < 0) {
+        fprintf(stderr, "The value of data cannot be negative!");
+        exit(EXIT_FAILURE);
+      }
       if (number_cases < data[i][j]) {
         country_name = countries->name;
         number_cases = data[i][j];
