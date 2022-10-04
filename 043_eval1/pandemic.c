@@ -43,6 +43,7 @@ country_t parseLine(char * line) {
   }
   while ((c = *line) != '\0') {
     if (c == '\n') {
+      line++;
       continue;
     }
     if (c >= 48 && c <= 57) {
