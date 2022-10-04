@@ -1,6 +1,6 @@
-Grading at 10/04/2022:14:25:14.617735
-For commit ID ea1dc2566cf4411b096371025e197adf5d251f3e
-Grading at Tue Oct  4 10:25:13 AM EDT 2022
+Grading at 10/04/2022:14:34:46.878651
+For commit ID da482be6d5979a2158d112f07cb4d09890d47fd7
+Grading at Tue Oct  4 10:34:41 AM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -14,7 +14,7 @@ Test case printCountries test.csv
 Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries test_succ.csv
-Your file matched the expected output
+Valgrind reported memory errors
 
 You have FAILED one or more of your test cases
 Keep debugging
