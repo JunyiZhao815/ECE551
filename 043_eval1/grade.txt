@@ -1,6 +1,6 @@
-Grading at 10/04/2022:14:17:57.911400
-For commit ID d33be1a2a6634ec675dfa4693ab6ef21dd9c03f6
-Grading at Tue Oct  4 10:17:51 AM EDT 2022
+Grading at 10/04/2022:14:18:49.848193
+For commit ID efd59fd5d1e91383436b866e23d7147d53681146
+Grading at Tue Oct  4 10:18:48 AM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,12 +11,12 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printCountries test.csv
-Valgrind reported memory errors
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries test_succ.csv
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
