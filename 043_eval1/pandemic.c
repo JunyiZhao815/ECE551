@@ -41,7 +41,10 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Invalid population number");
     exit(EXIT_FAILURE);
   }
-  while ((c = *line) != '\n') {
+  while ((c = *line) != '\0') {
+    if (c == '\n') {
+      continue;
+    }
     if (c >= 48 && c <= 57) {
       sum = sum * 10;
       sum = sum + (int)c - 48;
