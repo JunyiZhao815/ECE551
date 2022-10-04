@@ -1,4 +1,4 @@
 #error
 printCountries test.csv
 #success
-printCountries population.csv
+printCountries test_succ.csv
