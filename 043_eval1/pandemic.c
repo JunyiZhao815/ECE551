@@ -16,16 +16,16 @@ country_t parseLine(char * line) {
       fprintf(stderr, "Country name is too long");
       exit(EXIT_FAILURE);
     }
+    if (line == NULL) {
+      fprintf(stderr, "No population input");
+      exit(EXIT_FAILURE);
+    }
     // Checking illegal character
     if (c != 44) {
       ans.name[name_index++] = c;
     }
     else {
       fprintf(stderr, "Invalid character input for country name");
-      exit(EXIT_FAILURE);
-    }
-    if (line == NULL) {
-      fprintf(stderr, "No population input");
       exit(EXIT_FAILURE);
     }
     line++;
