@@ -1,6 +1,6 @@
-Grading at 10/04/2022:02:09:27.011808
-For commit ID ec536c8619462e6a2dbf39f5256e76d1d0f47e42
-Grading at Mon Oct  3 10:09:25 PM EDT 2022
+Grading at 10/04/2022:02:11:22.073576
+For commit ID a0f7d207287f12b04ec59cf001a1d26c3bfc7ffc
+Grading at Mon Oct  3 10:11:20 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,7 +11,7 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printCountries test.csv
-Our printCountries does not consider this an error case
+Valgrind reported memory errors
 +-----------------------------------------------------------------------+
 Test case printCountries test_succ.csv
 Line_1_did_not_match
