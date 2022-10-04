@@ -61,6 +61,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     fprintf(stderr, "The number of days is less than 7");
     exit(EXIT_FAILURE);
   }
+  if (*data < 0) {
+    fprintf(stderr, "The value of data cannot be negative!");
+    exit(EXIT_FAILURE);
+  }
   double * p = avg;
   //First pointing at the first element, calculating the sum of next 7 days, inclusive, by moving the data.
   for (size_t i = 0; i < n_days - 6; i++) {
@@ -90,6 +94,10 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
   if (n_days < 7) {
     fprintf(stderr, "The number of days is less than 7");
+    exit(EXIT_FAILURE);
+  }
+  if (*data < 0) {
+    fprintf(stderr, "The value of data cannot be negative!");
     exit(EXIT_FAILURE);
   }
   double * p = cum;  // p is the pointer that moves on cum.
