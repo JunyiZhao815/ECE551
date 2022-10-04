@@ -28,7 +28,10 @@ country_t parseLine(char * line) {
   }
   ans.name[name_index] = '\0';
   line++;  // We want line points to the first digit.
-
+  if (line == NULL) {
+    fprintf(stderr, "There is no population input!");
+    exit(EXIT_FAILURE);
+  }
   // In order to get population, we use memory allocation "digits", and copy the value from line to digits.
 
   uint64_t sum = 0;

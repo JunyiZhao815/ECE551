@@ -1,5 +1,4 @@
 #error
 printCountries test.csv
-
 #success
 printCountries population.csv
