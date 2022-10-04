@@ -12,7 +12,7 @@ country_t parseLine(char * line) {
   //First while is for getting the country name, ending before comma.
   while ((c = *line) != ',' && (*line != 0)) {
     // Checking if the length of country name exceeds our limitaion.
-    if (name_index >= 64) {
+    if (name_index >= 63) {
       fprintf(stderr, "Country name is too long");
       exit(EXIT_FAILURE);
     }
