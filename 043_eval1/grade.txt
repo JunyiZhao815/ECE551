@@ -1,6 +1,6 @@
-Grading at 10/04/2022:04:44:13.131876
-For commit ID a338fce6582bd0d701e57e35405511f2e4218204
-Grading at Tue Oct  4 12:44:12 AM EDT 2022
+Grading at 10/04/2022:04:46:25.026444
+For commit ID 2f8e064b863275b22230c2e53690b25e40046fca
+Grading at Tue Oct  4 12:46:23 AM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,7 +11,8 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printCountries test.csv
-Our printCountries does not consider this an error case
+1234567812345678123456781234567812345678123456781234567812345678: 24
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries test_succ.csv
 Your file matched the expected output
