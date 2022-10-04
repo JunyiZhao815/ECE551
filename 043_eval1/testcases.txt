@@ -1,5 +1,5 @@
 #error
-printCountries test.csv
+printRunningAvg test.csv
 
 #success
 printRunningAvg population.csv daily_small.csv
