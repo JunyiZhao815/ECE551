@@ -64,8 +64,8 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
-  if (n_days < 6) {
-    exit(EXIT_SUCCESS);
+  if (n_days < 7) {
+    return;
   }
   if (*data < 0) {
     fprintf(stderr, "The value of data cannot be negative!");
@@ -83,7 +83,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
       }
       sum += *data;
     }
-    //Go back 5 step
+    //Go back 5 steps
     for (size_t h = 0; h < 5; h++) {
       data--;
     }
