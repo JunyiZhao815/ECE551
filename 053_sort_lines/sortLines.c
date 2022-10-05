@@ -46,8 +46,8 @@ int main(int argc, char ** argv) {
       FILE * f;
       char * curr = NULL;
       if ((f = fopen(argv[i], "r")) == NULL) {
-        free(curr);
-        free(data);
+        //free(curr);
+        //free(data);
         fprintf(stderr, "The file cannot be opened");
         exit(EXIT_FAILURE);
       }
@@ -66,8 +66,8 @@ int main(int argc, char ** argv) {
         printf("%s", data[j]);
         free(data[j]);
       }
-      free(data);
     }
+    free(data);
   }
   return EXIT_SUCCESS;
 }
