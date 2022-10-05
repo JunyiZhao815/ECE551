@@ -1,6 +1,6 @@
-Grading at 10/05/2022:17:45:16.879237
-For commit ID ba20a6e73691effe9354855eae1dd1fb0bca0734
-Grading at Wed Oct  5 01:45:15 PM EDT 2022
+Grading at 10/05/2022:18:12:57.717806
+For commit ID ab0ed178e10a28f1e50ce41c4c332dbb9809d024
+Grading at Wed Oct  5 02:12:57 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,7 +11,7 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv test.csv
-Valgrind reported memory errors
+Our printRunningAvg does not consider this an error case
 
 You have FAILED one or more of your test cases
 Keep debugging
