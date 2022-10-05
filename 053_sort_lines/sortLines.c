@@ -66,6 +66,7 @@ int main(int argc, char ** argv) {
         printf("%s", data[j]);
         free(data[j]);
       }
+      free(data);
     }
     free(data);
   }
