@@ -21,16 +21,15 @@ int main(int argc, char ** argv) {
     char * curr = NULL;
     size_t sz = 0;
     size_t i = 0;
-    printf("0");
+
     while (getline(&curr, &sz, stdin) >= 0) {
-      printf("1");
       data = realloc(data, (i + 1) * sizeof(*data));
       data[i] = curr;
       curr = NULL;
       i++;
     }
     free(curr);
-    printf("2");
+
     sortData(data, i);
     for (size_t j = 0; j < i; j++) {
       printf("%s", data[j]);
@@ -42,21 +41,21 @@ int main(int argc, char ** argv) {
     size_t sz = 0;
     size_t index = 0;
     for (int i = 1; i < argc; i++) {
-      if (fopen(argv[i], "r") == NULL) {
+      FILE * f;
+      if ((f = fopen(argv[i], "r")) == NULL) {
         fprintf(stderr, "The file cannot be opened");
         exit(EXIT_FAILURE);
       }
-      FILE * f = fopen(argv[i], "r");
+      // FILE * f = fopen(argv[i], "r");
       char * curr = NULL;
-      while (getline(&curr, &sz, f)) {
+      while (getline(&curr, &sz, f) >= 0) {
         data = realloc(data, (index + 1) * sizeof(*data));
         data[index] = curr;
         curr = NULL;
         index++;
       }
-      fclose(f);
-
       free(curr);
+      fclose(f);
     }
     sortData(data, index);
     for (size_t j = 0; j < index; j++) {
