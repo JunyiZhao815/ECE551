@@ -52,7 +52,10 @@ board_t * makeBoard(int w, int h, int numMines) {
       b->board[i][j] = UNKNOWN;
     }
   }
-  addRandomMine(b);
+  while (numMines--) {
+    addRandomMine(b);
+  }
+  // addRandomMine(b);
   return b;
 }
 void printBoard(board_t * b) {
@@ -108,8 +111,8 @@ void printBoard(board_t * b) {
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
   int num = 0;
-  for (int i = y - 1; i < y + 1; i++) {
-    for (int j = x - 1; j < x + 1; j++) {
+  for (int i = y - 1; i < y + 2; i++) {
+    for (int j = x - 1; j < x + 2; j++) {
       if (i < 0 || i >= b->height || j < 0 || j >= b->width) {
         continue;
       }
