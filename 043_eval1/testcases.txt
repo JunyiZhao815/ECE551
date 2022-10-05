@@ -1,2 +1,2 @@
-#error
+#success
 printRunningAvg population.csv test.csv
