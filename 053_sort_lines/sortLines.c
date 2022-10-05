@@ -14,60 +14,58 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
+void sort(FILE * f) {
+  char ** data = NULL;
+  char * curr = NULL;
+  size_t sz;
+  size_t i = 0;
+  while (getline(&curr, &sz, f) >= 0) {
+    data = realloc(data, (i + 1) * sizeof(*data));
+    data[i] = curr;
+    curr = NULL;
+    i++;
+  }
+  free(curr);
+  sortData(data, i);
+  for (size_t j = 0; j < i; j++) {
+    printf("%s", data[j]);
+    free(data[j]);
+  }
+  free(data);
+}
+
 int main(int argc, char ** argv) {
   //WRITE YOUR CODE HERE!
-  char ** data = NULL;
   if (argc == 1) {
-    char * curr = NULL;
-    size_t sz = 0;
-    size_t i = 0;
-
-    while (getline(&curr, &sz, stdin) >= 0) {
-      data = realloc(data, (i + 1) * sizeof(*data));
-      data[i] = curr;
-      curr = NULL;
-      free(curr);
-      i++;
+    FILE * f = stdin;
+    if (f == NULL) {
+      fprintf(stderr, "The file you input is incorrect");
+      exit(EXIT_FAILURE);
     }
-    // free(curr);
-
-    sortData(data, i);
-    for (size_t j = 0; j < i; j++) {
-      printf("%s", data[j]);
-      free(data[j]);
+    else {
+      sort(f);
     }
-    free(data);
+    if (fclose(f) != 0) {
+      fprintf(stderr, "Failed to close the file");
+      exit(EXIT_FAILURE);
+    }
   }
   else {
-    size_t sz = 0;
-    size_t index = 0;
-    printf("$ %d $", argc);
     for (int i = 1; i < argc; i++) {
-      FILE * f;
-      char * curr = NULL;
-      if ((f = fopen(argv[i], "r")) == NULL) {
-        //free(curr);
-        //free(data);
-        fprintf(stderr, "The file cannot be opened");
+      FILE * f = fopen(argv[i], "r");
+      if (f == NULL) {
+        fprintf(stderr, "The file you input is incorrect, and cannot be opened!");
         exit(EXIT_FAILURE);
       }
-      // FILE * f = fopen(argv[i], "r");
-      while (getline(&curr, &sz, f) >= 0) {
-        data = realloc(data, (index + 1) * sizeof(*data));
-        data[index] = curr;
-        curr = NULL;
-        index++;
-      }
-      free(curr);
+      else {
+        sort(f);
 
-      sortData(data, index);
-      for (size_t j = 0; j < index; j++) {
-        printf("%s", data[j]);
-        free(data[j]);
+        if (fclose(f) != 0) {
+          fprintf(stderr, "Failed to close the file");
+          exit(EXIT_FAILURE);
+        }
       }
-      free(data);
-      fclose(f);
     }
   }
-  return EXIT_SUCCESS;
+  return 0;
 }
