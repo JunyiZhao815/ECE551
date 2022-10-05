@@ -42,12 +42,15 @@ int main(int argc, char ** argv) {
     size_t index = 0;
     for (int i = 1; i < argc; i++) {
       FILE * f;
+      char * curr = NULL;
       if ((f = fopen(argv[i], "r")) == NULL) {
+        free(curr);
+        fclose(f);
+        free(data);
         fprintf(stderr, "The file cannot be opened");
         exit(EXIT_FAILURE);
       }
       // FILE * f = fopen(argv[i], "r");
-      char * curr = NULL;
       while (getline(&curr, &sz, f) >= 0) {
         data = realloc(data, (index + 1) * sizeof(*data));
         data[index] = curr;
