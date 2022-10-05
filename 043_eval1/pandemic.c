@@ -65,7 +65,6 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   if (n_days < 6) {
-    return;
   }
   if (*data < 0) {
     fprintf(stderr, "The value of data cannot be negative!");
