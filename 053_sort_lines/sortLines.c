@@ -41,7 +41,9 @@ int main(int argc, char ** argv) {
   else {
     size_t sz = 0;
     size_t index = 0;
+    printf("$ %d $", argc);
     for (int i = 1; i < argc; i++) {
+      ;
       FILE * f;
       char * curr = NULL;
       if ((f = fopen(argv[i], "r")) == NULL) {
