@@ -59,13 +59,14 @@ int main(int argc, char ** argv) {
       }
       free(curr);
       fclose(f);
+
+      sortData(data, index);
+      for (size_t j = 0; j < index; j++) {
+        printf("%s", data[j]);
+        free(data[j]);
+      }
+      free(data);
     }
-    sortData(data, index);
-    for (size_t j = 0; j < index; j++) {
-      printf("%s", data[j]);
-      free(data[j]);
-    }
-    free(data);
   }
   return EXIT_SUCCESS;
 }
