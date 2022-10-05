@@ -25,10 +25,11 @@ int main(int argc, char ** argv) {
     while (getline(&curr, &sz, stdin) >= 0) {
       data = realloc(data, (i + 1) * sizeof(*data));
       data[i] = curr;
-      curr = NULL;
+      //curr = NULL;
+      free(curr);
       i++;
     }
-    free(curr);
+    // free(curr);
 
     sortData(data, i);
     for (size_t j = 0; j < i; j++) {
