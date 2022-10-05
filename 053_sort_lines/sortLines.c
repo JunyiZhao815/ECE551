@@ -25,7 +25,7 @@ int main(int argc, char ** argv) {
     while (getline(&curr, &sz, stdin) >= 0) {
       data = realloc(data, (i + 1) * sizeof(*data));
       data[i] = curr;
-      //curr = NULL;
+      curr = NULL;
       free(curr);
       i++;
     }
