@@ -65,8 +65,7 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   if (n_days < 7) {
-    fprintf(stderr, "The number of days is less than 7");
-    exit(EXIT_FAILURE);
+    exit(EXIT_SUCCESS);
   }
   if (*data < 0) {
     fprintf(stderr, "The value of data cannot be negative!");
