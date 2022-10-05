@@ -90,6 +90,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     *p = (double)(sum / (double)7);
     p++;
   }
+  return;
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
