@@ -59,7 +59,6 @@ int main(int argc, char ** argv) {
         index++;
       }
       free(curr);
-      fclose(f);
 
       sortData(data, index);
       for (size_t j = 0; j < index; j++) {
@@ -67,8 +66,8 @@ int main(int argc, char ** argv) {
         free(data[j]);
       }
       free(data);
+      fclose(f);
     }
-    free(data);
   }
   return EXIT_SUCCESS;
 }
