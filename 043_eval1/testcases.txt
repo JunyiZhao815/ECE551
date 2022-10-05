@@ -1,7 +1,4 @@
 #error
-printRunningAvg population.csv test.csv
 
 #success
-printRunningAvg population.csv daily_small.csv
-printCumulative population.csv daily_small.csv
-printDailyMax population.csv daily_small.csv
+printRunningAvg population.csv test.csv
