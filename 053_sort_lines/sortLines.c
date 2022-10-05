@@ -43,7 +43,6 @@ int main(int argc, char ** argv) {
     size_t index = 0;
     printf("$ %d $", argc);
     for (int i = 1; i < argc; i++) {
-      ;
       FILE * f;
       char * curr = NULL;
       if ((f = fopen(argv[i], "r")) == NULL) {
