@@ -48,7 +48,9 @@ kvarray_t * readKVs(const char * fname) {
     ans->pair = realloc(ans->pair, (ans->len) * sizeof(*ans->pair));
     parseLine(line, &(ans->pair[ans->len - 1]));
     free(line);
+    line = NULL;
   }
+  free(line);
   if (fclose(f) == 0) {
     perror("The file cannot be closed");
   }
