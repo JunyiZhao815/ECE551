@@ -1,0 +1,43 @@
+Grading at 10/12/2022:04:53:36.063888
+For commit ID d4fe02a7c73951766f8311c30a2f8d86f3cf6339
+Grading at Wed Oct 12 12:53:33 AM EDT 2022
+Attempting to compile:
+#################################################
+testcase1:
+valgrind reported memory errors
+#################################################
+testcase2:
+valgrind reported memory errors
+#################################################
+testcase3:
+Your output is correct
+  - Valgrind reported errors
+valgrind was not clean
+==700912== Memcheck, a memory error detector
+==700912== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==700912== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==700912== 
+==700912== Parent PID: 700911
+==700912== 
+==700912== 
+==700912== HEAP SUMMARY:
+==700912==     in use at exit: 120 bytes in 1 blocks
+==700912==   total heap usage: 6 allocs, 5 frees, 8,816 bytes allocated
+==700912== 
+==700912== 120 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==700912==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==700912==    by 0x48E31A2: getdelim (iogetdelim.c:62)
+==700912==    by 0x1094D3: readKVs (in kv_test)
+==700912==    by 0x1096C1: main (in kv_test)
+==700912== 
+==700912== LEAK SUMMARY:
+==700912==    definitely lost: 120 bytes in 1 blocks
+==700912==    indirectly lost: 0 bytes in 0 blocks
+==700912==      possibly lost: 0 bytes in 0 blocks
+==700912==    still reachable: 0 bytes in 0 blocks
+==700912==         suppressed: 0 bytes in 0 blocks
+==700912== 
+==700912== For lists of detected and suppressed errors, rerun with: -s
+==700912== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+Overall Grade: F
