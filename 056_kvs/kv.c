@@ -10,6 +10,9 @@ void parseLine(char * line, kvpair_t * pair) {
   while (*p != '=') {
     pair->key = realloc(pair->key, (len1 + 1) * sizeof(*pair->key));
     char * q1 = pair->key;
+    if (q1 == NULL) {
+      perror("No key!");
+    }
     q1 += q1_len;
     *q1 = *p;
     p++;
@@ -22,6 +25,9 @@ void parseLine(char * line, kvpair_t * pair) {
   while (*p != '\n') {
     pair->value = realloc(pair->value, (len2 + 1) * sizeof(*pair->value));
     char * q2 = pair->value;
+    if (q2 == NULL) {
+      perror("No value!");
+    }
     q2 += q2_len;
     *q2 = *p;
     p++;
@@ -38,7 +44,6 @@ kvarray_t * readKVs(const char * fname) {
   FILE * f = fopen(fname, "r");
   if (f == NULL) {
     perror("Cannot read file");
-    exit(EXIT_FAILURE);
   }
   size_t sz = 0;
   ssize_t len = 0;
