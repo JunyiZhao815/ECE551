@@ -11,6 +11,7 @@ void parseLine(char * line, kvpair_t * pair) {
     pair->key = realloc(pair->key, (len1 + 1) * sizeof(*pair->key));
     char * q1 = pair->key;
     if (q1 == NULL) {
+      free(pair->key);
       perror("No key!");
     }
     q1 += q1_len;
@@ -26,6 +27,7 @@ void parseLine(char * line, kvpair_t * pair) {
     pair->value = realloc(pair->value, (len2 + 1) * sizeof(*pair->value));
     char * q2 = pair->value;
     if (q2 == NULL) {
+      free(pair->value);
       perror("No value!");
     }
     q2 += q2_len;
