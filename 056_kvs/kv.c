@@ -1,5 +1,6 @@
 #include "kv.h"
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,42 +10,41 @@ void parseLine(char * line, kvpair_t * pair) {
     perror("");
     exit(EXIT_FAILURE);
   }
-  size_t q1_len = 0;
-  size_t len1 = 0;
+  //pair->key = malloc(sizeof(*pair->key));
+  //Key
+  pair->key = NULL;
+  size_t len_key = 0;
   while (*p != '=') {
-    pair->key = realloc(pair->key, (len1 + 1) * sizeof(*pair->key));
-    char * q1 = pair->key;
-    if (q1 == NULL) {
-      free(pair->key);
-      perror("No key!");
-    }
-    q1 += q1_len;
-    *q1 = *p;
+    len_key++;
     p++;
-    q1_len++;
-    len1++;
   }
+  char * index = line;
+  pair->key = calloc((len_key + 1), sizeof(*pair->key));
+  for (size_t i = 0; i < len_key; i++) {
+    pair->key[i] = *index;
+    index++;
+  }
+  //End key
   p++;
   if (*p == '\n') {
     perror("");
     exit(EXIT_FAILURE);
   }
-  size_t q2_len = 0;
-  size_t len2 = 0;
+  // Value
+  pair->value = NULL;
+  index++;
+  size_t len_value = 0;
   while (*p != '\n') {
-    pair->value = realloc(pair->value, (len2 + 1) * sizeof(*pair->value));
-    char * q2 = pair->value;
-    if (q2 == NULL) {
-      free(pair->value);
-      perror("No value!");
-      exit(EXIT_FAILURE);
-    }
-    q2 += q2_len;
-    *q2 = *p;
+    len_value++;
     p++;
-    q2_len++;
-    len2++;
   }
+
+  pair->value = calloc(len_value + 1, (sizeof(*pair->value)));
+  for (size_t i = 0; i < len_value; i++) {
+    pair->value[i] = *index;
+    index++;
+  }
+  //End Value
 }
 
 kvarray_t * readKVs(const char * fname) {
@@ -95,7 +95,7 @@ void printKVs(kvarray_t * pairs) {
 char * lookupValue(kvarray_t * pairs, const char * key) {
   //WRITE ME
   for (size_t i = 0; i < pairs->len; i++) {
-    if (strcmp(((pairs->pair + i)->key), key) == 0) {
+    if (strcmp((pairs->pair + i)->key, key) == 0) {
       return (pairs->pair + i)->value;
     }
   }
