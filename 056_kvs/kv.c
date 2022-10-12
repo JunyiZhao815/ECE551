@@ -5,6 +5,10 @@
 #include <string.h>
 void parseLine(char * line, kvpair_t * pair) {
   char * p = line;
+  if (*p == '=') {
+    perror("");
+    exit(EXIT_FAILURE);
+  }
   size_t q1_len = 0;
   size_t len1 = 0;
   while (*p != '=') {
@@ -21,6 +25,10 @@ void parseLine(char * line, kvpair_t * pair) {
     len1++;
   }
   p++;
+  if (*p == '\n') {
+    perror("");
+    exit(EXIT_FAILURE);
+  }
   size_t q2_len = 0;
   size_t len2 = 0;
   while (*p != '\n') {
@@ -29,6 +37,7 @@ void parseLine(char * line, kvpair_t * pair) {
     if (q2 == NULL) {
       free(pair->value);
       perror("No value!");
+      exit(EXIT_FAILURE);
     }
     q2 += q2_len;
     *q2 = *p;
@@ -40,13 +49,15 @@ void parseLine(char * line, kvpair_t * pair) {
 
 kvarray_t * readKVs(const char * fname) {
   //WRITE ME
-  kvarray_t * ans = malloc(sizeof(*ans));
-  ans->pair = malloc(sizeof(*ans->pair));
-  ans->len = 0;
   FILE * f = fopen(fname, "r");
   if (f == NULL) {
     perror("Cannot read file");
+    exit(EXIT_FAILURE);
   }
+
+  kvarray_t * ans = malloc(sizeof(*ans));
+  ans->pair = malloc(sizeof(*ans->pair));
+  ans->len = 0;
   size_t sz = 0;
   ssize_t len = 0;
   char * line = NULL;
