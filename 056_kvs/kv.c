@@ -1,6 +1,5 @@
 #include "kv.h"
 
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +11,6 @@ void parseLine(char * line, kvpair_t * pair) {
   }
   //pair->key = malloc(sizeof(*pair->key));
   //Key
-  pair->key = NULL;
   size_t len_key = 0;
   while (*p != '=') {
     len_key++;
@@ -31,7 +29,6 @@ void parseLine(char * line, kvpair_t * pair) {
     exit(EXIT_FAILURE);
   }
   // Value
-  pair->value = NULL;
   index++;
   size_t len_value = 0;
   while (*p != '\n') {
