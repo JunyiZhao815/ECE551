@@ -1,13 +1,18 @@
 #ifndef __COUNTS_H__
 #define __COUNTS_H__
+#include <stdio.h>
 struct _one_count_t {
   //DEFINE ME
-
+  char * str;
+  size_t seen;
 };
 typedef struct _one_count_t one_count_t;
 
 struct _counts_t {
   //DEFINE ME
+  size_t size;
+  one_count_t * history_set;
+  size_t UNKOWN_NAME;
 };
 typedef struct _counts_t counts_t;
 
