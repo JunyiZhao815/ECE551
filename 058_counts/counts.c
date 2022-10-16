@@ -37,7 +37,7 @@ void printCounts(counts_t * c, FILE * outFile) {
   one_count_t * p;
   for (size_t i = 0; i < c->size; i++) {
     p = &c->history_set[i];
-    fprintf(outFile, "%s: %zu\n", p->str, c->history_set->seen);
+    fprintf(outFile, "%s: %zu\n", p->str, p->seen);
   }
   if (c->UNKOWN_NAME != 0) {
     fprintf(outFile, "<unknown>: %zu\n", c->UNKOWN_NAME);
