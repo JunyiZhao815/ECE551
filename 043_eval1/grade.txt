@@ -1,19 +1,165 @@
-Grading at 10/05/2022:19:16:23.310368
+Grading at 10/17/2022:01:53:26.108309
 For commit ID a8d1a1c9855457baf657cf6d0b5f0040128cfe21
-Grading at Wed Oct  5 03:16:22 PM EDT 2022
+Grading at Sun Oct 16 09:53:08 PM EDT 2022
 
-Compiling 
+Checking that your code compiles
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
-Running your test cases
+
+=========================================================================
+Step 1
+
 +-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv test.csv
+Test case 1
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 2
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 3
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 4
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 5
 Your file matched the expected output
+                                                         [10/10]
++-----------------------------------------------------------------------+
+Test case 6
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 7
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 8
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 9
+Your file matched the expected output
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 10
+Your file matched the expected output
+                                                         [1/1]
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+Step 1 total                                             [30/30]
 
-Overall Grade: NO GRADE YET
+=========================================================================
+Step 2
+
++-----------------------------------------------------------------------+
+Test case 11
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 12
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 13
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 14
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 15
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 16
+Your file matched the expected output
+                                                         [3/3]
+
+Step 2 total                                             [20/20]
+
+=========================================================================
+Step 3
+
++-----------------------------------------------------------------------+
+Test case 17
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 18
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 19
+Line_1_did_not_match
+Your file did not match the expected ouput
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 20
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 21
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 22
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 23
+Your file matched the expected output
+                                                         [2/2]
+
+Step 3 total                                             [18/20]
+
+=========================================================================
+Step 4
+
++-----------------------------------------------------------------------+
+Test case 24
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 25
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 26
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 27
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 28
+Your file matched the expected output
+                                                         [4/4]
+
+Step 4 total                                             [20/20]
+
+=========================================================================
+Code quality
+
+Abstration:    Good
+Naming:        Excellent
+Formatting:    Excellent
+Documentation: Excellent
+Comments from your grader:
+Very well written! I see that you have commented very thoroughly and clearly 
+stated the function of each part. But, in the some function, did you find some 
+code that could be abstracted?
+
+Quality total                                            [9.6/10]
+
+=========================================================================
+
+Overall Grade: 98
