@@ -1,7 +1,11 @@
-Grading at 10/19/2022:04:02:15.113171
-For commit ID b0ce1b745051e1a14e985fe23a6b5d3c42dffa26
-Grading at Wed Oct 19 12:02:15 AM EDT 2022
+Grading at 10/19/2022:04:08:36.344473
+For commit ID 3245f656c2896ef11929dd91c190808d0bf6dd78
+Grading at Wed Oct 19 12:08:36 AM EDT 2022
 Attempting to compile:
-You do not have a Makefile
+g++ -Wall -Werror -std=gnu++98 -o code code.cpp
+Your Makefile produced a binary called 'code'
+Line_1_did_not_match
+Your file did not match the expected ouput
+Your output did not match what we expected.
 
 Overall Grade: FAILED
