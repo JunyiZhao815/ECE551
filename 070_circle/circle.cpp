@@ -8,7 +8,7 @@ void Circle::move(double dx, double dy) {
 double Circle::intersectionArea(const Circle & otherCircle) {
   double r = radius;
   double R = otherCircle.radius;
-  double d = sqrt(point.distanceFrom(otherCircle.point));
+  double d = point.distanceFrom(otherCircle.point);
   if (R < r) {
     // swap
     double temp = r;
