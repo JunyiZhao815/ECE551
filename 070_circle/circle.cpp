@@ -11,8 +11,9 @@ double Circle::intersectionArea(const Circle & otherCircle) {
   double d = sqrt(point.distanceFrom(otherCircle.point));
   if (R < r) {
     // swap
+    double temp = r;
     r = R;
-    R = r;
+    R = temp;
   }
   double part1 = r * r * acos((d * d + r * r - R * R) / (2 * d * r));
   double part2 = R * R * acos((d * d + R * R - r * r) / (2 * d * R));
