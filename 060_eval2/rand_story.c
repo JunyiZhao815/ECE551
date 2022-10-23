@@ -2,49 +2,66 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <string.h>
+#include <string.h>
 
 #include "provided.h"
 
-void checkValid(FILE * f) {
-  char * line = NULL;
-  size_t size = 0;
-  while (getline(&line, &size, f) >= 0) {
-    int count = 0;
-    char * p = line;
-    while (*p != '\n') {
-      if (*p == '_') {
-        count++;
-      }
-      p++;
+void freeAns(catarray_t * ans) {
+  if (ans == NULL) {
+    return;
+  }
+  category_t * p2 = ans->arr;
+  for (size_t i = 0; i < ans->n; i++) {
+    for (size_t j = 0; j < p2->n_words; j++) {
+      free(p2->words[j]);
     }
-    if (count % 2 == 1) {
-      fprintf(stderr, "The content in the story is incorrect!");
-      exit(EXIT_FAILURE);
+    free(p2->words);
+    free(p2->name);
+    p2++;
+  }
+
+  free(ans->arr);
+  free(ans);
+}
+void checkValid(char * line) {
+  int count = 0;
+  char * p = line;
+  while (*p != '\n') {
+    if (*p == '_') {
+      count++;
     }
-    free(line);
-    line = NULL;
+    p++;
+  }
+  if (count % 2 == 1) {
+    fprintf(stderr, "The content in the story is incorrect!");
+    exit(EXIT_FAILURE);
   }
 }
-
+/*
 int fill(char * temp, catarray_t * cats, char * pointer, int pointer_size) {
-  const char * p_animal = chooseWord(temp, cats);
-  while (*p_animal != '\0' && *p_animal != '\n') {
+  const char * p_target = chooseWord(temp, cats);
+
+  while (*p_target != '\0' && *p_target != '\n') {
     pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
-    pointer[pointer_size++] = *p_animal;
-    p_animal++;
+    pointer[pointer_size] = *p_target;
+    pointer_size++;
+    p_target++;
   }
+  // free(temp);
+  freeAns(cats);
   return pointer_size;
 }
-
-void printStory(FILE * f, catarray_t * cat) {
+*/
+void printStory(char * argv1, catarray_t * cats) {
   char * p = NULL;
-  size_t size = 0;
-  while (getline(&p, &size, f) >= 0) {
-    char * pointer = NULL;
-    int pointer_size = 0;
-    // char * p = line;
 
+  size_t size = 0;
+  FILE * f = fopen(argv1, "r");
+  while (getline(&p, &size, f) >= 0) {
+    checkValid(p);
+    char * pointer = NULL;
+    size_t pointer_size = 0;
+    char * line = p;
     while (*p != '\0') {
       if (*p != '_') {
         pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
@@ -52,7 +69,7 @@ void printStory(FILE * f, catarray_t * cat) {
         p++;
         if (*p == '\0') {
           pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
-          pointer[pointer_size++] = *p;
+          pointer[pointer_size++] = '\0';
         }
         continue;
       }
@@ -68,13 +85,114 @@ void printStory(FILE * f, catarray_t * cat) {
         p++;
         temp = realloc(temp, (len + 1) * sizeof(*temp));
         temp[len++] = '\0';
-        pointer_size = fill(temp, cat, pointer, pointer_size);
-        // free(temp);
+        //Choose word
+        const char * p_target = chooseWord(temp, cats);
+
+        while (*p_target != '\0' && *p_target != '\n') {
+          pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
+          pointer[pointer_size] = *p_target;
+          pointer_size++;
+          p_target++;
+        }
+        freeAns(cats);
+        free(temp);
       }
     }
     printf("%s", pointer);
-    free(pointer);
-    free(p);
+    free(line);
     p = NULL;
+    line = NULL;
+    free(pointer);
+  }
+  free(p);
+  if (fclose(f) != 0) {
+    fprintf(stderr, "The file cannot be closed");
+    exit(EXIT_FAILURE);
+  }
+}
+
+void checking_colon(char * line) {
+  int i = 0;
+  int count = 0;
+  while (line[i] != '\n') {
+    if (line[i] == ':') {
+      count++;
+    }
+    i++;
+  }
+  if (count == 0) {
+    free(line);
+    fprintf(stderr, "The input word has bad format");
+    exit(EXIT_FAILURE);
+  }
+}
+void create_category(char * category, catarray_t * ans, char * replacement) {
+  category_t * c = malloc(sizeof(*c));
+  c->name = category;
+  c->words = malloc(sizeof(*c->words));
+  c->words[0] = replacement;
+  c->n_words = 1;
+  ans->arr = realloc(ans->arr, (ans->n + 1) * sizeof(*ans->arr));
+  ans->arr[ans->n] = *c;
+  ans->n = ans->n + 1;
+
+  free(c);
+}
+
+void step2convert(char * argv1) {
+  FILE * f = fopen(argv1, "r");
+  char * line = NULL;
+  size_t size = 0;
+  catarray_t * ans = malloc(sizeof(*ans));
+  ans->n = 0;
+  ans->arr = NULL;
+
+  while (getline(&line, &size, f) >= 0) {
+    checking_colon(line);
+
+    // get the number of characters before colon
+    int num_before_colon = 0;
+    while (line[num_before_colon] != ':') {
+      num_before_colon++;
+    }
+    // get category
+    char * category = strndup(line, num_before_colon);
+    char * p = line;
+    for (int i = 0; i <= num_before_colon; i++) {
+      p++;
+    }
+    // get replacement
+    int num_after_colon = 0;
+    char * p2 = p;
+    while (*p != '\n') {
+      num_after_colon++;
+      p++;
+    }
+    char * replacement = strndup(p2, num_after_colon);
+    //start loop to obtain words
+    int flag = 0;
+    for (size_t i = 0; i < ans->n; i++) {
+      if (strcmp(ans->arr[i].name, category) == 0) {
+        flag = 1;
+        ans->arr[i].words = realloc(
+            ans->arr[i].words, (ans->arr[i].n_words + 1) * sizeof(ans->arr[i].words));
+
+        ans->arr[i].words[ans->arr[i].n_words] = replacement;
+        ans->arr[i].n_words++;
+        free(category);
+      }
+    }
+    if (flag == 0) {
+      create_category(category, ans, replacement);
+    }
+    free(line);
+    line = NULL;
+  }
+  free(line);
+  printWords(ans);
+  freeAns(ans);
+  if (fclose(f) != 0) {
+    fprintf(stderr, "Cannot close file");
+    exit(EXIT_FAILURE);
   }
 }

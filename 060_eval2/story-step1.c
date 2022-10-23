@@ -5,12 +5,9 @@
 #include "provided.h"
 #include "rand_story.h"
 int main(int argc, char ** argv) {
-  if (argc == 0) {
-    printf("No argument input!");
+  if (argc != 2) {
+    printf("The number of argument is incorrect");
     exit(EXIT_FAILURE);
   }
-  FILE * f = fopen(argv[1], "r");
-  checkValid(f);
-  printStory(f, NULL);
-  fclose(f);
+  printStory(argv[1], NULL);
 }
