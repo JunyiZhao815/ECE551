@@ -5,7 +5,7 @@ IntMatrix::IntMatrix() : numRows(0), numColumns(0), rows(NULL) {
 IntMatrix::IntMatrix(int r, int c) : numRows(r), numColumns(c) {
   rows = new IntArray *[numRows];
   for (int i = 0; i < r; i++) {
-    rows[i] = new IntArray[c];
+    rows[i] = new IntArray(c);
   }
 }
 IntMatrix::IntMatrix(const IntMatrix & rhs) :
@@ -29,7 +29,7 @@ IntMatrix & IntMatrix::operator=(const IntMatrix & rhs) {
     delete[] rows;
     numRows = rhs.numRows;
     numColumns = rhs.numColumns;
-    rows = new IntArray *[numRows];
+    rows = new IntArray *[rhs.numRows];
     for (int i = 0; i < rhs.numRows; i++) {
       rows[i] = new IntArray(rhs[i]);
     }
