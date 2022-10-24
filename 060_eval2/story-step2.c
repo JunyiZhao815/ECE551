@@ -10,5 +10,12 @@ int main(int argc, char ** argv) {
     printf("No argument input!");
     exit(EXIT_FAILURE);
   }
-  step2convert(argv[1]);
+  FILE * f = fopen(argv[1], "r");
+  catarray_t * ans = step2convert(f);
+  printWords(ans);
+  freeAns(ans);
+  if (fclose(f) != 0) {
+    fprintf(stderr, "Cannot close file");
+    exit(EXIT_FAILURE);
+  }
 }

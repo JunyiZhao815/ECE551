@@ -52,7 +52,13 @@ int fill(char * temp, catarray_t * cats, char * pointer, int pointer_size) {
   return pointer_size;
 }
 */
+const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blankSet);
 void printStory(char * argv1, catarray_t * cats) {
+  category_t * blankSet = malloc(sizeof(*blankSet));
+  blankSet->n_words = 0;
+  blankSet->name = NULL;
+  blankSet->words = NULL;
+
   char * p = NULL;
 
   size_t size = 0;
@@ -86,7 +92,7 @@ void printStory(char * argv1, catarray_t * cats) {
         temp = realloc(temp, (len + 1) * sizeof(*temp));
         temp[len++] = '\0';
         //Choose word
-        const char * p_target = chooseWord(temp, cats);
+        const char * p_target = chooseRandomWord(temp, cats, blankSet);
 
         while (*p_target != '\0' && *p_target != '\n') {
           pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
@@ -94,8 +100,8 @@ void printStory(char * argv1, catarray_t * cats) {
           pointer_size++;
           p_target++;
         }
-        freeAns(cats);
-        free(temp);
+        // freeAns(cats);
+        //free(temp);
       }
     }
     printf("%s", pointer);
@@ -104,11 +110,71 @@ void printStory(char * argv1, catarray_t * cats) {
     line = NULL;
     free(pointer);
   }
+  // /*
+  for (size_t i = 0; i < blankSet->n_words; i++) {
+    free(blankSet->words[i]);
+  }
+  if (blankSet->words != NULL) {
+    free(blankSet->words);
+  }
+  // free(blankSet->name);
+  free(blankSet);
+  // */
+  freeAns(cats);
   free(p);
   if (fclose(f) != 0) {
     fprintf(stderr, "The file cannot be closed");
     exit(EXIT_FAILURE);
   }
+}
+int isValidNumber(char * temp);
+const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blankSet) {
+  if (cats == NULL) {
+    return "cat";
+  }
+  // Checking if the blank is digit
+  if (isValidNumber(temp)) {
+    // If the temp has the number that within the range of out blank set.
+    if (blankSet->n_words > (size_t)atoi(temp) - 1) {
+      blankSet->words =
+          realloc(blankSet->words, (blankSet->n_words + 1) * sizeof(*blankSet->words));
+
+      blankSet->words[blankSet->n_words] =
+          strdup(blankSet->words[blankSet->n_words - (size_t)atoi(temp)]);
+
+      blankSet->n_words++;
+      free(temp);
+      //return chooseWord(blankSet->words[blankSet->n_words - 1], cats);
+      return blankSet->words[blankSet->n_words - 1];
+    }
+  }
+  else {  // If the blank is not digit, then it must be an error or a category
+    for (size_t i = 0; i < cats->n; i++) {
+      if (strcmp(temp, cats->arr[i].name) == 0) {
+        blankSet->words =
+            realloc(blankSet->words, (blankSet->n_words + 1) * sizeof(*blankSet->words));
+        const char * target = chooseWord(temp, cats);
+        blankSet->words[blankSet->n_words++] = strdup(target);
+        free(temp);
+        return target;
+      }
+    }
+  }
+  //If did not match category or integer
+  fprintf(stderr, "Invalid Category Name or Invalid Integer");
+  exit(EXIT_FAILURE);
+}
+
+int isValidNumber(char * temp) {
+  char * p = temp;
+  int a = 1;
+  while (*p != '\0') {
+    if (!('0' <= *p && *p <= '9')) {
+      a = 0;
+    }
+    p++;
+  }
+  return a;
 }
 
 void checking_colon(char * line) {
@@ -139,8 +205,9 @@ void create_category(char * category, catarray_t * ans, char * replacement) {
   free(c);
 }
 
-void step2convert(char * argv1) {
-  FILE * f = fopen(argv1, "r");
+// Should return ans
+catarray_t * step2convert(FILE * f) {
+  //FILE * f = fopen(argv1, "r");
   char * line = NULL;
   size_t size = 0;
   catarray_t * ans = malloc(sizeof(*ans));
@@ -189,10 +256,13 @@ void step2convert(char * argv1) {
     line = NULL;
   }
   free(line);
-  printWords(ans);
+  // printWords(ans);
+  return ans;
+}
+/*
   freeAns(ans);
   if (fclose(f) != 0) {
     fprintf(stderr, "Cannot close file");
     exit(EXIT_FAILURE);
   }
-}
+  */

@@ -12,6 +12,7 @@ int fill(char * temp, catarray_t * cats, char * pointer, int pointer_size);
 void checking_colon(char * line);
 void create_category(char * category, catarray_t * ans, char * replacement);
 void freeAns(catarray_t * ans);
-void step2convert(char * argv1);
+int isValidNumber(char * temp);
+catarray_t * step2convert(FILE * f);
 
 #endif
