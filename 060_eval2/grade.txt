@@ -1,11 +1,11 @@
-Grading at 10/24/2022:21:19:07.302522
-For commit ID 4ae01a8a64fac41b96087df93fcf311c7f280900
-Grading at Mon Oct 24 05:19:04 PM EDT 2022
+Grading at 10/24/2022:21:23:51.498337
+For commit ID f238650762bc9761f6528d3c273453b5959aa443
+Grading at Mon Oct 24 05:23:48 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that story-step1 compiles
-rm -f *~ story-step3  story-step3.o rand_story.o
+rm -f *~ story-step1  story-step1.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
@@ -19,37 +19,12 @@ Now running YOUR tests for step 1
 1.1: Current test is story-step1 story.txt
 -----------------------------
 Your output looks good. Lets check valgrind
-  - Valgrind reported errors
-Valgrind reported errors or memory leaks:
-==3314423== Memcheck, a memory error detector
-==3314423== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3314423== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3314423== Command: ./story-step1 story.txt
-==3314423== Parent PID: 3314422
-==3314423== 
-==3314423== 
-==3314423== HEAP SUMMARY:
-==3314423==     in use at exit: 23 bytes in 3 blocks
-==3314423==   total heap usage: 96 allocs, 93 frees, 10,950 bytes allocated
-==3314423== 
-==3314423== 23 bytes in 3 blocks are definitely lost in loss record 1 of 1
-==3314423==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==3314423==    by 0x1096D6: printStory (rand_story.c:92)
-==3314423==    by 0x1093B7: main (story-step1.c:12)
-==3314423== 
-==3314423== LEAK SUMMARY:
-==3314423==    definitely lost: 23 bytes in 3 blocks
-==3314423==    indirectly lost: 0 bytes in 0 blocks
-==3314423==      possibly lost: 0 bytes in 0 blocks
-==3314423==    still reachable: 0 bytes in 0 blocks
-==3314423==         suppressed: 0 bytes in 0 blocks
-==3314423== 
-==3314423== For lists of detected and suppressed errors, rerun with: -s
-==3314423== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
-rm -f *~ story-step3  story-step3.o rand_story.o
+rm -f *~ story-step1  story-step1.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
@@ -66,7 +41,7 @@ Valgrind was clean
 
 Step 3
 Checking that story-step3 compiles
-rm -f *~ story-step3  story-step3.o rand_story.o
+rm -f *~ story-step1  story-step1.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
@@ -83,7 +58,7 @@ Valgrind was clean
 
 Step 4
 Checking that story-step4 compiles
-rm -f *~ story-step3  story-step3.o rand_story.o
+rm -f *~ story-step1  story-step1.o rand_story.o
 The code did not compile!
 
 Overall Grade: NO GRADE YET
