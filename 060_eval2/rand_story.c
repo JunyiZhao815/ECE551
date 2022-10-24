@@ -101,6 +101,9 @@ void printStory(char * argv1, catarray_t * cats) {
           p_target++;
         }
         // freeAns(cats);
+        if (cats == NULL) {
+          free(temp);
+        }
         //free(temp);
       }
     }
