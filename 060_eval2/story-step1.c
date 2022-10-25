@@ -9,5 +9,5 @@ int main(int argc, char ** argv) {
     printf("The number of argument is incorrect");
     exit(EXIT_FAILURE);
   }
-  printStory(argv[1], NULL);
+  printStory(argv[1], NULL, 0);
 }
