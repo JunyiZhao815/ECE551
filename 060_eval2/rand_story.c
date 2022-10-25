@@ -52,8 +52,12 @@ int fill(char * temp, catarray_t * cats, char * pointer, int pointer_size) {
   return pointer_size;
 }
 */
-const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blankSet);
-void printStory(char * argv1, catarray_t * cats) {
+void deleteDup(const char * target, char * temp, catarray_t * cats, int n);
+const char * chooseRandomWord(char * temp,
+                              catarray_t * cats,
+                              category_t * blankSet,
+                              int n);
+void printStory(char * argv1, catarray_t * cats, int n) {
   category_t * blankSet = malloc(sizeof(*blankSet));
   blankSet->n_words = 0;
   blankSet->name = NULL;
@@ -92,19 +96,17 @@ void printStory(char * argv1, catarray_t * cats) {
         temp = realloc(temp, (len + 1) * sizeof(*temp));
         temp[len++] = '\0';
         //Choose word
-        const char * p_target = chooseRandomWord(temp, cats, blankSet);
-
+        const char * p_target = chooseRandomWord(temp, cats, blankSet, n);
         while (*p_target != '\0' && *p_target != '\n') {
           pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
           pointer[pointer_size] = *p_target;
           pointer_size++;
           p_target++;
         }
-        // freeAns(cats);
+
         if (cats == NULL) {
           free(temp);
         }
-        //free(temp);
       }
     }
     printf("%s", pointer);
@@ -113,16 +115,14 @@ void printStory(char * argv1, catarray_t * cats) {
     line = NULL;
     free(pointer);
   }
-  // /*
   for (size_t i = 0; i < blankSet->n_words; i++) {
     free(blankSet->words[i]);
   }
   if (blankSet->words != NULL) {
     free(blankSet->words);
   }
-  // free(blankSet->name);
+
   free(blankSet);
-  // */
   freeAns(cats);
   free(p);
   if (fclose(f) != 0) {
@@ -131,7 +131,11 @@ void printStory(char * argv1, catarray_t * cats) {
   }
 }
 int isValidNumber(char * temp);
-const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blankSet) {
+
+const char * chooseRandomWord(char * temp,
+                              catarray_t * cats,
+                              category_t * blankSet,
+                              int n) {
   if (cats == NULL) {
     return "cat";
   }
@@ -147,7 +151,7 @@ const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blank
 
       blankSet->n_words++;
       free(temp);
-      //return chooseWord(blankSet->words[blankSet->n_words - 1], cats);
+
       return blankSet->words[blankSet->n_words - 1];
     }
   }
@@ -158,8 +162,11 @@ const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blank
             realloc(blankSet->words, (blankSet->n_words + 1) * sizeof(*blankSet->words));
         const char * target = chooseWord(temp, cats);
         blankSet->words[blankSet->n_words++] = strdup(target);
+        deleteDup(target, temp, cats, n);
+        const char * s = blankSet->words[blankSet->n_words - 1];
+        target = NULL;
         free(temp);
-        return target;
+        return s;
       }
     }
   }
@@ -168,6 +175,30 @@ const char * chooseRandomWord(char * temp, catarray_t * cats, category_t * blank
   exit(EXIT_FAILURE);
 }
 
+void deleteDup(const char * target, char * temp, catarray_t * cats, int n) {
+  if (n == 0) {
+    return;
+  }
+  else {
+    if (cats->arr->n_words == 0) {
+      fprintf(stderr, "There is not enough item in the category");
+      exit(EXIT_FAILURE);
+    }
+    for (size_t i = 0; i < cats->n; i++) {
+      if (strcmp((cats->arr)[i].name, temp) == 0) {
+        for (size_t j = 0; j < cats->arr->n_words; j++) {
+          if (strcmp(cats->arr->words[j], target) == 0) {
+            for (size_t h = j; h < cats->arr->n_words - 1; h++) {
+              *cats->arr->words[h] = *cats->arr->words[h + 1];
+            }
+            cats->arr->n_words--;
+            free(cats->arr->words[cats->arr->n_words]);
+          }
+        }
+      }
+    }
+  }
+}
 int isValidNumber(char * temp) {
   char * p = temp;
   int a = 1;
@@ -262,10 +293,3 @@ catarray_t * step2convert(FILE * f) {
   // printWords(ans);
   return ans;
 }
-/*
-  freeAns(ans);
-  if (fclose(f) != 0) {
-    fprintf(stderr, "Cannot close file");
-    exit(EXIT_FAILURE);
-  }
-  */
