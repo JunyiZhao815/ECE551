@@ -37,21 +37,7 @@ void checkValid(char * line) {
     exit(EXIT_FAILURE);
   }
 }
-/*
-int fill(char * temp, catarray_t * cats, char * pointer, int pointer_size) {
-  const char * p_target = chooseWord(temp, cats);
 
-  while (*p_target != '\0' && *p_target != '\n') {
-    pointer = realloc(pointer, (pointer_size + 1) * sizeof(*pointer));
-    pointer[pointer_size] = *p_target;
-    pointer_size++;
-    p_target++;
-  }
-  // free(temp);
-  freeAns(cats);
-  return pointer_size;
-}
-*/
 void deleteDup(const char * target, char * temp, catarray_t * cats, int n);
 const char * chooseRandomWord(char * temp,
                               catarray_t * cats,
@@ -62,13 +48,13 @@ void printStory(char * argv1, catarray_t * cats, int n) {
   blankSet->n_words = 0;
   blankSet->name = NULL;
   blankSet->words = NULL;
-
   char * p = NULL;
 
   size_t size = 0;
   FILE * f = fopen(argv1, "r");
   while (getline(&p, &size, f) >= 0) {
     checkValid(p);
+    // pointer is the string that we are going to print
     char * pointer = NULL;
     size_t pointer_size = 0;
     char * line = p;
@@ -85,6 +71,7 @@ void printStory(char * argv1, catarray_t * cats, int n) {
       }
       else {
         p++;
+        // temp is the string that comes from chooseRandomword function
         char * temp = NULL;
         int len = 0;
         while (*p != '_') {
@@ -95,6 +82,7 @@ void printStory(char * argv1, catarray_t * cats, int n) {
         p++;
         temp = realloc(temp, (len + 1) * sizeof(*temp));
         temp[len++] = '\0';
+
         //Choose word
         const char * p_target = chooseRandomWord(temp, cats, blankSet, n);
         while (*p_target != '\0' && *p_target != '\n') {
@@ -139,6 +127,15 @@ const char * chooseRandomWord(char * temp,
   if (cats == NULL) {
     return "cat";
   }
+  // If there is no words in category:
+  for (size_t i = 0; i < cats->n; i++) {
+    if (strcmp(temp, cats->arr[i].name) == 0) {
+      if (cats->arr[i].n_words == 0) {
+        fprintf(stderr, "There are no words in the category\n");
+        exit(EXIT_FAILURE);
+      }
+    }
+  }
   // Checking if the blank is digit
   if (isValidNumber(temp)) {
     // If the temp has the number that within the range of out blank set.
@@ -163,9 +160,11 @@ const char * chooseRandomWord(char * temp,
         const char * target = chooseWord(temp, cats);
         blankSet->words[blankSet->n_words++] = strdup(target);
         deleteDup(target, temp, cats, n);
+
         const char * s = blankSet->words[blankSet->n_words - 1];
         target = NULL;
         free(temp);
+        // free((char *)target);
         return s;
       }
     }
@@ -180,19 +179,21 @@ void deleteDup(const char * target, char * temp, catarray_t * cats, int n) {
     return;
   }
   else {
-    if (cats->arr->n_words == 0) {
-      fprintf(stderr, "There is not enough item in the category");
-      exit(EXIT_FAILURE);
-    }
     for (size_t i = 0; i < cats->n; i++) {
       if (strcmp((cats->arr)[i].name, temp) == 0) {
-        for (size_t j = 0; j < cats->arr->n_words; j++) {
-          if (strcmp(cats->arr->words[j], target) == 0) {
-            for (size_t h = j; h < cats->arr->n_words - 1; h++) {
-              *cats->arr->words[h] = *cats->arr->words[h + 1];
+        if (cats->arr[i].n_words == 0) {
+          fprintf(stderr, "There is notitem in the category");
+          exit(EXIT_FAILURE);
+        }
+        for (size_t j = 0; j < cats->arr[i].n_words; j++) {
+          if (strcmp(cats->arr[i].words[j], target) == 0) {
+            free(cats->arr[i].words[j]);
+            for (size_t h = j; h < cats->arr[i].n_words - 1; h++) {
+              cats->arr[i].words[h] = cats->arr[i].words[h + 1];
             }
-            cats->arr->n_words--;
-            free(cats->arr->words[cats->arr->n_words]);
+            cats->arr[i].n_words--;
+            cats->arr[i].words[cats->arr[i].n_words] = NULL;
+            return;
           }
         }
       }
