@@ -24,6 +24,10 @@ int main(int argc, char ** argv) {
   else {
     for (int i = 1; i < argc; i++) {
       std::ifstream file(argv[i]);
+      if (file.fail()) {
+        std::cout << "The file cannot be opened";
+        exit(EXIT_FAILURE);
+      }
       std::vector<std::string> vector;
       std::string line;
       while (!file.eof()) {
