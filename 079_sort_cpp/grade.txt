@@ -1,6 +1,6 @@
-Grading at 10/27/2022:01:00:21.162536
-For commit ID 5bc13ddf803c940288083cc164db518a1f101719
-Grading at Wed Oct 26 09:00:04 PM EDT 2022
+Grading at 10/27/2022:01:19:26.724035
+For commit ID fca08f2657fd74cae41fd98f1bf54ed2ca2000c0
+Grading at Wed Oct 26 09:19:21 PM EDT 2022
 Looking for malloc in your files
 No uses found (good).
 Looking for free in your files
@@ -18,7 +18,7 @@ make: 'sortLines' is up to date.
 Using sortLines..
 #################################################
 testcase1:
-valgrind reported memory errors
+testcase1 failed, your program didn't indicate this is a failure case
 #################################################
 testcase2:
 Your output is correct
@@ -26,9 +26,9 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase3:
-valgrind reported memory errors
+Your output is incorrect
 #################################################
 testcase4:
-valgrind reported memory errors
+Your output is incorrect
 
 Overall Grade: F
