@@ -26,7 +26,7 @@ int main(int argc, char ** argv) {
       std::ifstream file(argv[i]);
       std::vector<std::string> vector;
       std::string line;
-      while (!std::cin.eof()) {
+      while (!file.eof()) {
         std::getline(file, line);
         vector.push_back(line);
       }
@@ -39,4 +39,5 @@ int main(int argc, char ** argv) {
       vector.clear();
     }
   }
+  return EXIT_SUCCESS;
 }
