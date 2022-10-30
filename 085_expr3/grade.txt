@@ -1,28 +1,22 @@
-Grading at 10/30/2022:21:05:42.079954
-For commit ID a52293d7227e0b5b3b2e0e6503ea885fa54e7a1f
-Grading at Sun Oct 30 05:05:39 PM EDT 2022
+Grading at 10/30/2022:21:06:45.006198
+For commit ID 70230948c32eaecca1e3ceae486deb890b70cace
+Grading at Sun Oct 30 05:06:42 PM EDT 2022
 Compiling code
 The code compiled.
 ---------------------
 Test case 1
   - Valgrind was clean (no errors, no memory leaks)
-Line_9_did_not_match
-Line_12_did_not_match
-Your file did not match the expected ouput
-Testcase failed 
+Your file matched the expected output
+Testcase passed 
 ---------------------
 Test case 2
   - Valgrind was clean (no errors, no memory leaks)
-Line_12_did_not_match
-Line_26_did_not_match
-Line_29_did_not_match
-Your file did not match the expected ouput
-Testcase failed 
+Your file matched the expected output
+Testcase passed 
 ---------------------
 Test case 3
   - Valgrind was clean (no errors, no memory leaks)
-Line_3_did_not_match
-Your file did not match the expected ouput
-Testcase failed 
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
