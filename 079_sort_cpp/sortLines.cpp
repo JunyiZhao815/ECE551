@@ -25,7 +25,6 @@ int main(int argc, char ** argv) {
     for (int i = 1; i < argc; i++) {
       std::ifstream file(argv[i]);
       if (file.fail()) {
-        // std::cout << "The file cannot be opened";
         std::cerr << "The file cannot be opened";
         exit(EXIT_FAILURE);
       }
