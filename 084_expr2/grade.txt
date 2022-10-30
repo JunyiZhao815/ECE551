@@ -1,17 +1,22 @@
-Grading at 10/30/2022:20:47:04.414213
-For commit ID 7cad7b0a7f9a3e1e85a2b2a7f90c17902ab51f50
-Grading at Sun Oct 30 04:47:04 PM EDT 2022
+Grading at 10/30/2022:20:50:07.365977
+For commit ID 796e46acca6ab824376851b996633c7d3ce437b0
+Grading at Sun Oct 30 04:50:04 PM EDT 2022
 Compiling code
-expr.cpp: In function ‘Expression* makeExpr(char, Expression*, Expression*)’:
-expr.cpp:22:42: error: cannot convert ‘MinusExpression*’ to ‘Expression*’ in return
-   22 |       return new MinusExpression(lhs, rhs);
-      |                                          ^
-expr.cpp:24:42: error: cannot convert ‘TimesExpression*’ to ‘Expression*’ in return
-   24 |       return new TimesExpression(lhs, rhs);
-      |                                          ^
-expr.cpp:26:40: error: cannot convert ‘DivExpression*’ to ‘Expression*’ in return
-   26 |       return new DivExpression(lhs, rhs);
-      |                                        ^
-The code did not compile.
+The code compiled.
+---------------------
+Test case 1
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
+---------------------
+Test case 2
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
+---------------------
+Test case 3
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
