@@ -6,7 +6,7 @@
 #include <vector>
 
 int main(int argc, char ** argv) {
-  if (argc == 1) {
+  if (argc == 1 || argc == 0) {
     std::string line;
     std::vector<std::string> vector;
     while (!std::cin.eof()) {
