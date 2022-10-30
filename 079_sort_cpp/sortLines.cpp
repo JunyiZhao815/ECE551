@@ -26,6 +26,7 @@ int main(int argc, char ** argv) {
       std::ifstream file(argv[i]);
       if (file.fail()) {
         std::cout << "The file cannot be opened";
+        std::cerr << "The file cannot be opened";
         exit(EXIT_FAILURE);
       }
       std::vector<std::string> vector;
