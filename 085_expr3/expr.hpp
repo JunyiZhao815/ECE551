@@ -18,6 +18,7 @@ class NumExpression : public Expression {
     ans << num;
     return ans.str();
   }
+  virtual long evaluate() const { return num; }
 };
 
 class PlusExpression : public Expression {
@@ -30,7 +31,7 @@ class PlusExpression : public Expression {
     ans << "(" << a->toString() << " + " << b->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return stoul(a->toString()) + stoul(b->toString()); }
+  virtual long evaluate() const { return a->evaluate() + b->evaluate(); }
   ~PlusExpression() {
     delete a;
     delete b;
@@ -47,7 +48,7 @@ class MinusExpression : public Expression {
     ans << "(" << l->toString() << " - " << r->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return stoul(l->toString()) - stoul(r->toString()); }
+  virtual long evaluate() const { return l->evaluate() - r->evaluate(); }
   ~MinusExpression() {
     delete l;
     delete r;
@@ -64,7 +65,7 @@ class TimesExpression : public Expression {
     ans << "(" << l->toString() << " * " << r->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return stoul(l->toString()) * stoul(r->toString()); }
+  virtual long evaluate() const { return l->evaluate() - r->evaluate(); }
 
   ~TimesExpression() {
     delete l;
@@ -82,7 +83,7 @@ class DivExpression : public Expression {
     ans << "(" << l->toString() << " / " << r->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return stoul(l->toString()) / stoul(r->toString()); }
+  virtual long evaluate() const { return l->evaluate() - r->evaluate(); }
   ~DivExpression() {
     delete l;
     delete r;
