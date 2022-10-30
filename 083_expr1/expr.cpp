@@ -6,7 +6,6 @@
 
 #include <cstdlib>
 #include <iostream>
-
 Expression * parse(const char ** strp);
 
 void skipSpace(const char ** strp) {
