@@ -6,7 +6,7 @@
 #include <vector>
 
 int main(int argc, char ** argv) {
-  if (argc == 1 || argc == 0) {
+  if (argc == 1) {
     std::string line;
     std::vector<std::string> vector;
     while (!std::cin.eof()) {
@@ -25,7 +25,7 @@ int main(int argc, char ** argv) {
     for (int i = 1; i < argc; i++) {
       std::ifstream file(argv[i]);
       if (file.fail()) {
-        std::cout << "The file cannot be opened";
+        // std::cout << "The file cannot be opened";
         std::cerr << "The file cannot be opened";
         exit(EXIT_FAILURE);
       }
