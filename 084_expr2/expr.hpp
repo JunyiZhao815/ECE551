@@ -35,7 +35,7 @@ class PlusExpression : public Expression {
   }
 };
 
-class MinusExpression {
+class MinusExpression : public Expression {
  public:
   Expression * l;
   Expression * r;
@@ -45,9 +45,13 @@ class MinusExpression {
     ans << "(" << l->toString() << " - " << r->toString() << ")";
     return ans.str();
   }
+  ~MinusExpression() {
+    delete l;
+    delete r;
+  }
 };
 
-class TimesExpression {
+class TimesExpression : public Expression {
  public:
   Expression * l;
   Expression * r;
@@ -57,9 +61,14 @@ class TimesExpression {
     ans << "(" << l->toString() << " * " << r->toString() << ")";
     return ans.str();
   }
+
+  ~TimesExpression() {
+    delete l;
+    delete r;
+  }
 };
 
-class DivExpression {
+class DivExpression : public Expression {
  public:
   Expression * l;
   Expression * r;
@@ -68,5 +77,10 @@ class DivExpression {
     std::stringstream ans;
     ans << "(" << l->toString() << " / " << r->toString() << ")";
     return ans.str();
+  }
+
+  ~DivExpression() {
+    delete l;
+    delete r;
   }
 };
