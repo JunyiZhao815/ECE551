@@ -1,0 +1,39 @@
+Grading at 10/30/2022:20:58:19.129118
+For commit ID 200f0c952210864dac835ff9b18e4d2681c38a11
+Grading at Sun Oct 30 04:58:18 PM EDT 2022
+Compiling code
+In file included from expr.cpp:1:
+expr.hpp: In member function ‘virtual long int PlusExpression::evaluate() const’:
+expr.hpp:33:42: error: ‘stoul’ was not declared in this scope; did you mean ‘wcstoul’?
+   33 |   virtual long evaluate() const { return stoul(a->toString()) + stoul(b->toString()); }
+      |                                          ^~~~~
+      |                                          wcstoul
+expr.hpp: In member function ‘virtual long int MinusExpression::evaluate() const’:
+expr.hpp:50:42: error: ‘stoul’ was not declared in this scope; did you mean ‘wcstoul’?
+   50 |   virtual long evaluate() const { return stoul(l->toString()) - stoul(r->toString()); }
+      |                                          ^~~~~
+      |                                          wcstoul
+expr.hpp: In member function ‘virtual long int TimesExpression::evaluate() const’:
+expr.hpp:67:42: error: ‘stoul’ was not declared in this scope; did you mean ‘wcstoul’?
+   67 |   virtual long evaluate() const { return stoul(l->toString()) * stoul(r->toString()); }
+      |                                          ^~~~~
+      |                                          wcstoul
+expr.hpp: In member function ‘virtual long int DivExpression::evaluate() const’:
+expr.hpp:85:42: error: ‘stoul’ was not declared in this scope; did you mean ‘wcstoul’?
+   85 |   virtual long evaluate() const { return stoul(l->toString()) / stoul(r->toString()); }
+      |                                          ^~~~~
+      |                                          wcstoul
+expr.cpp: In function ‘Expression* parse(const char**)’:
+expr.cpp:83:33: error: invalid new-expression of abstract class type ‘NumExpression’
+   83 |     return new NumExpression(num);
+      |                                 ^
+In file included from expr.cpp:1:
+expr.hpp:12:7: note:   because the following virtual functions are pure within ‘NumExpression’:
+   12 | class NumExpression : public Expression {
+      |       ^~~~~~~~~~~~~
+expr.hpp:9:16: note:     ‘virtual long int Expression::evaluate() const’
+    9 |   virtual long evaluate() const = 0;
+      |                ^~~~~~~~
+The code did not compile.
+
+Overall Grade: F
