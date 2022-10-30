@@ -65,7 +65,7 @@ class TimesExpression : public Expression {
     ans << "(" << l->toString() << " * " << r->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return l->evaluate() - r->evaluate(); }
+  virtual long evaluate() const { return l->evaluate() * r->evaluate(); }
 
   ~TimesExpression() {
     delete l;
@@ -83,7 +83,7 @@ class DivExpression : public Expression {
     ans << "(" << l->toString() << " / " << r->toString() << ")";
     return ans.str();
   }
-  virtual long evaluate() const { return l->evaluate() - r->evaluate(); }
+  virtual long evaluate() const { return l->evaluate() / r->evaluate(); }
   ~DivExpression() {
     delete l;
     delete r;
