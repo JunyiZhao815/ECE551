@@ -5,7 +5,7 @@ B
 B
 A
 C
-D
+A
 D
 B
-D
+A
