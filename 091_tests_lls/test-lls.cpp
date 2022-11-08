@@ -40,56 +40,42 @@ class Tester {
     il.remove(10);
     il.remove(20);
   }
-  // example of another method you might want to write
+
   void testAddBack() {
     IntList il;
-    // First addBack
+    // When there is only one node
     il.addBack(1);
-    IntList::Node * N1 = il.tail;
     assert(il.head != NULL);
-    assert(il.tail == il.head);
+    assert(il.head == il.tail);
     assert(il.getSize() == 1);
     assert(il[0] == 1);
-    assert(N1->data == 1);
-    assert(N1->next == NULL);
-    assert(N1->prev == NULL);
+    assert(il.head->data == 1);
+    assert(il.head->next == il.head->prev);
+    assert(il.head->next == NULL);
 
-    // Second addBack
+    // Two nodes
     il.addBack(2);
-    IntList::Node * N2 = il.tail;
-    assert(il.head == N1);
+    assert(il.head != NULL);
     assert(il.tail != NULL);
     assert(il.getSize() == 2);
     assert(il[0] == 1);
     assert(il[1] == 2);
-    assert(N1->data == 1);
-    assert(N1->next == N2);
-    assert(N1->prev == NULL);
-    assert(N2->data == 2);
-    assert(N2->next == NULL);
-    assert(N2->prev == N1);
+    assert(il.head->data == 1);
+    assert(il.tail->data == 2);
+    assert(il.head->prev == NULL);
+    assert(il.tail->next == NULL);
+    assert(il.head->next->data == 2);
+    assert(il.tail->prev == il.head);
+    assert(il.head->next == il.tail);
 
-    // Third addFront
-    il.addFront(3);
-    IntList::Node * N3 = il.head;
+    // Three nodes
+    il.addBack(3);
     assert(il.head != NULL);
-    assert(il.tail == N2);
-    assert(il.getSize() == 3);
-    assert(il[0] == 3);
-    assert(il[1] == 1);
-    assert(il[2] == 2);
-    assert(N1->data == 1);
-    assert(N1->next == N2);
-    assert(N1->prev == N3);
-    assert(N2->data == 2);
-    assert(N2->next == NULL);
-    assert(N2->prev == N1);
-    assert(N3->data == 3);
-    assert(N3->next == N1);
-    assert(N3->prev == NULL);
+    assert(il.tail != NULL);
+    assert(il.head->prev == NULL);
+    assert(il.tail->next == NULL);
   }
 
-  // many more tester methods
   void testRemove() {
     IntList il;
     il.addFront(1);
@@ -194,19 +180,24 @@ class Tester {
     IntList * l2 = new IntList(*l1);
     assert(l1->head != l2->head);
     assert(l1->tail != l2->tail);
+    //checking deleting
     delete l2;
     delete l1;
     IntList * l3 = new IntList();
     IntList * l4 = new IntList();
     l3->addBack(1);
     l3->addBack(2);
-    l4->addFront(1);
-    l4->addFront(2);
-    l4->addFront(3);
+    l4->addBack(1);
+    l4->addBack(2);
+    l4->addBack(3);
 
     //check assignment
     *l4 = *l3;
     assert(l4->getSize() == 2);
+    assert(l3->head->data == l4->head->data);
+    assert(l3->tail->data == l4->tail->data);
+    assert(l3->head->next->data == l4->tail->data);
+    assert(l3->tail->prev->data == l4->head->data);
     assert(l3->head != l4->head);
     assert(l3->tail != l4->tail);
     assert(l4->tail->next == NULL);
