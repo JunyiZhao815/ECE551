@@ -79,12 +79,9 @@ class LinkedList {
   bool remove(const T & item) {
     Node * temp = head;
     while (temp != NULL) {
-      if (temp == NULL) {
-        return false;
-      }
       if (temp->data == item) {
         --size;
-        if (temp->next && temp->prev == NULL) {
+        if (temp->next == NULL && temp->prev == NULL) {
           head = NULL;
           tail = NULL;
           delete temp;
