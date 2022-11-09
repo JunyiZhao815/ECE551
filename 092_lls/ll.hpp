@@ -27,6 +27,7 @@ class LinkedList {
 
  public:
   LinkedList() : head(NULL), tail(NULL), size(0) {}
+
   ~LinkedList() {
     while (head != NULL) {
       Node * temp = head->next;
@@ -34,6 +35,7 @@ class LinkedList {
       head = temp;
     }
   }
+
   LinkedList(const LinkedList & rhs) : head(NULL), tail(NULL), size(0) {
     Node * temp = rhs.head;
     while (temp != NULL) {
@@ -51,12 +53,14 @@ class LinkedList {
     }
     return *this;
   }
+
   void addFront(const T & item) {
     ++size;
     Node * temp = new Node(item);
     temp->next = head;
     if (tail == NULL) {
-      tail = head;
+      tail = temp;
+      head = temp;
     }
     else {
       head->prev = temp;
@@ -68,7 +72,8 @@ class LinkedList {
     Node * temp = new Node(item);
     temp->prev = tail;
     if (head == NULL) {
-      head = tail;
+      head = temp;
+      tail = temp;
     }
     else {
       tail->next = temp;
@@ -110,41 +115,43 @@ class LinkedList {
     }
     return false;
   }
-  class e : public std::exception {
+
+  class err : public std::exception {
    public:
     const char * what() const throw() { return "index is out of boundary!"; }
   };
   T & operator[](int index) {
     try {
       if (index >= size || index < 0) {
-        throw e();
+        throw err();
       }
     }
-    catch (e & e) {
+    catch (err & e) {
       std::cerr << e.what() << std::endl;
     }
     Node * temp = head;
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < index; i++) {
       temp = temp->next;
     }
     return temp->data;
   }
   T & operator[](int index) const {
     try {
-      if (index > size || index < 0) {
-        throw e();
+      if (index >= size || index < 0) {
+        throw err();
       }
     }
-    catch (e & e) {
+    catch (err & e) {
       std::cerr << e.what() << std::endl;
     }
     Node * temp = head;
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < index; i++) {
       temp = temp->next;
     }
     return temp->data;
   }
+
   int find(const T & item) const {
     int index = 0;
     Node * temp = head;
