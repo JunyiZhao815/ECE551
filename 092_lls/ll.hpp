@@ -148,16 +148,11 @@ class LinkedList {
     }
     return temp->data;
   }
-
   int find(const T & item) const {
-    int index = 0;
-    Node * temp = head;
-    while (temp != NULL) {
-      if (temp->data == item) {
-        return index;
+    for (int i = 0; i < size; i++) {
+      if ((*this)[i] == item) {
+        return i;
       }
-      ++index;
-      temp = temp->next;
     }
     return -1;
   }
