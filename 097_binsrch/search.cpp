@@ -10,14 +10,18 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
   }
   int mid = low + (high - low) / 2;
   int mid_val = f->invoke(mid);
-  if (mid_val == 0) {
-    return mid;
-  }
-  else if (mid_val > 0) {
-    return binarySearchForZero(f, low, mid - 1);
+  if (high >= low) {
+    if (mid_val == 0) {
+      return mid;
+    }
+    else if (mid_val > 0) {
+      return binarySearchForZero(f, low, mid - 1);
+    }
+    else {
+      return binarySearchForZero(f, mid + 1, high);
+    }
   }
   else {
-    return binarySearchForZero(f, mid + 1, high);
+    return low;
   }
-  return low;
 }
