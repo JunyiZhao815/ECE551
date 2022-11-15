@@ -1,13 +1,13 @@
-Grading at 11/15/2022:03:01:10.464171
-For commit ID 4205f25619da67bee4d37ca5dd2bc234dcbb32fd
-Grading at Mon Nov 14 10:01:08 PM EST 2022
+Grading at 11/15/2022:03:04:52.848394
+For commit ID 54bd4dd2479b9372cc9d1695d077a352ef7be707
+Grading at Mon Nov 14 10:04:50 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = int; V = int]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -17,7 +17,7 @@ testcase 2 : Testing with BstMap<int,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = int; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -27,7 +27,7 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = int; V = Tester]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -37,7 +37,7 @@ testcase 4 : Testing with BstMap<std::string,int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = std::__cxx11::basic_string<char>; V = int]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -47,7 +47,7 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -57,7 +57,7 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -67,7 +67,7 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = Tester; V = int]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -77,7 +77,7 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
@@ -87,7 +87,7 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 In file included from 89-tester.cpp:1:
 bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, K) [with K = Tester; V = Tester]’:
 bstmap.h:117:3: error: control reaches end of non-void function [-Werror=return-type]
-  117 |   }
+  117 |   };
       |   ^
 cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
