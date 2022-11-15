@@ -78,9 +78,9 @@ class BstMap : public Map<K, V> {
     return curr;
   }
   virtual void remove(const K & key) { root = deleteNode(root, key); }
-  Node * deleteNode(Node * root, int key) {
+  Node * deleteNode(Node * root, K key) {
     if (root == NULL) {
-      return;
+      return NULL;
     }
     if (key < root->val.first) {
       root->left = deleteNode(root->left, key);
@@ -98,7 +98,7 @@ class BstMap : public Map<K, V> {
         return tmp;
       }
       else if (root->right == NULL) {
-        struct node * tmp = root->left;
+        Node * tmp = root->left;
         delete root;
         return tmp;
       }
