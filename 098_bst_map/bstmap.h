@@ -64,7 +64,7 @@ class BstMap : public Map<K, V> {
     if (curr->key == key) {
       if (curr->left == NULL) {
         Node * temp = curr->right;
-        delete temp;
+        delete curr;
         return temp;
       }
       else if (curr->right == NULL) {
