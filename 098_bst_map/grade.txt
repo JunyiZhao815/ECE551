@@ -1,101 +1,113 @@
-Grading at 11/15/2022:04:45:25.563673
-For commit ID 298b67f4d188241428918a1b3f872bf4bd14aff7
-Grading at Mon Nov 14 11:45:24 PM EST 2022
+Grading at 11/15/2022:04:48:13.609076
+For commit ID 095419853f79715419dc8bde2f9a6f7799476c63
+Grading at Mon Nov 14 11:47:25 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid conversion from ‘BstMap<int, int>::Node*’ to ‘int’ [-fpermissive]
-   54 |         return travesal;
-      |                ^~~~~~~~
-      |                |
-      |                BstMap<int, int>::Node*
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678076== Memcheck, a memory error detector
+==1678076== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678076== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678076== Command: ./test.1
+==1678076== Parent PID: 1678075
+==1678076== 
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678144== Memcheck, a memory error detector
+==1678144== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678144== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678144== Command: ./test.2
+==1678144== Parent PID: 1678143
+==1678144== 
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<int, Tester>::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678191== Memcheck, a memory error detector
+==1678191== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678191== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678191== Command: ./test.3
+==1678191== Parent PID: 1678190
+==1678191== 
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ to ‘int’ [-fpermissive]
-   54 |         return travesal;
-      |                ^~~~~~~~
-      |                |
-      |                BstMap<std::__cxx11::basic_string<char>, int>::Node*
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678246== Memcheck, a memory error detector
+==1678246== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678246== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678246== Command: ./test.4
+==1678246== Parent PID: 1678245
+==1678246== 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678304== Memcheck, a memory error detector
+==1678304== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678304== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678304== Command: ./test.5
+==1678304== Parent PID: 1678303
+==1678304== 
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678351== Memcheck, a memory error detector
+==1678351== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678351== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678351== Command: ./test.6
+==1678351== Parent PID: 1678350
+==1678351== 
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid conversion from ‘BstMap<Tester, int>::Node*’ to ‘int’ [-fpermissive]
-   54 |         return travesal;
-      |                ^~~~~~~~
-      |                |
-      |                BstMap<Tester, int>::Node*
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678384== Memcheck, a memory error detector
+==1678384== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678384== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678384== Command: ./test.7
+==1678384== Parent PID: 1678383
+==1678384== 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678417== Memcheck, a memory error detector
+==1678417== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678417== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678417== Command: ./test.8
+==1678417== Parent PID: 1678416
+==1678417== 
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
-89-tester.cpp:119:24:   required from here
-bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<Tester, Tester>::Node*’
-   54 |         return travesal;
-      |                ^~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==1678443== Memcheck, a memory error detector
+==1678443== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1678443== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1678443== Command: ./test.9
+==1678443== Parent PID: 1678442
+==1678443== 
 
 Overall Grade: F
