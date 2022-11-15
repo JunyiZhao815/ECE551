@@ -5,14 +5,14 @@
 #include "map.h"
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
+ private:
   class Node {
    public:
-    Node * left;
-    Node * right;
     K key;
     V value;
-    Node() : left(NULL), right(NULL) {}
-    Node(K key, V value) : left(NULL), right(NULL), key(key), value(value) {}
+    Node * left;
+    Node * right;
+    Node(K key, V value) : key(key), value(value), left(NULL), right(NULL) {}
   };
   Node * root;
 
@@ -25,7 +25,7 @@ class BstMap : public Map<K, V> {
     }
     else {
       Node * travesal = root;
-      while (true) {
+      while (travesal != NULL) {
         if (key > travesal->key) {
           if (travesal->right == NULL) {
             travesal->right = new Node(key, value);
@@ -48,19 +48,13 @@ class BstMap : public Map<K, V> {
     }
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    Node * travesal = root;
-    while (travesal != NULL) {
-      if (travesal->key == key) {
-        return travesal->value;
-      }
-      else if (travesal->key > key) {
-        travesal = travesal->left;
-      }
-      else {
-        travesal = travesal->right;
-      }
+    Node * target = findNode(this->root, key);
+    if (target == NULL) {
+      throw std::invalid_argument("cannot find the key");
     }
-    throw std::invalid_argument("Cannot find the key");
+    else {
+      return target->value;
+    }
   }
   virtual void remove(const K & key) { root = helper(root, key); }
   Node * helper(Node * curr, const K & key) {
@@ -79,7 +73,7 @@ class BstMap : public Map<K, V> {
         return temp;
       }
       else {
-        K k = getMinKey(curr->right);
+        K k = minKey(curr->right);
         V v = lookup(k);
         curr->right = helper(curr->right, k);
         curr->key = k;
@@ -96,9 +90,9 @@ class BstMap : public Map<K, V> {
       return curr;
     }
   }
-  K getMinKey(Node * curr) {
+  K minKey(Node * curr) {
     if (curr == NULL) {
-      std::cerr << "cannot get the minimize key!" << std::endl;
+      std::cerr << "Cannot find the min key" << std::endl;
       exit(EXIT_FAILURE);
     }
     Node * travesal = curr;
@@ -108,5 +102,20 @@ class BstMap : public Map<K, V> {
       travesal = travesal->left;
     }
     return temp;
+  }
+  Node * findNode(Node * curr, const K & key) {
+    Node * travesal = curr;
+    while (travesal != NULL) {
+      if (key == travesal->key) {
+        return travesal;
+      }
+      else if (key > travesal->key) {
+        travesal = travesal->right;
+      }
+      else {
+        travesal = travesal->left;
+      }
+    }
+    return travesal;
   }
 };
