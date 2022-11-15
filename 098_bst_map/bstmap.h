@@ -48,7 +48,7 @@ class BstMap : public Map<K, V> {
     }
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    Node * target = findNode(this->root, key);
+    Node * target = findNode(root, key);
     if (target == NULL) {
       throw std::invalid_argument("cannot find the key");
     }
@@ -74,6 +74,7 @@ class BstMap : public Map<K, V> {
       }
       else {
         //get min key
+        curr = curr->right;
         if (curr == NULL) {
           std::cerr << "Cannot find the min key" << std::endl;
           exit(EXIT_FAILURE);
