@@ -1,0 +1,1157 @@
+Grading at 11/15/2022:02:28:43.909608
+For commit ID 1a1596a4cf5301947fc5510fafac0f84d5218854
+Grading at Mon Nov 14 09:28:42 PM EST 2022
+-----------------------------------------------
+testcase 1 : Testing with BstMap<int,int>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = int; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<int, int>::Node*’ [-fpermissive]
+bstmap.h:101:35: error: cannot convert ‘BstMap<int, int>::Node*’ to ‘BstMap<int, int>::deleteNode(BstMap<int, int>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<int, int>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<int, int>::deleteNode(BstMap<int, int>::Node*, int)::node*’ to ‘BstMap<int, int>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<int, int>::deleteNode(BstMap<int, int>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 2 : Testing with BstMap<int,std::string>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ [-fpermissive]
+bstmap.h:101:35: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::deleteNode(BstMap<int, std::__cxx11::basic_string<char> >::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<int, std::__cxx11::basic_string<char> >::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::deleteNode(BstMap<int, std::__cxx11::basic_string<char> >::Node*, int)::node*’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<int, std::__cxx11::basic_string<char> >::deleteNode(BstMap<int, std::__cxx11::basic_string<char> >::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = int; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<int, Tester>::Node*’ [-fpermissive]
+bstmap.h:101:35: error: cannot convert ‘BstMap<int, Tester>::Node*’ to ‘BstMap<int, Tester>::deleteNode(BstMap<int, Tester>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<int, Tester>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<int, Tester>::deleteNode(BstMap<int, Tester>::Node*, int)::node*’ to ‘BstMap<int, Tester>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<int, Tester>::deleteNode(BstMap<int, Tester>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 4 : Testing with BstMap<std::string,int>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const std::__cxx11::basic_string<char>’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = int]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1153 |     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1161 |     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:489:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  489 |     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:489:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note: candidate: ‘template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  425 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  464 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6340:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6340 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6340:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6353:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6353 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6353:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6365:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6365 |     operator<(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6365:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const _CharT*’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1168 |     operator>(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1176 |     operator>(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:502:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator>(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  502 |     operator>(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:502:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note: candidate: ‘template<class _Iterator> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  437 |     operator>(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  476 |     operator>(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6378:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6378 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6378:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6391:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6391 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6391:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6403:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6403 |     operator>(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6403:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const _CharT*’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::deleteNode(BstMap<std::__cxx11::basic_string<char>, int>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<std::__cxx11::basic_string<char>, int>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::deleteNode(BstMap<std::__cxx11::basic_string<char>, int>::Node*, int)::node*’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<std::__cxx11::basic_string<char>, int>::deleteNode(BstMap<std::__cxx11::basic_string<char>, int>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘std::__cxx11::basic_string<char>’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       std::__cxx11::basic_string<char>
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = int]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 5 : Testing with BstMap<std::string,std::string>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const std::__cxx11::basic_string<char>’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1153 |     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1161 |     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:489:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  489 |     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:489:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note: candidate: ‘template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  425 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  464 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6340:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6340 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6340:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6353:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6353 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6353:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6365:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6365 |     operator<(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6365:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const _CharT*’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1168 |     operator>(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1176 |     operator>(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:502:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator>(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  502 |     operator>(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:502:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note: candidate: ‘template<class _Iterator> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  437 |     operator>(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  476 |     operator>(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6378:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6378 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6378:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6391:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6391 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6391:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6403:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6403 |     operator>(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6403:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const _CharT*’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::deleteNode(BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::deleteNode(BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*, int)::node*’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::deleteNode(BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘std::__cxx11::basic_string<char>’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       std::__cxx11::basic_string<char>
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const std::__cxx11::basic_string<char>’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1153 |     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1161 |     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:489:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  489 |     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:489:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note: candidate: ‘template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  425 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  464 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6340:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6340 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6340:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6353:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6353 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6353:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6365:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6365 |     operator<(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6365:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:85:13: note:   mismatched types ‘const _CharT*’ and ‘int’
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘std::__cxx11::basic_string<char>’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1168 |     operator>(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1168:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator>(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1176 |     operator>(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1176:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:502:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator>(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  502 |     operator>(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:502:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note: candidate: ‘template<class _Iterator> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  437 |     operator>(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:437:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  476 |     operator>(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:476:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6378:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6378 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6378:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6391:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6391 |     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6391:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from bstmap.h:3,
+                 from 89-tester.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6403:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6403 |     operator>(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6403:5: note:   template argument deduction/substitution failed:
+In file included from 89-tester.cpp:1:
+bstmap.h:88:18: note:   mismatched types ‘const _CharT*’ and ‘int’
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::deleteNode(BstMap<std::__cxx11::basic_string<char>, Tester>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<std::__cxx11::basic_string<char>, Tester>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::deleteNode(BstMap<std::__cxx11::basic_string<char>, Tester>::Node*, int)::node*’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::deleteNode(BstMap<std::__cxx11::basic_string<char>, Tester>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘std::__cxx11::basic_string<char>’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       std::__cxx11::basic_string<char>
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 7 : Testing with BstMap<(a custom class we wrote),int>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const Tester’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = int]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<Tester, int>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘Tester’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘Tester’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<Tester, int>::Node*’ to ‘BstMap<Tester, int>::deleteNode(BstMap<Tester, int>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<Tester, int>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<Tester, int>::deleteNode(BstMap<Tester, int>::Node*, int)::node*’ to ‘BstMap<Tester, int>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<Tester, int>::deleteNode(BstMap<Tester, int>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘Tester’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       Tester
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = int]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const Tester’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘Tester’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘Tester’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::deleteNode(BstMap<Tester, std::__cxx11::basic_string<char> >::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<Tester, std::__cxx11::basic_string<char> >::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::deleteNode(BstMap<Tester, std::__cxx11::basic_string<char> >::Node*, int)::node*’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::deleteNode(BstMap<Tester, std::__cxx11::basic_string<char> >::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘Tester’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       Tester
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
+...compiling...
+In file included from 89-tester.cpp:1:
+bstmap.h:20:11: error: declaration of ‘~Map<K, V>’ as member of ‘BstMap<K, V>’
+   20 |   virtual ~Map<K, V>() { freeTree(root); }
+      |           ^
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int)’:
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<K, V>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’:
+bstmap.h:80:16:   required from here
+bstmap.h:80:57: error: cannot convert ‘const Tester’ to ‘int’
+   80 |   virtual void remove(const K & key) { root = deleteNode(root, key); }
+      |                                               ~~~~~~~~~~^~~~~~~~~~~
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = Tester]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:83:7: error: return-statement with no value, in function returning ‘BstMap<Tester, Tester>::Node*’ [-fpermissive]
+   83 |       return;
+      |       ^~~~~~
+bstmap.h:85:13: error: no match for ‘operator<’ (operand types are ‘int’ and ‘Tester’)
+   85 |     if (key < root->val.first) {
+      |         ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:88:18: error: no match for ‘operator>’ (operand types are ‘int’ and ‘Tester’)
+   88 |     else if (key > root->val.first) {
+      |              ~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:101:35: error: cannot convert ‘BstMap<Tester, Tester>::Node*’ to ‘BstMap<Tester, Tester>::deleteNode(BstMap<Tester, Tester>::Node*, int)::node*’ in initialization
+  101 |         struct node * tmp = root->left;
+      |                             ~~~~~~^~~~
+      |                                   |
+      |                                   BstMap<Tester, Tester>::Node*
+bstmap.h:103:16: error: cannot convert ‘BstMap<Tester, Tester>::deleteNode(BstMap<Tester, Tester>::Node*, int)::node*’ to ‘BstMap<Tester, Tester>::Node*’ in return
+  103 |         return tmp;
+      |                ^~~
+bstmap.h:101:16: note: class type ‘BstMap<Tester, Tester>::deleteNode(BstMap<Tester, Tester>::Node*, int)::node’ is incomplete
+  101 |         struct node * tmp = root->left;
+      |                ^~~~
+bstmap.h:105:33: error: ‘minValueNode’ was not declared in this scope
+  105 |       Node * temp = minValueNode(root->right);
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+bstmap.h:108:55: error: cannot convert ‘Tester’ to ‘int’
+  108 |       root->right = deleteNode(root->right, temp->val.first);
+      |                                             ~~~~~~~~~~^~~~~
+      |                                                       |
+      |                                                       Tester
+bstmap.h:81:38: note:   initializing argument 2 of ‘BstMap<K, V>::Node* BstMap<K, V>::deleteNode(BstMap<K, V>::Node*, int) [with K = Tester; V = Tester]’
+   81 |   Node * deleteNode(Node * root, int key) {
+      |                                  ~~~~^~~
+The code did not compile.  This test failed.
+
+Overall Grade: F
