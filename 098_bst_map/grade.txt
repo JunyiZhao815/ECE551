@@ -1,18 +1,17 @@
-Grading at 11/15/2022:04:41:23.960395
-For commit ID c1b96145f2e3488ce28146b8463df9530209a301
-Grading at Mon Nov 14 11:41:22 PM EST 2022
+Grading at 11/15/2022:04:45:25.563673
+For commit ID 298b67f4d188241428918a1b3f872bf4bd14aff7
+Grading at Mon Nov 14 11:45:24 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<int, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid conversion from ‘BstMap<int, int>::Node*’ to ‘int’ [-fpermissive]
+   54 |         return travesal;
+      |                ^~~~~~~~
+      |                |
+      |                BstMap<int, int>::Node*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
@@ -20,12 +19,9 @@ testcase 2 : Testing with BstMap<int,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
@@ -33,12 +29,9 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<int, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<int, Tester>::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
@@ -46,12 +39,11 @@ testcase 4 : Testing with BstMap<std::string,int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ to ‘int’ [-fpermissive]
+   54 |         return travesal;
+      |                ^~~~~~~~
+      |                |
+      |                BstMap<std::__cxx11::basic_string<char>, int>::Node*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
@@ -59,12 +51,9 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
@@ -72,12 +61,9 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
@@ -85,12 +71,11 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<Tester, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid conversion from ‘BstMap<Tester, int>::Node*’ to ‘int’ [-fpermissive]
+   54 |         return travesal;
+      |                ^~~~~~~~
+      |                |
+      |                BstMap<Tester, int>::Node*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
@@ -98,12 +83,9 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<Tester, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const std::__cxx11::basic_string<char>&’ from expression of type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
@@ -111,12 +93,9 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:51:29: error: passing ‘const BstMap<Tester, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’
-  106 |   Node * findNode(Node * curr, const K & key) {
-      |          ^~~~~~~~
+bstmap.h:54:16: error: invalid initialization of reference of type ‘const Tester&’ from expression of type ‘BstMap<Tester, Tester>::Node*’
+   54 |         return travesal;
+      |                ^~~~~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
