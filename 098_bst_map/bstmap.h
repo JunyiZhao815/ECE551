@@ -86,9 +86,11 @@ class BstMap : public Map<K, V> {
     }
     if (key < curr->key) {
       curr->left = deleteNode(curr->left, key);
+      return curr;
     }
     else if (key > curr->key) {
       curr->right = deleteNode(curr->right, key);
+      return curr;
     }
     else {
       if (curr->left == NULL and curr->right == NULL) {
@@ -114,5 +116,5 @@ class BstMap : public Map<K, V> {
         return curr;
       }
     }
-  };
+  }
 };
