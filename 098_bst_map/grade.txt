@@ -1,6 +1,6 @@
-Grading at 11/15/2022:03:59:37.033478
-For commit ID a030dbb753110a263354e266185ef8504cdbd974
-Grading at Mon Nov 14 10:59:35 PM EST 2022
+Grading at 11/15/2022:04:04:58.705587
+For commit ID ee0a58775d8a7c2af29dfe6fba3d76b970ae43bb
+Grading at Mon Nov 14 11:04:57 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
@@ -8,10 +8,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<int, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -21,10 +21,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -34,10 +34,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<int, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -47,10 +47,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -60,10 +60,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -73,10 +73,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -86,10 +86,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<Tester, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -99,10 +99,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<Tester, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -112,10 +112,10 @@ In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
 89-tester.cpp:119:24:   required from here
 bstmap.h:51:29: error: passing ‘const BstMap<Tester, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   51 |     Node * target = findNode(this->root, key);
-      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
-bstmap.h:105:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’
-  105 |   Node * findNode(Node * curr, const K & key) {
+   51 |     Node * target = findNode(root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~
+bstmap.h:106:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’
+  106 |   Node * findNode(Node * curr, const K & key) {
       |          ^~~~~~~~
 The code did not compile.  This test failed.
 
