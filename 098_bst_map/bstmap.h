@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "map.h"
+
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
  private:
@@ -33,7 +34,7 @@ class BstMap : public Map<K, V> {
     }
     else {
       Node * travesal = root;
-      while (true) {
+      while (travesal != NULL) {
         if (key > travesal->key) {
           if (travesal->right == NULL) {
             travesal->right = new Node(key, value);
@@ -76,6 +77,42 @@ class BstMap : public Map<K, V> {
       return target->value;
     }
   }
+  virtual void remove(const K & key) { root = removeHelper(root, key); }
+  Node * removeHelper(Node * curr, const K & key) {
+    if (curr == NULL) {
+      return curr;
+    }
+    if (curr->key == key) {
+      if (curr->left == NULL) {
+        Node * temp = curr->right;
+        delete temp;
+        return temp;
+      }
+      else if (curr->right == NULL) {
+        Node * temp = curr->left;
+        delete curr;
+        return temp;
+      }
+      else {
+        K kTarget = minKey(curr->right);
+        V vTarget = lookup(kTarget);
+        curr->right = removeHelper(curr->right, kTarget);
+        curr->key = kTarget;
+        curr->value = vTarget;
+        return curr;
+      }
+    }
+    else if (key < curr->key) {
+      curr->left = removeHelper(curr->left, key);
+      return curr;
+    }
+    else {
+      curr->right = removeHelper(curr->right, key);
+      return curr;
+    }
+  }
+};
+/*
   virtual void remove(const K & key) { root = helper(root, key); }
   Node * helper(Node * curr, const K & key) {
     if (curr == NULL) {
@@ -123,3 +160,4 @@ class BstMap : public Map<K, V> {
     }
   }
 };
+*/
