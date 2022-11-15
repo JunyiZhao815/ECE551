@@ -49,9 +49,10 @@ class BstMap : public Map<K, V> {
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
     Node * travesal = this->root;
+    Node * target = NULL;
     while (travesal != NULL) {
       if (key == travesal->key) {
-        return travesal;
+        target = travesal;
       }
       else if (key < travesal->key) {
         travesal = travesal->left;
@@ -60,11 +61,11 @@ class BstMap : public Map<K, V> {
         travesal = travesal->right;
       }
     }
-    if (travesal == NULL) {
+    if (target == NULL) {
       throw std::invalid_argument("cannot find the key");
     }
     else {
-      return travesal->value;
+      return target->value;
     }
   }
   virtual void remove(const K & key) { root = helper(root, key); }
