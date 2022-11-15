@@ -1,104 +1,149 @@
-Grading at 11/15/2022:05:23:31.522804
-For commit ID 7554a5e2c6b12334e5236e1df1566c48e0433218
-Grading at Tue Nov 15 12:23:30 AM EST 2022
+Grading at 11/15/2022:05:24:53.144189
+For commit ID 85ddbfa96f997205e7851ed5fca4ff3579d2429b
+Grading at Tue Nov 15 12:24:51 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = int; V = int]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = int; V = Tester]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = Tester; V = int]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’:
+bstmap.h: In instantiation of ‘K BstMap<K, V>::minKey(BstMap<K, V>::Node*) [with K = Tester; V = Tester]’:
+bstmap.h:97:21:   required from ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’
 bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’
 bstmap.h:80:16:   required from here
-bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
-   97 |         K kTarget = minKey(curr->right);
-      |                     ~~~~~~^~~~~~~~~~~~~
+bstmap.h:115:11: error: ‘assert’ was not declared in this scope
+  115 |     assert(curr != NULL);
+      |     ~~~~~~^~~~~~~~~~~~~~
+bstmap.h:6:1: note: ‘assert’ is defined in header ‘<cassert>’; did you forget to ‘#include <cassert>’?
+    5 | #include "map.h"
+  +++ |+#include <cassert>
+    6 | 
 The code did not compile.  This test failed.
 
 Overall Grade: F
