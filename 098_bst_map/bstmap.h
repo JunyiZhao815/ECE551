@@ -9,9 +9,11 @@ class BstMap : public Map<K, V> {
    public:
     Node * left;
     Node * right;
-    std::pair<K, V> val;
+    K key;
+    V value;
     Node() : left(NULL), right(NULL) {}
-    Node(const K & key, const V & value) : left(NULL), right(NULL), val(key, value) {}
+    Node(const K & key, const V & value) :
+        left(NULL), right(NULL), key(key), value(value) {}
   };
   Node * root;
 
@@ -22,7 +24,6 @@ class BstMap : public Map<K, V> {
     if (root == NULL) {
       return;
     }
-    delete root->val;
     freeTree(root->left);
     freeTree(root->right);
     delete root;
@@ -35,7 +36,7 @@ class BstMap : public Map<K, V> {
     else {
       Node * travesal = root;
       while (travesal != NULL) {
-        if (key < travesal->val.first) {
+        if (key < travesal->key) {
           if (travesal->left == NULL) {
             travesal->left = new Node(key, value);
             break;
@@ -59,10 +60,10 @@ class BstMap : public Map<K, V> {
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
     Node * travesal = root;
     while (travesal != NULL) {
-      if (travesal->val.first == key) {
-        return travesal->val.second;
+      if (travesal->key == key) {
+        return travesal->value;
       }
-      else if (travesal->val.first > key) {
+      else if (travesal->key > key) {
         travesal = travesal->left;
       }
       else {
@@ -73,7 +74,6 @@ class BstMap : public Map<K, V> {
   }
   Node * getMin(Node * root) {
     Node * curr = root;
-
     while (curr != NULL && curr->left != NULL) {
       curr = curr->left;
     }
@@ -84,10 +84,10 @@ class BstMap : public Map<K, V> {
     if (root == NULL) {
       return NULL;
     }
-    if (key < root->val.first) {
+    if (key < root->key) {
       root->left = deleteNode(root->left, key);
     }
-    else if (key > root->val.first) {
+    else if (key > root->key) {
       root->right = deleteNode(root->right, key);
     }
     else {
@@ -105,9 +105,9 @@ class BstMap : public Map<K, V> {
         return tmp;
       }
       Node * temp = getMin(root->right);
-      root->val.first = temp->val.first;
-
-      root->right = deleteNode(root->right, temp->val.first);
+      root->key = temp->key;
+      root->value = temp->value;
+      root->right = deleteNode(root->right, temp->key);
     }
     return root;
   }
