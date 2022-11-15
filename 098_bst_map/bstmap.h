@@ -102,7 +102,7 @@ class BstMap : public Map<K, V> {
         delete root;
         return tmp;
       }
-      Node * temp = minValueNode(root->right);
+      Node * temp = getMin(root->right);
       root->val.first = temp->val.first;
 
       root->right = deleteNode(root->right, temp->val.first);
