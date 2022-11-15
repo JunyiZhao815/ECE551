@@ -33,7 +33,7 @@ class BstMap : public Map<K, V> {
     }
     else {
       Node * travesal = root;
-      while (travesal != NULL) {
+      while (true) {
         if (key > travesal->key) {
           if (travesal->right == NULL) {
             travesal->right = new Node(key, value);
