@@ -18,7 +18,15 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
-  virtual ~BstMap<K, V>() {}
+  virtual ~BstMap<K, V>() { freeTree(root); }
+  void freeTree(Node * root) {
+    if (root == NULL) {
+      return;
+    }
+    freeTree(root->left);
+    freeTree(root->right);
+    delete root;
+  }
   virtual void add(const K & key, const V & value) {
     if (root == NULL) {
       root = new Node(key, value);
@@ -114,21 +122,4 @@ class BstMap : public Map<K, V> {
       return curr;
     }
   }
-  /**
-  Node * findNode(Node * curr, const K & key) {
-    Node * travesal = curr;
-    while (travesal != NULL) {
-      if (key == travesal->key) {
-        return travesal;
-      }
-      else if (key < travesal->key) {
-        travesal = travesal->left;
-      }
-      else {
-        travesal = travesal->right;
-      }
-    }
-    return travesal;
-  }
-  */
 };
