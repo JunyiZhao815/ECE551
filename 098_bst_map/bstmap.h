@@ -19,39 +19,30 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
-  virtual ~BstMap<K, V>() {}  // { freeTree(root); }
-  void freeTree(Node * root) {
-    if (root == NULL) {
-      return;
-    }
-    freeTree(root->left);
-    freeTree(root->right);
-    delete root;
-  }
+  virtual ~BstMap<K, V>() {}
   virtual void add(const K & key, const V & value) {
-    //base case
     if (root == NULL) {
       root = new Node(key, value);
     }
     else {
       Node * travesal = root;
-      while (travesal != NULL) {
-        if (key < travesal->key) {
-          if (travesal->left == NULL) {
-            travesal->left = new Node(key, value);
-            break;
-          }
-          else {
-            travesal = travesal->left;
-          }
-        }
-        else {
+      while (true) {
+        if (key > travesal->key) {
           if (travesal->right == NULL) {
             travesal->right = new Node(key, value);
             break;
           }
           else {
             travesal = travesal->right;
+          }
+        }
+        else {
+          if (travesal->left == NULL) {
+            travesal->left = new Node(key, value);
+            break;
+          }
+          else {
+            travesal = travesal->left;
           }
         }
       }
@@ -70,51 +61,53 @@ class BstMap : public Map<K, V> {
         travesal = travesal->right;
       }
     }
-    throw std::invalid_argument("Cannot find the key!");
+    throw std::invalid_argument("Cannot find the key");
   }
-  Node * getMin(Node * root) {
-    Node * curr = root;
-    while (curr != NULL && curr->left != NULL) {
-      curr = curr->left;
-    }
-    return curr;
-  }
-  virtual void remove(const K & key) { root = deleteNode(root, key); }
-  Node * deleteNode(Node * curr, K key) {
+  virtual void remove(const K & key) { root = helper(root, key); }
+  Node * helper(Node * curr, const K & key) {
     if (curr == NULL) {
-      return NULL;
-    }
-    if (key < curr->key) {
-      curr->left = deleteNode(curr->left, key);
       return curr;
     }
-    else if (key > curr->key) {
-      curr->right = deleteNode(curr->right, key);
-      return curr;
-    }
-    else {
-      if (curr->left == NULL and curr->right == NULL) {
-        return NULL;
-      }
-      else if (curr->left == NULL) {
-        Node * tmp = curr->right;
-        delete curr;
-        return tmp;
+    if (curr->key == key) {
+      if (curr->left == NULL) {
+        Node * temp = curr->right;
+        delete temp;
+        return temp;
       }
       else if (curr->right == NULL) {
-        Node * tmp = curr->left;
+        Node * temp = curr->left;
         delete curr;
-        return tmp;
+        return temp;
       }
       else {
-        Node * t = getMin(root->right);
-        K k = t->key;
-        V v = t->value;
-        root->right = deleteNode(curr->right, k);
-        root->key = k;
-        root->value = v;
+        K k = getMinKey(curr->right);
+        V v = lookup(k);
+        curr->right = helper(curr->right, k);
+        curr->key = k;
+        curr->value = v;
         return curr;
       }
     }
+    else if (key < curr->key) {
+      curr->left = helper(curr->left, key);
+      return curr;
+    }
+    else {
+      curr->right = helper(curr->right, key);
+      return curr;
+    }
+  }
+  K getMinKey(Node * curr) {
+    if (curr == NULL) {
+      std::cerr << "cannot get the minimize key!" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    Node * travesal = curr;
+    K temp = curr->key;
+    while (travesal != NULL) {
+      temp = travesal->key;
+      travesal = travesal->left;
+    }
+    return temp;
   }
 };
