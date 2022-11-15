@@ -114,5 +114,5 @@ class BstMap : public Map<K, V> {
         return curr;
       }
     }
-  }
+  };
 };
