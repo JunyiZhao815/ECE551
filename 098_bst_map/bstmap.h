@@ -24,6 +24,7 @@ class BstMap : public Map<K, V> {
     }
     freeTree(root->left);
     freeTree(root->right);
+    delete root;
   }
   virtual void add(const K & key, const V & value) {
     //base case
