@@ -1,113 +1,122 @@
-Grading at 11/15/2022:05:26:51.111626
-For commit ID 3902a187f70ffd1630b7be2dff91469a23dc438f
-Grading at Tue Nov 15 12:26:03 AM EST 2022
+Grading at 11/15/2022:05:46:18.056299
+For commit ID b6aae96d06b1f2555f1fe366e1995fc377133306
+Grading at Tue Nov 15 12:46:16 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1693823== Memcheck, a memory error detector
-==1693823== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1693823== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1693823== Command: ./test.1
-==1693823== Parent PID: 1693822
-==1693823== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<int, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1693888== Memcheck, a memory error detector
-==1693888== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1693888== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1693888== Command: ./test.2
-==1693888== Parent PID: 1693886
-==1693888== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1693986== Memcheck, a memory error detector
-==1693986== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1693986== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1693986== Command: ./test.3
-==1693986== Parent PID: 1693985
-==1693986== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<int, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694097== Memcheck, a memory error detector
-==1694097== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694097== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694097== Command: ./test.4
-==1694097== Parent PID: 1694096
-==1694097== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694187== Memcheck, a memory error detector
-==1694187== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694187== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694187== Command: ./test.5
-==1694187== Parent PID: 1694186
-==1694187== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694302== Memcheck, a memory error detector
-==1694302== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694302== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694302== Command: ./test.6
-==1694302== Parent PID: 1694301
-==1694302== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694414== Memcheck, a memory error detector
-==1694414== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694414== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694414== Command: ./test.7
-==1694414== Parent PID: 1694413
-==1694414== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<Tester, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694541== Memcheck, a memory error detector
-==1694541== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694541== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694541== Command: ./test.8
-==1694541== Parent PID: 1694540
-==1694541== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<Tester, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1694614== Memcheck, a memory error detector
-==1694614== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1694614== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1694614== Command: ./test.9
-==1694614== Parent PID: 1694613
-==1694614== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:78:29: error: passing ‘const BstMap<Tester, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   78 |     Node * target = findNode(this->root, key);
+      |                     ~~~~~~~~^~~~~~~~~~~~~~~~~
+bstmap.h:61:10: note:   in call to ‘BstMap<K, V>::Node* BstMap<K, V>::findNode(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’
+   61 |   Node * findNode(Node * curr, const K & key) {
+      |          ^~~~~~~~
+The code did not compile.  This test failed.
 
 Overall Grade: F
