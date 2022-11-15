@@ -19,7 +19,7 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
-  virtual ~BstMap<K, V>() { freeTree(root); }
+  virtual ~BstMap<K, V>() {}  // { freeTree(root); }
   void freeTree(Node * root) {
     if (root == NULL) {
       return;
@@ -80,35 +80,39 @@ class BstMap : public Map<K, V> {
     return curr;
   }
   virtual void remove(const K & key) { root = deleteNode(root, key); }
-  Node * deleteNode(Node * root, K key) {
-    if (root == NULL) {
+  Node * deleteNode(Node * curr, K key) {
+    if (curr == NULL) {
       return NULL;
     }
-    if (key < root->key) {
-      root->left = deleteNode(root->left, key);
+    if (key < curr->key) {
+      curr->left = deleteNode(curr->left, key);
     }
-    else if (key > root->key) {
-      root->right = deleteNode(root->right, key);
+    else if (key > curr->key) {
+      curr->right = deleteNode(curr->right, key);
     }
     else {
-      if (root->left == NULL and root->right == NULL) {
+      if (curr->left == NULL and curr->right == NULL) {
         return NULL;
       }
-      else if (root->left == NULL) {
-        Node * tmp = root->right;
-        delete root;
+      else if (curr->left == NULL) {
+        Node * tmp = curr->right;
+        delete curr;
         return tmp;
       }
-      else if (root->right == NULL) {
-        Node * tmp = root->left;
-        delete root;
+      else if (curr->right == NULL) {
+        Node * tmp = curr->left;
+        delete curr;
         return tmp;
       }
-      Node * temp = getMin(root->right);
-      root->key = temp->key;
-      root->value = temp->value;
-      root->right = deleteNode(root->right, temp->key);
+      else {
+        Node * t = getMin(root->right);
+        K k = t->key;
+        V v = t->value;
+        root->right = deleteNode(curr->right, k);
+        root->key = k;
+        root->value = v;
+        return curr;
+      }
     }
-    return root;
   }
 };
