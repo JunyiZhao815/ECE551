@@ -111,6 +111,16 @@ class BstMap : public Map<K, V> {
       return curr;
     }
   }
+  K minKey(Node * curr) {
+    assert(curr != NULL);
+    Node * travesal = curr;
+    K temp = curr->key;
+    while (travesal != NULL) {
+      temp = travesal->key;
+      travesal = travesal->left;
+    }
+    return temp;
+  }
 };
 /*
   virtual void remove(const K & key) { root = helper(root, key); }
