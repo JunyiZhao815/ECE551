@@ -1,113 +1,104 @@
-Grading at 11/15/2022:05:03:39.763128
-For commit ID afe52f75384776200415bb03075ebf1ad7c0778b
-Grading at Tue Nov 15 12:02:51 AM EST 2022
+Grading at 11/15/2022:05:23:31.522804
+For commit ID 7554a5e2c6b12334e5236e1df1566c48e0433218
+Grading at Tue Nov 15 12:23:30 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684203== Memcheck, a memory error detector
-==1684203== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684203== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684203== Command: ./test.1
-==1684203== Parent PID: 1684202
-==1684203== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684219== Memcheck, a memory error detector
-==1684219== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684219== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684219== Command: ./test.2
-==1684219== Parent PID: 1684218
-==1684219== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684232== Memcheck, a memory error detector
-==1684232== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684232== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684232== Command: ./test.3
-==1684232== Parent PID: 1684231
-==1684232== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684244== Memcheck, a memory error detector
-==1684244== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684244== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684244== Command: ./test.4
-==1684244== Parent PID: 1684243
-==1684244== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684256== Memcheck, a memory error detector
-==1684256== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684256== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684256== Command: ./test.5
-==1684256== Parent PID: 1684255
-==1684256== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684277== Memcheck, a memory error detector
-==1684277== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684277== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684277== Command: ./test.6
-==1684277== Parent PID: 1684276
-==1684277== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684292== Memcheck, a memory error detector
-==1684292== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684292== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684292== Command: ./test.7
-==1684292== Parent PID: 1684291
-==1684292== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684305== Memcheck, a memory error detector
-==1684305== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684305== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684305== Command: ./test.8
-==1684305== Parent PID: 1684304
-==1684305== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==1684323== Memcheck, a memory error detector
-==1684323== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1684323== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1684323== Command: ./test.9
-==1684323== Parent PID: 1684322
-==1684323== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node* BstMap<K, V>::removeHelper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’:
+bstmap.h:80:47:   required from ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’
+bstmap.h:80:16:   required from here
+bstmap.h:97:27: error: ‘minKey’ was not declared in this scope
+   97 |         K kTarget = minKey(curr->right);
+      |                     ~~~~~~^~~~~~~~~~~~~
+The code did not compile.  This test failed.
 
 Overall Grade: F
