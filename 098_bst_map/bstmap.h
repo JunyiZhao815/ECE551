@@ -22,6 +22,7 @@ class BstMap : public Map<K, V> {
     if (root == NULL) {
       return;
     }
+    delete root->val;
     freeTree(root->left);
     freeTree(root->right);
     delete root;
