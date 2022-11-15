@@ -21,7 +21,7 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
-  virtual ~BstMap<K, V>() { freeTree(root); }
+  virtual ~BstMap<K, V>() {}
   void freeTree(Node * root) {
     if (root == NULL) {
       return;
@@ -58,32 +58,7 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  Node * findNode(Node * curr, const K & key) {
-    Node * travesal = curr;
-    while (travesal != NULL) {
-      if (key == travesal->key) {
-        return travesal;
-      }
-      else if (key > travesal->key) {
-        travesal = travesal->right;
-      }
-      else {
-        travesal = travesal->left;
-      }
-    }
-    return travesal;
-  }
 
-  virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    Node * target = findNode(this->root, key);
-    if (target == NULL) {
-      throw std::invalid_argument("key not found");
-    }
-    else {
-      return target->value;
-    }
-  }
-  /**
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
     Node * travesal = this->root;
     Node * target = NULL;
@@ -105,7 +80,6 @@ class BstMap : public Map<K, V> {
       return target->value;
     }
   }
-  */
 
   virtual void remove(const K & key) { root = helper(root, key); }
   Node * helper(Node * curr, const K & key) {
