@@ -21,7 +21,7 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
-  virtual ~BstMap<K, V>() {}
+  virtual ~BstMap<K, V>() { freeTree(root); }
   void freeTree(Node * root) {
     if (root == NULL) {
       return;
