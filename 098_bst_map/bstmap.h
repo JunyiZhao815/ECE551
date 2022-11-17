@@ -87,7 +87,10 @@ class BstMap : public Map<K, V> {
       return curr;
     }
     if (curr->key == key) {
-      if (curr->left == NULL) {
+      if (curr->left == NULL && curr->right == NULL) {
+        delete curr;
+      }
+      else if (curr->left == NULL) {
         Node * temp = curr->right;
         delete curr;
         return temp;
