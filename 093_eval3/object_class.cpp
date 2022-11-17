@@ -1,3 +1,4 @@
+
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
@@ -10,10 +11,19 @@ class line {
   size_t number;
   size_t index;
   vector<string> text;
-  ~line() { text.clear(); }
+  vector<pair<size_t, string> > vec;
+  ~line() {
+    text.clear();
+    vec.clear();
+  }
+  // Here we not only get the page number, but also clear some mistakes by calling error
   size_t getNumber(string line, char target, size_t start) {
     string numStr;
     for (size_t i = start; i < line.length(); i++) {
+      if (line[i] == '0' && line[i + 1] != target) {
+        cerr << "You name a wrong page number with 0" << endl;
+        exit(EXIT_FAILURE);
+      }
       if (line[i] == target) {
         break;
       }
@@ -23,17 +33,33 @@ class line {
       }
       if (line[i] < 48 || line[i] > 57) {
         cerr << "the page number is incorrect" << endl;
+        exit(EXIT_FAILURE);
       }
+    }
+
+    if (line[index - 1] == ' ') {
+      cerr << "The page number has a blank at the tail" << endl;
+      exit(EXIT_FAILURE);
     }
     //if there is no @
     if (index == line.length()) {
       cerr << "Cannot find " << target << endl;
+      exit(EXIT_FAILURE);
     }
     char * end;
     numStr.append(line, start, index);
+
+    for (size_t i = 0; i < numStr.length(); i++) {
+      if (numStr[i] == ' ') {
+        if (i >= 1 && numStr[i - 1] != ' ') {
+          cerr << "There is a blank between the page number" << endl;
+          exit(EXIT_FAILURE);
+        }
+      }
+    }
     const char * numChar = numStr.c_str();
     size_t ans = (size_t)strtol(numChar, &end, 10);
-    //delete numChar;
+
     return ans;
   }
   void printStory() {
@@ -44,12 +70,10 @@ class line {
     }
   }
 };
-
+//declare the first type: line_type who inherits from line
 using namespace std;
 class line_type1 : public line {
  public:
-  // size_t number;
-
   string type;
   string fileName;
   //vector<string> text;
@@ -65,18 +89,21 @@ class line_type1 : public line {
     ++index;
     if (index + 2 >= line.length()) {
       cerr << "The line input is not complete" << endl;
+      exit(EXIT_FAILURE);
     }
     //Cannot find ':'
     if (line[index + 1] != ':') {
       cerr << "Cannot find : between page number and file type" << endl;
+      exit(EXIT_FAILURE);
     }
     if (line[index] == 'N' || line[index] == 'W' || line[index] == 'L') {
       type = line[index];
       fileName = line.substr(index + 2);
       ifstream f(fileName.c_str());
-      //f.open(fileName.c_str());
+
       if (!f) {
         cerr << "Cannot open file!" << endl;
+        exit(EXIT_FAILURE);
       }
       //use vector to story content
       string line;
@@ -84,23 +111,15 @@ class line_type1 : public line {
         text.push_back(line);
       }
       f.close();
-      //if the type is N or W
-      /*
-      if (line[index] == 'W') {
-        text.push_back("\n");
-        text.push_back("Congratulations! You have won. Hooray!");
-      }
-      else if (line[index] == 'L') {
-        text.push_back("\n");
-        text.push_back("Sorry, you have lost. Better luck next time!");
-      }
-      */
     }
     else {
       std::cerr << "Can not detect the type of page" << std::endl;
+      exit(EXIT_FAILURE);
     }
   }
 };
+
+//declare a second type: line_type2 who inherits from line
 using namespace std;
 class line_type2 : public line {
  public:

@@ -12,9 +12,9 @@ You encounter a dragon.
 
 What would you like to do?
 
-1.Try to sneak past the sleeping dragon
-2.Leave the dragon's cave and go home
-3.Stab the dragon in the neck
+ 1. Try to sneak past the sleeping dragon
+ 2. Leave the dragon's cave and go home
+ 3. Stab the dragon in the neck
 Page 1
 ==========
 As you tiptoe past the sleeping dragon, steam rising from her nostrils, you
@@ -24,8 +24,8 @@ An enormous, rare Scythian ruby gleams atop a pedestal, beckoning you.
 
 What would you like to do?
 
-1.Pick up the ruby
-2.Pass the ruby to explore the rest of the hoard
+ 1. Pick up the ruby
+ 2. Pass the ruby to explore the rest of the hoard
 Page 2
 ==========
 You enjoy a quiet evening at home with a mug of herbal tea and your cats,
@@ -56,8 +56,8 @@ grand marble desk, lies an ancient book with gold-leaf trim.
 
 What would you like to do?
 
-1.Put on the cloak
-2.Open the book
+ 1. Put on the cloak
+ 2. Open the book
 Page 6
 ==========
 It appears to be a cloak of invisibility! You pass what should be your hand
@@ -67,8 +67,8 @@ Emboldened, you explore the treasure hoard further.
 
 What would you like to do?
 
-1.Go back and take the ruby
-2.Go back and open the book
+ 1. Go back and take the ruby
+ 2. Go back and open the book
 Page 7
 ==========
 The book is the original copy of All of Programming. You pore over its
@@ -79,8 +79,8 @@ sleeping.
 
 What would you like to do?
 
-1.Exult in your skillset and go home
-2.Stab the dragon in the neck
+ 1. Exult in your skillset and go home
+ 2. Stab the dragon in the neck
 Page 8
 ==========
 You wrap the Scythian ruby in the cloak, and sneak back to where the dragon
@@ -88,8 +88,8 @@ slumbers.
 
 What would you like to do?
 
-1.Take your prize and go home
-2.Stab the dragon in the neck
+ 1. Take your prize and go home
+ 2. Stab the dragon in the neck
 Page 9
 ==========
 The book is the original copy of All of Programming, but the text

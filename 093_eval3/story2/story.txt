@@ -1,4 +1,4 @@
-0@N:start.txt
+0@N::start.txt
 1@N:tiptoe.txt
 2@W:home.txt
 3@L:stab.txt
