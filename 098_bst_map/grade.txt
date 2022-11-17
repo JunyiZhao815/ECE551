@@ -1,113 +1,95 @@
-Grading at 11/16/2022:18:46:41.074115
-For commit ID 9bb69b6011809e7edf065200a4f44c84b75fa84a
-Grading at Wed Nov 16 01:45:53 PM EST 2022
+Grading at 11/17/2022:03:36:24.030532
+For commit ID 8dd75be6c17a397572ba1c1165423e1cb2f86072
+Grading at Wed Nov 16 10:36:22 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087207== Memcheck, a memory error detector
-==3087207== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087207== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087207== Command: ./test.1
-==3087207== Parent PID: 3087206
-==3087207== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087378== Memcheck, a memory error detector
-==3087378== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087378== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087378== Command: ./test.2
-==3087378== Parent PID: 3087377
-==3087378== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087468== Memcheck, a memory error detector
-==3087468== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087468== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087468== Command: ./test.3
-==3087468== Parent PID: 3087467
-==3087468== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087662== Memcheck, a memory error detector
-==3087662== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087662== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087662== Command: ./test.4
-==3087662== Parent PID: 3087661
-==3087662== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087804== Memcheck, a memory error detector
-==3087804== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087804== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087804== Command: ./test.5
-==3087804== Parent PID: 3087803
-==3087804== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3087956== Memcheck, a memory error detector
-==3087956== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3087956== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3087956== Command: ./test.6
-==3087956== Parent PID: 3087955
-==3087956== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3088050== Memcheck, a memory error detector
-==3088050== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3088050== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3088050== Command: ./test.7
-==3088050== Parent PID: 3088049
-==3088050== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3088160== Memcheck, a memory error detector
-==3088160== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3088160== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3088160== Command: ./test.8
-==3088160== Parent PID: 3088159
-==3088160== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
-==3088609== Memcheck, a memory error detector
-==3088609== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3088609== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==3088609== Command: ./test.9
-==3088609== Parent PID: 3088607
-==3088609== 
+In file included from 89-tester.cpp:1:
+bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’:
+bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
+  132 |   }
+      |   ^
+cc1plus: all warnings being treated as errors
+The code did not compile.  This test failed.
 
 Overall Grade: F
