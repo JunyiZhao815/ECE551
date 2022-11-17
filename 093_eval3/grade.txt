@@ -1,11 +1,11 @@
-Grading at 11/17/2022:07:34:24.532798
-For commit ID 18484cd29f4612f40ff9bbff198bbb85cd4d30a3
-Grading at Thu Nov 17 02:34:24 AM EST 2022
+Grading at 11/17/2022:15:44:56.839463
+For commit ID 7fd7530c2e92d1c4e42cf4bbb2773ab967be7205
+Grading at Thu Nov 17 10:44:55 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-make: 'cyoa-step1' is up to date.
+g++ -Werror -Wall -pedantic -std=c++98 -o cyoa-step1 cyoa-step1.cpp
 The code compiled (good)
 Executable cyoa-step1 exists (good)
 ------------------------------------
