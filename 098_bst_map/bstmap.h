@@ -45,7 +45,7 @@ void BstMap<K, V>::getNode(Node * curr) {
 
 template<typename K, typename V>
 BstMap<K, V>::BstMap(const BstMap<K, V> & rhs) : root(NULL) {
-  copy(rhs.root);
+  getNode(rhs.root);
 }
 
 template<typename K, typename V>
