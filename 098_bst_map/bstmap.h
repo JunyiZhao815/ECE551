@@ -1,163 +1,188 @@
-
-#include <exception>
+#include <algorithm>
+#include <cstdlib>
 #include <iostream>
-#include <stdexcept>
+#include <sstream>
+#include <string>
 
 #include "map.h"
+using namespace std;
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
  private:
   class Node {
    public:
-    K k;
-    V v;
+    K key;
+    V value;
     Node * left;
     Node * right;
-    Node(K k, V v, Node * l, Node * r) : k(k), v(v), left(l), right(r) {}
+
+   public:
+    Node(K k, V v) : key(k), value(v), left(NULL), right(NULL) {}
   };
   Node * root;
-  Node * clone(Node * curr);
-  void destory(Node * curr);
-  void print(Node * curr) {
+
+  void copy(Node * curr);
+  void destroy(Node * curr);
+
+ public:
+  BstMap() : root(NULL) {}
+  BstMap(const BstMap<K, V> & rhs);
+  BstMap & operator=(const BstMap<K, V> & rhs);
+  virtual void add(const K & k, const V & v);
+  virtual const V & lookup(const K & k) const throw(std::invalid_argument);
+  virtual void remove(const K & k);
+  virtual ~BstMap();
+  //checkings
+  template<typename G, typename W>
+  friend class TestBstMap;
+};
+
+template<typename G, typename W>
+class TestBstMap {
+ private:
+  size_t nodeNum;
+
+  void checkNodes(typename BstMap<G, W>::Node * curr, const G * k, const W * v) {
     if (curr != NULL) {
-      print(curr->left);
-      std::cout << "(" << curr->k << ", " << curr->v << ") ";
-      print(curr->right);
+      checkNodes(curr->left, k, v);
+      if (k[nodeNum] != curr->key || v[nodeNum] != curr->value) {
+        cerr << "Node error";
+        throw std::exception();
+      }
+      nodeNum++;
+      checkNodes(curr->right, k, v);
     }
   }
 
  public:
-  BstMap() : root(NULL){};
-  BstMap(const BstMap & rhs);
-  BstMap & operator=(const BstMap & rhs);
-  virtual void add(const K & key, const V & value);
-  virtual const V & lookup(const K & key) const throw(std::invalid_argument);
-  virtual void remove(const K & key);
-  virtual ~BstMap<K, V>();
-  void printTree() {
-    print(root);
-    std::cout << "\n";
+  TestBstMap() : nodeNum(0) {}
+  virtual void checkNodes(const BstMap<G, W> & bst, const G * k, const W * v, size_t n) {
+    nodeNum = 0;
+    checkNodes(bst.root, k, v);
+    if (nodeNum != n) {
+      cerr << "Node number is incorrect" << endl;
+
+      throw std::exception();
+    }
+    cout << "nodes clear" << endl;
   }
 };
 
-// destructor helper
 template<typename K, typename V>
-void BstMap<K, V>::destory(typename BstMap<K, V>::Node * curr) {
+void BstMap<K, V>::copy(Node * curr) {
   if (curr != NULL) {
-    destory(curr->left);
-    destory(curr->right);
-    delete curr;
+    this->add(curr->key, curr->value);
+    copy(curr->left);
+    copy(curr->right);
   }
 }
 
-// destructor
 template<typename K, typename V>
-BstMap<K, V>::~BstMap() {
-  destory(root);
-  root = NULL;
+BstMap<K, V>::BstMap(const BstMap<K, V> & rhs) : root(NULL) {
+  copy(rhs.root);
 }
 
-// copy constructor helper
 template<typename K, typename V>
-typename BstMap<K, V>::Node * BstMap<K, V>::clone(typename BstMap<K, V>::Node * curr) {
-  if (curr == NULL) {
-    return NULL;
-  }
-  typename BstMap<K, V>::Node * newNode =
-      new typename BstMap<K, V>::Node(curr->k, curr->v, NULL, NULL);
-  newNode->left = clone(curr->left);
-  newNode->right = clone(curr->right);
-  return newNode;
-}
-
-// copy constructor
-template<typename K, typename V>
-BstMap<K, V>::BstMap(const BstMap<K, V> & rhs) {
-  root = clone(rhs.root);
-}
-
-// = operator
-template<typename K, typename V>
-BstMap<K, V> & BstMap<K, V>::operator=(const BstMap & rhs) {
-  if (&rhs != this) {
+BstMap<K, V> & BstMap<K, V>::operator=(const BstMap<K, V> & rhs) {
+  if (this != &rhs) {
     BstMap<K, V> temp(rhs);
-    std::swap(temp.root, root);
+    std::swap(root, temp.root);
   }
   return *this;
 }
 
-// add
 template<typename K, typename V>
-void BstMap<K, V>::add(const K & key, const V & value) {
+void BstMap<K, V>::add(const K & k, const V & v) {
   Node ** curr = &root;
-  while (*curr != NULL && key != (*curr)->k) {
-    if (key < (*curr)->k) {
+  while (*curr != NULL) {
+    if (k < (*curr)->key) {
       curr = &(*curr)->left;
     }
-    else {
+    else if (k > (*curr)->key) {
       curr = &(*curr)->right;
     }
+    else {
+      (*curr)->value = v;
+      return;
+    }
   }
-  if (*curr == NULL) {
-    *curr = new Node(key, value, NULL, NULL);
-  }
-  else {
-    (*curr)->v = value;
-  }
+  *curr = new Node(k, v);
 }
 
-// lookup
 template<typename K, typename V>
-const V & BstMap<K, V>::lookup(const K & key) const throw(std::invalid_argument) {
+const V & BstMap<K, V>::lookup(const K & k) const throw(std::invalid_argument) {
   Node * curr = root;
   while (curr != NULL) {
-    if (key < curr->k) {
+    if (k == curr->key) {
+      return curr->value;
+    }
+    else if (k < curr->key) {
       curr = curr->left;
     }
-    else if (key > curr->k) {
+    else {
       curr = curr->right;
     }
-    else {
-      return curr->v;
-    }
   }
-  throw std::invalid_argument("Invaild Key!\n");
+  std::stringstream ss;
+  ss << "cannot find the ke";
+  std::string msg = ss.str();
+  throw std::invalid_argument(msg);
 }
 
-// remove
 template<typename K, typename V>
-void BstMap<K, V>::remove(const K & key) {
+void BstMap<K, V>::remove(const K & k) {
   Node ** curr = &root;
-  while (*curr != NULL && key != (*curr)->k) {
-    if (key < (*curr)->k) {
+  while (*curr != NULL) {
+    if (k < (*curr)->key) {
       curr = &(*curr)->left;
     }
-    else {
+    else if (k > (*curr)->key) {
       curr = &(*curr)->right;
     }
-  }
-  if (*curr == NULL) {
-    return;
-  }
-  if ((*curr)->left == NULL) {
-    Node * temp = (*curr)->right;
-    delete *curr;
-    *curr = temp;
-  }
-  else if ((*curr)->right == NULL) {
-    Node * temp = (*curr)->left;
-    delete *curr;
-    *curr = temp;
-  }
-  else {
-    Node ** temp = &(*curr)->left;
-    while ((*temp)->right != NULL) {
-      temp = &(*temp)->right;
+    else {
+      if ((*curr)->left == NULL) {
+        Node * temp = (*curr)->right;
+        delete *curr;
+        *curr = temp;
+      }
+      else if ((*curr)->right == NULL) {
+        Node * temp = (*curr)->left;
+        delete *curr;
+        *curr = temp;
+      }
+      else {
+        Node * prev = *curr;
+        Node * temp = (*curr)->right;
+        bool goLeft = false;
+        while (temp->left != NULL) {
+          prev = temp;
+          temp = temp->left;
+          goLeft = true;
+        }
+        temp->left = (*curr)->left;
+        if (goLeft) {
+          prev->left = temp->right;
+          temp->right = (*curr)->right;
+        }
+        delete *curr;
+        *curr = temp;
+      }
+      return;
     }
-    (*curr)->k = (*temp)->k;
-    (*curr)->v = (*temp)->v;
-    Node * lTemp = (*temp)->left;
-    delete *temp;
-    *temp = lTemp;
   }
+}
+
+template<typename K, typename V>
+void BstMap<K, V>::destroy(Node * curr) {
+  if (curr != NULL) {
+    destroy(curr->left);
+    destroy(curr->right);
+    delete curr;
+    curr = NULL;
+  }
+}
+
+template<typename K, typename V>
+BstMap<K, V>::~BstMap() {
+  destroy(root);
 }
