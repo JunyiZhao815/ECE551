@@ -1,329 +1,68 @@
-Grading at 11/18/2022:16:46:35.477578
-For commit ID 4d810e347a443e501a89bd71797e15517606add7
-Grading at Fri Nov 18 11:46:33 AM EST 2022
+Grading at 11/18/2022:16:47:35.660269
+For commit ID 724e9913e4bc5db2e1c106bb279030f11794cbae
+Grading at Fri Nov 18 11:47:25 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = int; V = int]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<int, int>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, int>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = int; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<int, std::__cxx11::basic_string<char> >::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = int; V = Tester]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<int, Tester>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, Tester>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<std::__cxx11::basic_string<char>, int>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = Tester; V = int]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<Tester, int>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, int>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘BstMap<K, V>::BstMap(const BstMap<K, V>&) [with K = Tester; V = Tester]’:
-89-tester.cpp:95:36:   required from here
-bstmap.h:48:7: error: no matching function for call to ‘copy(BstMap<Tester, Tester>::Node* const&)’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/algorithm:61,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note: candidate: ‘template<class _II, class _OI> _OI std::copy(_II, _II, _OI)’
-  611 |     copy(_II __first, _II __last, _OI __result)
-      |     ^~~~
-/usr/include/c++/11/bits/stl_algobase.h:611:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   candidate expects 3 arguments, 1 provided
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-In file included from /usr/include/c++/11/bits/locale_facets.h:48,
-                 from /usr/include/c++/11/bits/basic_ios.h:37,
-                 from /usr/include/c++/11/ios:44,
-                 from /usr/include/c++/11/ostream:38,
-                 from /usr/include/c++/11/iostream:39,
-                 from bstmap.h:3,
-                 from 89-tester.cpp:1:
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, std::ostreambuf_iterator<_CharT> >::__type std::copy(std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >, std::ostreambuf_iterator<_CharT>)’
-  325 |     copy(istreambuf_iterator<_CharT> __first,
-      |     ^~~~
-/usr/include/c++/11/bits/streambuf_iterator.h:325:5: note:   template argument deduction/substitution failed:
-In file included from 89-tester.cpp:1:
-bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, Tester>::Node*’
-   48 |   copy(rhs.root);
-      |   ~~~~^~~~~~~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
