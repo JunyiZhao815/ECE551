@@ -1,26 +1,83 @@
-Grading at 11/18/2022:16:35:27.063842
-For commit ID f0443b1028b91bde7fb3809ad7f297264ce1301a
-Grading at Fri Nov 18 11:35:23 AM EST 2022
+Grading at 11/18/2022:16:39:07.849623
+For commit ID a25810fd7178a477439cbaa42e3f98409da1052b
+Grading at Fri Nov 18 11:39:07 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-The code compiled.
-  - Valgrind was clean (no errors, no memory leaks)
-Your file matched the expected output
-Testcase passed 
+In file included from 90-tester.cpp:1:
+bstset.h:146:2: error: expected ‘;’ after class definition
+  146 | }
+      |  ^
+      |  ;
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<int>::BstSet()’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = int]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<int>::BstSet()’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = int]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-The code compiled.
-  - Valgrind was clean (no errors, no memory leaks)
-Your file matched the expected output
-Testcase passed 
+In file included from 90-tester.cpp:1:
+bstset.h:146:2: error: expected ‘;’ after class definition
+  146 | }
+      |  ^
+      |  ;
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<std::__cxx11::basic_string<char> >::BstSet()’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = std::__cxx11::basic_string<char>]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<std::__cxx11::basic_string<char> >::BstSet()’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = std::__cxx11::basic_string<char>]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind was clean (no errors, no memory leaks)
-Your file matched the expected output
-Testcase passed 
+In file included from 90-tester.cpp:1:
+bstset.h:146:2: error: expected ‘;’ after class definition
+  146 | }
+      |  ^
+      |  ;
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<Tester>::BstSet()’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = Tester]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<Tester>::BstSet()’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+In file included from 90-tester.cpp:1:
+bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = Tester]’
+   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
+      |   ^~~~~~
+bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
+The code did not compile.  This test failed.
 
-Overall Grade: A
+Overall Grade: F
