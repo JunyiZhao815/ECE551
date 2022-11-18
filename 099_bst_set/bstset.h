@@ -20,8 +20,8 @@ class BstSet : public Set<T> {
   };
   Node * root;
 
-  void copy(Node * curr);
-  void destroy(Node * curr);
+  void getNode(Node * curr);
+  void setFree(Node * curr);
 
  public:
   BstSet<T>() : root(NULL) {}
@@ -32,51 +32,19 @@ class BstSet : public Set<T> {
   virtual void remove(const T & k);
   virtual ~BstSet<T>();
 };
-/*
-template<typename G>
-class TestBstSet {
- private:
-  size_t nodeNum;
 
-  void checkNodes(typename BstSet<G>::Node * curr, const G * k) {
-    if (curr != NULL) {
-      checkNodes(curr->left, k);
-      if (k[nodeNum] != curr->key) {
-        cerr << "The node is not correct" << endl;
-        throw std::exception();
-      }
-      nodeNum++;
-      checkNodes(curr->right, k);
-    }
-  }
-
- public:
-  TestBstSet<G>() : nodeNum(0) {}
-  virtual void checkNodes(const BstSet<G> & bss, const G * k, size_t n) {
-    nodeNum = 0;
-    checkNodes(bss.root, k);
-    if (nodeNum != n) {
-      std::stringstream ss;
-      ss << "number of nodes not match [bss, real] = (" << nodeNum << ", " << n << ")";
-      cerr << ss.str() << endl;
-      throw std::exception();
-    }
-    cout << "nodes clear" << endl;
-  }
-};
-*/
 template<typename T>
-void BstSet<T>::copy(Node * curr) {
+void BstSet<T>::getNode(Node * curr) {
   if (curr != NULL) {
     this->add(curr->key);
-    copy(curr->left);
-    copy(curr->right);
+    getNode(curr->left);
+    getNode(curr->right);
   }
 }
 
 template<typename T>
 BstSet<T>::BstSet(const BstSet<T> & rhs) : root(NULL) {
-  copy(rhs.root);
+  getNode(rhs.root);
 }
 
 template<typename T>
@@ -90,19 +58,19 @@ BstSet<T> & BstSet<T>::operator=(const BstSet<T> & rhs) {
 
 template<typename T>
 void BstSet<T>::add(const T & k) {
-  Node ** curr = &root;
-  while (*curr != NULL) {
-    if (k < (*curr)->key) {
-      curr = &(*curr)->left;
+  Node * curr = root;
+  while (curr != NULL) {
+    if (k < curr->key) {
+      curr = curr->left;
     }
-    else if (k > (*curr)->key) {
-      curr = &(*curr)->right;
+    else if (k > curr->key) {
+      curr = curr->right;
     }
     else {
       return;
     }
   }
-  *curr = new Node(k);
+  curr = new Node(k);
 }
 
 template<typename T>
@@ -166,10 +134,10 @@ void BstSet<T>::remove(const T & k) {
 }
 
 template<typename T>
-void BstSet<T>::destroy(Node * curr) {
+void BstSet<T>::setFree(Node * curr) {
   if (curr != NULL) {
-    destroy(curr->left);
-    destroy(curr->right);
+    setFree(curr->left);
+    setFree(curr->right);
     delete curr;
     curr = NULL;
   }
@@ -177,5 +145,5 @@ void BstSet<T>::destroy(Node * curr) {
 
 template<typename T>
 BstSet<T>::~BstSet() {
-  destroy(root);
+  setFree(root);
 }
