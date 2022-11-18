@@ -1,68 +1,26 @@
-Grading at 11/18/2022:16:40:28.585140
-For commit ID 9ea3bf4e2a31dc5713d76eb02faa93b2c45303fd
-Grading at Fri Nov 18 11:40:28 AM EST 2022
+Grading at 11/18/2022:16:42:31.887691
+For commit ID fcfaed6ca61648b844eb2671a0df7873d428c012
+Grading at Fri Nov 18 11:42:28 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<int>::BstSet()’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = int]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<int>::BstSet()’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = int]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<std::__cxx11::basic_string<char> >::BstSet()’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = std::__cxx11::basic_string<char>]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<std::__cxx11::basic_string<char> >::BstSet()’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = std::__cxx11::basic_string<char>]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: no matching function for call to ‘BstSet<Tester>::BstSet()’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = Tester]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-90-tester.cpp:151:26: error: no matching function for call to ‘BstSet<Tester>::BstSet()’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-In file included from 90-tester.cpp:1:
-bstset.h:47:3: note: candidate: ‘BstSet<T>::BstSet(const BstSet<T>&) [with T = Tester]’
-   47 |   BstSet(const BstSet<T> & rhs) : root(NULL) { getNode(rhs.root); }
-      |   ^~~~~~
-bstset.h:47:3: note:   candidate expects 1 argument, 0 provided
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
