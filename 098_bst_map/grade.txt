@@ -1,6 +1,6 @@
-Grading at 11/18/2022:16:45:33.708912
-For commit ID b91cfc7e45b01b68199f7dff530fad438a369984
-Grading at Fri Nov 18 11:45:32 AM EST 2022
+Grading at 11/18/2022:16:46:35.477578
+For commit ID 4d810e347a443e501a89bd71797e15517606add7
+Grading at Fri Nov 18 11:46:33 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
@@ -36,15 +36,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, int>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = int; V = int]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = int; V = int]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
@@ -81,15 +72,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = int; V = std::__cxx11::basic_string<char>]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
@@ -126,15 +108,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<int, Tester>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = int; V = Tester]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = int; V = Tester]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
@@ -171,15 +144,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = std::__cxx11::basic_string<char>; V = int]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
@@ -216,15 +180,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
@@ -261,15 +216,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = std::__cxx11::basic_string<char>; V = Tester]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
@@ -306,15 +252,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, int>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = Tester; V = int]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = Tester; V = int]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
@@ -351,15 +288,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = Tester; V = std::__cxx11::basic_string<char>]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
@@ -396,15 +324,6 @@ In file included from 89-tester.cpp:1:
 bstmap.h:48:7: note:   mismatched types ‘std::istreambuf_iterator<_CharT, std::char_traits<_CharT> >’ and ‘BstMap<Tester, Tester>::Node*’
    48 |   copy(rhs.root);
       |   ~~~~^~~~~~~~~~
-bstmap.h: In instantiation of ‘void BstMap<K, V>::mapFree(BstMap<K, V>::Node*) [with K = Tester; V = Tester]’:
-bstmap.h:150:3:   required from ‘BstMap<K, V>::~BstMap() [with K = Tester; V = Tester]’
-89-tester.cpp:164:10:   required from here
-bstmap.h:142:12: error: ‘destroy’ was not declared in this scope
-  142 |     destroy(curr->left);
-      |     ~~~~~~~^~~~~~~~~~~~
-bstmap.h:143:12: error: ‘destroy’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
-  143 |     destroy(curr->right);
-      |     ~~~~~~~^~~~~~~~~~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
