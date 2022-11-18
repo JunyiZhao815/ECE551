@@ -13,7 +13,7 @@ class line {
   size_t index;
   vector<string> text;
   vector<pair<size_t, string> > vec;
-  ~line() {
+  virtual ~line() {
     text.clear();
     vec.clear();
   }
@@ -21,10 +21,12 @@ class line {
   size_t getNumber(string line, char target, size_t start) {
     string numStr;
     for (size_t i = start; i < line.length(); i++) {
+      /*
       if (line[i] == '0' && line[i + 1] != target) {
         cerr << "You name a wrong page number with 0" << endl;
         exit(EXIT_FAILURE);
       }
+      */
       if (line[i] == target) {
         break;
       }
@@ -63,13 +65,6 @@ class line {
 
     return ans;
   }
-  void printStory() {
-    vector<string>::const_iterator it = text.begin();
-    while (it != text.end()) {
-      cout << *it << endl;
-      ++it;
-    }
-  }
 };
 //declare the first type: line_type who inherits from line
 using namespace std;
@@ -83,6 +78,38 @@ class line_type1 : public line {
     index = 0;
     number = getNumber(line, '@', 0);
     getOthers(line);
+  }
+  void printStory() {
+    vector<string>::const_iterator it = text.begin();
+    cout << "Page " << number << endl;
+    cout << "==========" << endl;
+    while (it != text.end()) {
+      cout << *it << endl;
+      ++it;
+    }
+    if (type == "N") {
+      cout << "\n"
+           << "What would you like to do?\n"
+           << endl;
+    }
+    else if (type == "W") {
+      cout << "\n";
+      cout << "Congratulations! You have won. Hooray!\n";
+    }
+    else {
+      cout << "\n";
+      cout << "Sorry, you have lost. Better luck next time!\n";
+    }
+    vector<pair<size_t, string> >::iterator p_it = vec.begin();
+    // Here, vector is used to get the choices and print them out.
+    size_t choice_number = 1;
+    while (p_it != vec.end()) {
+      pair<size_t, string> p = *p_it;
+      cout << " " << choice_number << ". " << p.second << "\n";
+      ++choice_number;
+      ++p_it;
+    }
+    ++it;
   }
 
   //Obtain the type

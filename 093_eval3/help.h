@@ -63,3 +63,89 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
   }
   f.close();
 }
+
+void checkProblem(vector<line_type1> * v) {
+  //Initialize all element in the destlist to be 0
+  vector<size_t> destList((*v).size());
+  vector<line_type1>::iterator it = (*v).begin();
+  //These two flags here are to check if there is at least one win and lose page
+  bool flag_win = false;
+  bool flag_lose = false;
+  while (it != (*v).end()) {
+    if ((*it).type == "W") {
+      flag_win = true;
+    }
+    if ((*it).type == "L") {
+      flag_lose = true;
+    }
+    vector<pair<size_t, string> > line_type2_vector = (*it).vec;
+    vector<pair<size_t, string> >::iterator it_inner = line_type2_vector.begin();
+    while (it_inner != line_type2_vector.end()) {
+      //It the page has the choice that references to itself;
+      if ((*it_inner).first == (*it).number) {
+        ++it_inner;
+        continue;
+      }
+      else {
+        // 3a: the choice is not valid
+        if ((*it_inner).first >= (*v).size()) {
+          cerr << "Cannot reach the page in the choice" << endl;
+          exit(EXIT_FAILURE);
+        }
+        destList[(*it_inner).first] = destList[(*it_inner).first] + 1;
+        ++it_inner;
+      }
+    }
+    line_type2_vector.clear();
+    ++it;
+  }
+  //3c: No win or lose page
+  if (!(flag_win && flag_lose)) {
+    cerr << "There is no Win or Lose page!" << endl;
+    exit(EXIT_FAILURE);
+  }
+  // 3b: If every element in the destList is not 0, that means every page is referenced.
+  for (size_t i = 1; i < (*v).size(); i++) {
+    if (destList[i] == 0) {
+      cerr << "Some pages are not referenced!" << endl;
+      exit(EXIT_FAILURE);
+    }
+    /*
+    cerr << i << endl;
+    cerr << destList[i] << endl;
+    cerr << "-------------------" << endl;
+    */
+  }
+}
+void askUser(vector<line_type1> * v) {
+  line_type1 current_page = *(*v).begin();
+  current_page.printStory();
+  while (current_page.type == "N") {
+    size_t input;
+    cin >> input;
+    bool match = false;
+
+    for (size_t i = 0; i < current_page.vec.size(); i++) {
+      if (input == i + 1) {
+        current_page = (*v)[current_page.vec[i].first];
+        match = true;
+        break;
+      }
+    }
+    while (!match) {
+      //If input does not fit the choices.
+      cerr << "That is not a valid choice, please try again" << endl;
+      size_t another_input;
+      cin >> another_input;
+      for (size_t i = 0; i < current_page.vec.size(); i++) {
+        if (another_input == i + 1) {
+          match = true;
+          current_page = (*v)[current_page.vec[i].first];
+          break;
+        }
+      }
+    }
+    current_page.printStory();
+  }
+  // exit(EXIT_SUCCESS);
+}
