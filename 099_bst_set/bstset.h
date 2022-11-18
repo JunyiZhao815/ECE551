@@ -31,11 +31,8 @@ class BstSet : public Set<T> {
   virtual bool contains(const T & k) const;
   virtual void remove(const T & k);
   virtual ~BstSet<T>();
-  //checking
-  //template<typename G>
-  //friend class TestBstSet;
 };
-
+/*
 template<typename G>
 class TestBstSet {
  private:
@@ -67,7 +64,7 @@ class TestBstSet {
     cout << "nodes clear" << endl;
   }
 };
-
+*/
 template<typename T>
 void BstSet<T>::copy(Node * curr) {
   if (curr != NULL) {
