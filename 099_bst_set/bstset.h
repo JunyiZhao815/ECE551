@@ -143,4 +143,4 @@ class BstSet : public Set<T> {
 
   //template<typename T>
   ~BstSet() { setFree(root); }
-}
+};
