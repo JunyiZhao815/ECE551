@@ -3,9 +3,9 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
-
 using namespace std;
 class line {
  public:
@@ -21,12 +21,6 @@ class line {
   size_t getNumber(string line, char target, size_t start) {
     string numStr;
     for (size_t i = start; i < line.length(); i++) {
-      /*
-      if (line[i] == '0' && line[i + 1] != target) {
-        cerr << "You name a wrong page number with 0" << endl;
-        exit(EXIT_FAILURE);
-      }
-      */
       if (line[i] == target) {
         break;
       }
@@ -70,11 +64,10 @@ class line {
 using namespace std;
 class line_type1 : public line {
  public:
+  char * path;
   string type;
   string fileName;
-  //vector<string> text;
-  // size_t index;
-  line_type1(string line) {
+  line_type1(string line, char * path) : path(path) {
     index = 0;
     number = getNumber(line, '@', 0);
     getOthers(line);
@@ -127,10 +120,12 @@ class line_type1 : public line {
     if (line[index] == 'N' || line[index] == 'W' || line[index] == 'L') {
       type = line[index];
       fileName = line.substr(index + 2);
-      ifstream f(fileName.c_str());
+      ostringstream totalPath;
+      totalPath << path << "/" << fileName;
+      ifstream f(totalPath.str().c_str());
 
       if (!f) {
-        cerr << "Cannot open file!" << endl;
+        cerr << "Cannot open each story file!" << endl;
         exit(EXIT_FAILURE);
       }
       //use vector to story content

@@ -6,15 +6,18 @@
 #include <iostream>
 #include <map>
 #include <set>
+#include <sstream>
 #include <string>
 #include <vector>
 
 #include "object_class.cpp"
 
 void readStoryFile(char ** argv, vector<line_type1> * v) {
-  ifstream f(argv[1]);
+  ostringstream path;
+  path << argv[1] << "/story.txt";
+  ifstream f(path.str().c_str());
   if (!f) {
-    cerr << "Cannot open file!" << endl;
+    cerr << "Cannot open file!!" << endl;
     exit(EXIT_FAILURE);
   }
   //I use vector to store the page, and also use the vector inside the line_type1 object to store choices
@@ -33,7 +36,7 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
     }
     // When find the line that declares page
     if (flag == '@') {
-      line_type1 story(line);
+      line_type1 story(line, argv[1]);
       if (count != story.number) {
         cerr << "The page number does not follow order" << endl;
         exit(EXIT_FAILURE);
