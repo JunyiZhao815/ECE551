@@ -21,8 +21,8 @@ class BstMap : public Map<K, V> {
   };
   Node * root;
 
-  void copy(Node * curr);
-  void destroy(Node * curr);
+  void getNode(Node * curr);
+  void mapFree(Node * curr);
 
  public:
   BstMap() : root(NULL) {}
@@ -32,48 +32,14 @@ class BstMap : public Map<K, V> {
   virtual const V & lookup(const K & k) const throw(std::invalid_argument);
   virtual void remove(const K & k);
   virtual ~BstMap();
-  //checkings
-  template<typename G, typename W>
-  friend class TestBstMap;
-};
-
-template<typename G, typename W>
-class TestBstMap {
- private:
-  size_t nodeNum;
-
-  void checkNodes(typename BstMap<G, W>::Node * curr, const G * k, const W * v) {
-    if (curr != NULL) {
-      checkNodes(curr->left, k, v);
-      if (k[nodeNum] != curr->key || v[nodeNum] != curr->value) {
-        cerr << "Node error";
-        throw std::exception();
-      }
-      nodeNum++;
-      checkNodes(curr->right, k, v);
-    }
-  }
-
- public:
-  TestBstMap() : nodeNum(0) {}
-  virtual void checkNodes(const BstMap<G, W> & bst, const G * k, const W * v, size_t n) {
-    nodeNum = 0;
-    checkNodes(bst.root, k, v);
-    if (nodeNum != n) {
-      cerr << "Node number is incorrect" << endl;
-
-      throw std::exception();
-    }
-    cout << "nodes clear" << endl;
-  }
 };
 
 template<typename K, typename V>
-void BstMap<K, V>::copy(Node * curr) {
+void BstMap<K, V>::getNode(Node * curr) {
   if (curr != NULL) {
     this->add(curr->key, curr->value);
-    copy(curr->left);
-    copy(curr->right);
+    getNode(curr->left);
+    getNode(curr->right);
   }
 }
 
@@ -123,10 +89,8 @@ const V & BstMap<K, V>::lookup(const K & k) const throw(std::invalid_argument) {
       curr = curr->right;
     }
   }
-  std::stringstream ss;
-  ss << "cannot find the ke";
-  std::string msg = ss.str();
-  throw std::invalid_argument(msg);
+
+  throw std::invalid_argument("Cannot find the key!!!");
 }
 
 template<typename K, typename V>
@@ -173,16 +137,15 @@ void BstMap<K, V>::remove(const K & k) {
 }
 
 template<typename K, typename V>
-void BstMap<K, V>::destroy(Node * curr) {
+void BstMap<K, V>::mapFree(Node * curr) {
   if (curr != NULL) {
     destroy(curr->left);
     destroy(curr->right);
     delete curr;
-    curr = NULL;
   }
 }
 
 template<typename K, typename V>
 BstMap<K, V>::~BstMap() {
-  destroy(root);
+  mapFree(root);
 }
