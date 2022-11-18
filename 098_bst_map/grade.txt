@@ -1,95 +1,68 @@
-Grading at 11/17/2022:03:36:24.030532
-For commit ID 8dd75be6c17a397572ba1c1165423e1cb2f86072
-Grading at Wed Nov 16 10:36:22 PM EST 2022
+Grading at 11/18/2022:04:47:38.224145
+For commit ID 73a0f66bcc58e4070466cf5e05fae2dbbbc4a92b
+Grading at Thu Nov 17 11:47:28 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = int]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = int; V = Tester]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = int]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In member function ‘BstMap<K, V>::Node* BstMap<K, V>::helper(BstMap<K, V>::Node*, const K&) [with K = Tester; V = Tester]’:
-bstmap.h:132:3: error: control reaches end of non-void function [-Werror=return-type]
-  132 |   }
-      |   ^
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
