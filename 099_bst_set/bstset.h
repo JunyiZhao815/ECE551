@@ -58,19 +58,19 @@ BstSet<T> & BstSet<T>::operator=(const BstSet<T> & rhs) {
 
 template<typename T>
 void BstSet<T>::add(const T & k) {
-  Node * curr = root;
-  while (curr != NULL) {
-    if (k < curr->key) {
-      curr = curr->left;
+  Node ** curr = &root;
+  while (*curr != NULL) {
+    if (k < (*curr)->key) {
+      curr = &(*curr)->left;
     }
-    else if (k > curr->key) {
-      curr = curr->right;
+    else if (k > (*curr)->key) {
+      curr = &(*curr)->right;
     }
     else {
       return;
     }
   }
-  curr = new Node(k);
+  *curr = new Node(k);
 }
 
 template<typename T>
@@ -139,7 +139,6 @@ void BstSet<T>::setFree(Node * curr) {
     setFree(curr->left);
     setFree(curr->right);
     delete curr;
-    curr = NULL;
   }
 }
 
