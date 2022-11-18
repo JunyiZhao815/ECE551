@@ -139,8 +139,8 @@ void BstMap<K, V>::remove(const K & k) {
 template<typename K, typename V>
 void BstMap<K, V>::mapFree(Node * curr) {
   if (curr != NULL) {
-    destroy(curr->left);
-    destroy(curr->right);
+    mapFree(curr->left);
+    mapFree(curr->right);
     delete curr;
   }
 }
