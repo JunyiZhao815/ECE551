@@ -15,6 +15,6 @@ int main(int argc, char ** argv) {
   vector<line_type1> * v = &line_type1_vector;
   readStoryFile(argv, v);
   checkProblem(v);
-
+  getWinningPath(v);
   line_type1_vector.clear();
 }

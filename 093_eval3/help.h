@@ -1,4 +1,3 @@
-
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
@@ -151,4 +150,50 @@ void askUser(vector<line_type1> * v) {
     current_page.printStory();
   }
   // exit(EXIT_SUCCESS);
+}
+
+string size_tTostring(size_t num) {
+  ostringstream s;
+  s << num;
+  return s.str();
+}
+void getPath(vector<line_type1> * v, size_t index, string path, set<size_t> * visited) {
+  // When it comes to Win page
+  if ((*v)[index].type == "W") {
+    string winPage = size_tTostring((*v)[index].number);
+    path = path + winPage + "(win)";
+    cout << path << endl;
+    return;
+  }
+  // When it comes to Lose page
+  if ((*v)[index].type == "L") {
+    return;
+  }
+  // Check if we can go one of the choice
+  for (size_t i = 0; i < (*v)[index].vec.size(); i++) {
+    if ((*visited).find((*v)[index].vec[i].first) != (*visited).end()) {
+      continue;
+    }
+    else {
+      string tmp = path;
+      path = path + size_tTostring((*v)[index].number);
+      (*visited).insert((*v)[index].vec[i].first);
+      path = path + "(" + size_tTostring(1 + i) + "),";
+      getPath(v, (*v)[index].vec[i].first, path, visited);
+      path = tmp;
+      (*visited).erase((*v)[index].vec[i].first);
+    }
+  }
+}
+
+void getWinningPath(vector<line_type1> * v) {
+  set<size_t> s;
+  // visited pointer here points to a set which record if the element has been visited
+  set<size_t> * visited = &s;
+  if ((*v).size() == 0) {
+    return;
+  }
+  // Using recursion to print the answer.
+  getPath(v, 0, "", visited);
+  s.clear();
 }
