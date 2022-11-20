@@ -74,8 +74,8 @@ class line_type1 : public line {
   }
   void printStory() {
     vector<string>::const_iterator it = text.begin();
-    cout << "Page " << number << endl;
-    cout << "==========" << endl;
+    // cout << "Page " << number << endl;
+    //cout << "==========" << endl;
     while (it != text.end()) {
       cout << *it << endl;
       ++it;
