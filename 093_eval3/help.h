@@ -136,7 +136,7 @@ void askUser(vector<line_type1> * v) {
     }
     while (!match) {
       //If input does not fit the choices.
-      cerr << "That is not a valid choice, please try again" << endl;
+      cout << "That is not a valid choice, please try again" << endl;
       size_t another_input;
       cin >> another_input;
       for (size_t i = 0; i < current_page.vec.size(); i++) {
