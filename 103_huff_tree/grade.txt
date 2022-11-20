@@ -1,0 +1,32 @@
+Grading at 11/20/2022:05:42:07.163801
+For commit ID fd626b284b01cdc8d390902a81957f1069fd073c
+Grading at Sun Nov 20 12:42:02 AM EST 2022
+compiling
+g++ -ggdb3 -Wall -Werror -pedantic -o testTree testTree.cpp readFreq.cpp buildTree.cpp
+Make succeed, testTree created
+Testcase 1
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 2
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 3
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 4
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+
+Overall Grade: A
