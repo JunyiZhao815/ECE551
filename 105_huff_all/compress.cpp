@@ -65,8 +65,8 @@ int main(int argc, char ** argv) {
   Node * tree = buildTree(counts);
   delete[] counts;
   std::map<unsigned, BitString> theMap;
-  BitString empty;
-  tree->buildMap(empty, theMap);
+  BitString bs;
+  tree->buildMap(bs, theMap);
   writeCompressedOutput(argv[1], argv[2], theMap);
   delete tree;
   //hint 1: most of the work is already done.
