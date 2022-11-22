@@ -14,7 +14,7 @@ using namespace std;
 int main(int argc, char ** argv) {
   vector<line_type1> dest;
   vector<line_type1> * v = &dest;
-  readStoryFile(argv, v);
+  readStoryFile(argv, v, NULL);
   // Here I have finished getting information from the story.txt file, and then starting with print out
   vector<line_type1>::iterator it = (*v).begin();
   while (it != (*v).end()) {

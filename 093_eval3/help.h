@@ -11,7 +11,7 @@
 
 #include "object_class.cpp"
 
-void readStoryFile(char ** argv, vector<line_type1> * v) {
+void readStoryFile(char ** argv, vector<line_type1> * v, map<string, long int> * m) {
   ostringstream path;
   path << argv[1] << "/story.txt";
   ifstream f(path.str().c_str());
@@ -64,6 +64,9 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
     }
     else if (flag == '$') {
       line_type3 word(line);
+      //Update what we remember
+      (*m)[word.variable] = word.value;
+      /*
       vector<line_type1>::iterator it = (*v).begin();
       while (it != (*v).end()) {
         if (word.number == (*it).number) {
@@ -72,14 +75,15 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
         }
         ++it;
       }
+      */
     }
     else {
       line_type4 word(line);
       vector<line_type1>::iterator it = (*v).begin();
       while (it != (*v).end()) {
         if (word.number == (*it).number) {
-          map<string, long int>::iterator inner_it = (*it).m.begin();
-          while (inner_it != (*it).m.end()) {
+          map<string, long int>::iterator inner_it = (*m).begin();
+          while (inner_it != (*m).end()) {
             //if We find the variable
             if ((*inner_it).first == word.variable) {
               // If the value is correct
