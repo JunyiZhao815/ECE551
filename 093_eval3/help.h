@@ -28,7 +28,7 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
     }
     char flag = ' ';
     for (size_t i = 0; i < line.length(); i++) {
-      if (line[i] == ':' || line[i] == '@') {
+      if (line[i] == ':' || line[i] == '@' || line[i] == '$' || line[i] == '[') {
         flag = line[i];
         break;
       }
@@ -43,7 +43,7 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
       ++count;
       (*v).push_back(story);
     }
-    else {
+    else if (flag == ':') {
       line_type2 word(line);
       vector<line_type1>::iterator it = (*v).begin();
       bool haveNum = false;
@@ -60,6 +60,63 @@ void readStoryFile(char ** argv, vector<line_type1> * v) {
       if (!haveNum) {
         cerr << "The page number has not been declared" << endl;
         exit(EXIT_FAILURE);
+      }
+    }
+    else if (flag == '$') {
+      line_type3 word(line);
+      vector<line_type1>::iterator it = (*v).begin();
+      while (it != (*v).end()) {
+        if (word.number == (*it).number) {
+          (*it).m[word.variable] = word.value;
+          break;
+        }
+        ++it;
+      }
+    }
+    else {
+      line_type4 word(line);
+      vector<line_type1>::iterator it = (*v).begin();
+      while (it != (*v).end()) {
+        if (word.number == (*it).number) {
+          map<string, long int>::iterator inner_it = (*it).m.begin();
+          while (inner_it != (*it).m.end()) {
+            //if We find the variable
+            if ((*inner_it).first == word.variable) {
+              // If the value is correct
+              if ((*inner_it).second == word.value) {
+                pair<size_t, string> pair;
+                pair.first = word.dest;
+                pair.second = *word.text.begin();
+                (*it).vec.push_back(pair);
+              }
+              else {
+                pair<size_t, string> pair;
+                pair.first = word.dest;
+                pair.second = "<UNAVAILABLE>";
+                (*it).vec.push_back(pair);
+              }
+              break;
+            }
+            ++inner_it;
+          }
+          //if We did not find the variable, the value of it is 0;
+          if (inner_it == (*it).m.end()) {
+            if (word.value == 0) {
+              pair<size_t, string> pair;
+              pair.first = word.dest;
+              pair.second = *word.text.begin();
+              (*it).vec.push_back(pair);
+            }
+            else {
+              pair<size_t, string> pair;
+              pair.first = word.dest;
+              pair.second = "<UNAVAILABLE>";
+              (*it).vec.push_back(pair);
+            }
+          }
+          break;
+        }
+        ++it;
       }
     }
   }
@@ -126,17 +183,28 @@ void askUser(vector<line_type1> * v) {
     size_t input;
     cin >> input;
     bool match = false;
-
+    bool unavaliable = false;
     for (size_t i = 0; i < current_page.vec.size(); i++) {
       if (input == i + 1) {
+        if (current_page.vec[i].second == "<UNAVAILABLE>") {
+          unavaliable = true;
+          break;
+        }
         current_page = (*v)[current_page.vec[i].first];
         match = true;
         break;
       }
     }
+
     while (!match) {
-      //If input does not fit the choices.
-      cout << "That is not a valid choice, please try again" << endl;
+      if (unavaliable) {
+        // if the choice is unavaliable
+        cout << "That choice is not available at this time, please try again" << endl;
+      }
+      else {
+        //If input does not fit the choices.
+        cout << "That is not a valid choice, please try again" << endl;
+      }
       size_t another_input;
       cin >> another_input;
       for (size_t i = 0; i < current_page.vec.size(); i++) {

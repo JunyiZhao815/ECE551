@@ -1,8 +1,8 @@
-
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -11,11 +11,13 @@ class line {
  public:
   size_t number;
   size_t index;
+  map<string, long int> m;
   vector<string> text;
   vector<pair<size_t, string> > vec;
   virtual ~line() {
     text.clear();
     vec.clear();
+    m.clear();
   }
   // Here we not only get the page number, but also clear some mistakes by calling error
   size_t getNumber(string line, char target, size_t start) {
@@ -59,6 +61,25 @@ class line {
 
     return ans;
   }
+  size_t checkNumber(string numStr) {
+    char * end;
+    for (size_t i = 0; i < numStr.length(); i++) {
+      if (numStr[i] == ' ') {
+        if (i >= 1 && numStr[i - 1] != ' ') {
+          cerr << "There is a blank between the page number" << endl;
+          exit(EXIT_FAILURE);
+        }
+        continue;
+      }
+      if (numStr[i] < 48 || numStr[i] > 57) {
+        cerr << "Some invalid character you input as number" << endl;
+        exit(EXIT_FAILURE);
+      }
+    }
+    const char * numChar = numStr.c_str();
+    size_t ans = (size_t)strtol(numChar, &end, 10);
+    return ans;
+  }
 };
 //declare the first type: line_type who inherits from line
 using namespace std;
@@ -67,6 +88,7 @@ class line_type1 : public line {
   char * path;
   string type;
   string fileName;
+  // vector<pair<size_t, string> > vec;
   line_type1(string line, char * path) : path(path) {
     index = 0;
     number = getNumber(line, '@', 0);
@@ -156,5 +178,42 @@ class line_type2 : public line {
     ++index;
     destpage = getNumber(line, ':', index);
     text.push_back(line.substr(index + 1));
+  }
+};
+
+class line_type3 : public line {
+ public:
+  //number size_t
+  string variable;
+  long int value;
+  line_type3(string line) {
+    index = 0;
+    number = getNumber(line, '$', 0);
+    ++index;
+    variable = line.substr(line.find('$') + 1, line.find('=') - line.find('$') - 1);
+    string numStr = line.substr(line.find('=') + 1);
+    value = (size_t)checkNumber(numStr);
+    ;
+  }
+};
+class line_type4 : public line {
+ public:
+  //number: size_t
+  // text: string
+  string variable;
+  long int value;
+  size_t dest;
+  line_type4(string line) {
+    index = 0;
+    number = getNumber(line, '[', 0);
+    variable = line.substr(line.find('[') + 1, line.find('=') - line.find('[') - 1);
+    string valStr = line.substr(line.find('=') + 1, line.find(']') - line.find('=') - 1);
+    value = (long int)checkNumber(valStr);
+    size_t secondColonIndex = line.find(':');
+    string destStr = line.substr(
+        line.find(':') + 1, line.find(':', secondColonIndex + 1) - line.find(':') - 1);
+    dest = checkNumber(destStr);
+    string t = line.substr(line.find(':', secondColonIndex + 1) + 1);
+    text.push_back(t);
   }
 };
