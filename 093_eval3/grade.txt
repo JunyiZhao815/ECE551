@@ -1,6 +1,6 @@
-Grading at 11/22/2022:05:55:07.060918
-For commit ID 98be10e4638f1c630a62151fc683eb81fa7ef187
-Grading at Tue Nov 22 12:54:17 AM EST 2022
+Grading at 11/22/2022:05:59:56.989165
+For commit ID 437b9744ad762be9b8ae84da5b7e2f9a83e2fec4
+Grading at Tue Nov 22 12:59:08 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -29,7 +29,7 @@ Step 1 EC intermediate deadline test 2
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 1 passed at Tue Nov 22 12:54:19 AM EST 2022
+Intermediate deadline requirements for Step 1 passed at Tue Nov 22 12:59:10 AM EST 2022
 
 Step 2
 Checking that cyoa-step2 compiles
@@ -214,7 +214,7 @@ Step 2 EC intermediate deadline test 23
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 2 passed at Tue Nov 22 12:54:39 AM EST 2022
+Intermediate deadline requirements for Step 2 passed at Tue Nov 22 12:59:30 AM EST 2022
 
 Step 3
 Checking that cyoa-step3 compiles
@@ -242,7 +242,7 @@ Step 3 EC intermediate deadline test 2
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 3 passed at Tue Nov 22 12:54:41 AM EST 2022
+Intermediate deadline requirements for Step 3 passed at Tue Nov 22 12:59:31 AM EST 2022
 
 Step 4
 Checking that cyoa-step4 compiles
@@ -260,71 +260,9 @@ You have requested that we check for intermediate deadline completion on step 4
 Step 4 EC intermediate deadline test 1
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input0.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. Offer the dragon the chocolate croissant.			3.Offer the dragon the chocolate croissant.
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-"Oh thank you this looks delicious!" the dragon says		"Oh thank you this looks delicious!" the dragon says
-as he devours the pastry.   "I was so hungry I couldn't		as he devours the pastry.   "I was so hungry I couldn't
-think straight and was about to eat you!  How terrible		think straight and was about to eat you!  How terrible
-would that have been."						would that have been."
-
-Having solved the dragon's hunger problems, he is happy		Having solved the dragon's hunger problems, he is happy
-to give you a ride back to your house.  Everyone lives		to give you a ride back to your house.  Everyone lives
-happily ever after.						happily ever after.
-
-Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 2
 ===========================================================
@@ -343,7 +281,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -351,7 +288,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -361,7 +297,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -374,14 +309,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -389,7 +322,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -415,97 +347,9 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 3
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input11.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
-Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
-
-What would you like to do?					What would you like to do?
-
- 1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. <UNAVAILABLE>						1.<UNAVAILABLE>
- 2. Charge the dragon with your sword.				2.Charge the dragon with your sword.
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
-The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
-to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
-
-What would you like to do?					What would you like to do?
-
- 1. <UNAVAILABLE>						1.<UNAVAILABLE>
- 2. Attack the dragon with your sword				2.Attack the dragon with your sword
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Run for it!							4.Run for it!
-That is not a valid choice, please try again		      <
-Even though you don't really know how to use a sword,		Even though you don't really know how to use a sword,
-the dragon is blinded by your eclair filling.  You		the dragon is blinded by your eclair filling.  You
-defeat the dragon.						defeat the dragon.
-
-Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 4
 ===========================================================
@@ -524,7 +368,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -532,7 +375,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -542,7 +384,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -555,14 +396,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -570,7 +409,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -583,7 +421,6 @@ What would you like to do?					What would you like to do?
  4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
  5. <UNAVAILABLE>						5.<UNAVAILABLE>
  6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
 You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
 The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
 to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
@@ -606,96 +443,9 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 5
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input13.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
-Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
-
-What would you like to do?					What would you like to do?
-
- 1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. <UNAVAILABLE>						1.<UNAVAILABLE>
- 2. Charge the dragon with your sword.				2.Charge the dragon with your sword.
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
-The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
-to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
-
-What would you like to do?					What would you like to do?
-
- 1. <UNAVAILABLE>						1.<UNAVAILABLE>
- 2. Attack the dragon with your sword				2.Attack the dragon with your sword
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Run for it!							4.Run for it!
-That is not a valid choice, please try again		      <
-You run away.  Not the most heroic victory,			You run away.  Not the most heroic victory,
-but we'll call it a win.					but we'll call it a win.
-
-Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 6
 ===========================================================
@@ -714,7 +464,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -722,7 +471,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -732,7 +480,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -745,14 +492,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -760,7 +505,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -785,160 +529,16 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 7
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input15.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
-Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
-
-What would you like to do?					What would you like to do?
-
- 1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Unfortunately the shadow flying overhead was a large		Unfortunately the shadow flying overhead was a large
-hungry dragon, who swooped down and ate you for breakfast.	hungry dragon, who swooped down and ate you for breakfast.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 8
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input16.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
-The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
-to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
-
-What would you like to do?					What would you like to do?
-
- 1. Fling your last coins at the dragon				1.Fling your last coins at the dragon
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. Run for it!							3.Run for it!
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
-That is not a valid choice, please try again		      <
-As you fling the coins at the dragon, the jangling sound they	As you fling the coins at the dragon, the jangling sound they
-the air lets the dragon know where you are.  He turns and bre	the air lets the dragon know where you are.  He turns and bre
-fire at you.							fire at you.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 9
 ===========================================================
@@ -957,7 +557,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -965,7 +564,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -975,7 +573,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -988,7 +585,6 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -996,7 +592,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1009,7 +604,6 @@ What would you like to do?					What would you like to do?
  4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
  5. <UNAVAILABLE>						5.<UNAVAILABLE>
  6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
 You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
 The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
 to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
@@ -1046,7 +640,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1054,7 +647,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1064,7 +656,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1077,7 +668,6 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1085,7 +675,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1098,7 +687,6 @@ What would you like to do?					What would you like to do?
  4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
  5. <UNAVAILABLE>						5.<UNAVAILABLE>
  6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
 You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
 The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
 to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
@@ -1121,66 +709,9 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 11
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input19.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
- 5. Throw the muffin at the dragon's nose and run for it!	5.Throw the muffin at the dragon's nose and run for it!
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
-his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
-eats you for breakfast.						eats you for breakfast.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 12
 ===========================================================
@@ -1199,7 +730,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1207,7 +737,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1217,7 +746,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1230,14 +758,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1245,7 +771,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1284,7 +809,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1292,7 +816,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1302,7 +825,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1310,7 +832,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1350,7 +871,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1358,7 +878,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1368,7 +887,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1381,14 +899,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1396,7 +912,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1437,7 +952,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1445,7 +959,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1455,7 +968,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1468,7 +980,6 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1476,7 +987,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1502,235 +1012,23 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 16
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input23.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
- 5. Throw the muffin at the dragon's nose and run for it!	5.Throw the muffin at the dragon's nose and run for it!
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-"Oh my! I'm so hungry, but I do love a good joke.   The		"Oh my! I'm so hungry, but I do love a good joke.   The
-best one I've heard lately is					best one I've heard lately is
-  Why can't you hear a pterodactyl go to the bathroom?"		  Why can't you hear a pterodactyl go to the bathroom?"
-
-The dragon asks waiting a moment for you to reply.		The dragon asks waiting a moment for you to reply.
-"...because the P is silent?"  you guess.			"...because the P is silent?"  you guess.
-
-"HAHAH YES!  I love that one.  Tell you what,			"HAHAH YES!  I love that one.  Tell you what,
-if you tell me a great joke in return, I'll go find		if you tell me a great joke in return, I'll go find
-someone else to eat..."						someone else to eat..."
-
-What would you like to do?					What would you like to do?
-
- 1. What 80s band would sing "You have to fight for your righ	1.What 80s band would sing "You have to fight for your right 
- 2. What do you call it when you see the same ghost twice?	2.What do you call it when you see the same ghost twice?
- 3. Knock knock.						3.Knock knock.
-That is not a valid choice, please try again		      <
-The dragon thinks for a moment then asks your			The dragon thinks for a moment then asks your
-"Ok, what 80s band would sing 'You have to fight		"Ok, what 80s band would sing 'You have to fight
-for your right to lg(N) search?"				for your right to lg(N) search?"
-
-"The BST-boys!" you exclaim proudly.				"The BST-boys!" you exclaim proudly.
-
-Sadly, the dragon does not know about binary search trees,	Sadly, the dragon does not know about binary search trees,
-80s bands, or Big-O, and does not find your joke funny,		80s bands, or Big-O, and does not find your joke funny,
-so eats you.							so eats you.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 17
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input24.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
-Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
-
-What would you like to do?					What would you like to do?
-
- 1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Unfortunately the shadow flying overhead was a large		Unfortunately the shadow flying overhead was a large
-hungry dragon, who swooped down and ate you for breakfast.	hungry dragon, who swooped down and ate you for breakfast.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 18
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input25.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Unfortunately the shadow flying overhead was a large		Unfortunately the shadow flying overhead was a large
-hungry dragon, who swooped down and ate you for breakfast.	hungry dragon, who swooped down and ate you for breakfast.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 19
 ===========================================================
@@ -1749,7 +1047,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1757,7 +1054,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1767,7 +1063,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1780,14 +1075,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1795,7 +1088,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1827,7 +1119,6 @@ What would you like to do?					What would you like to do?
  1. What 80s band would sing "You have to fight for your righ	1.What 80s band would sing "You have to fight for your right 
  2. What do you call it when you see the same ghost twice?	2.What do you call it when you see the same ghost twice?
  3. Knock knock.						3.Knock knock.
-That is not a valid choice, please try again		      <
 "Who is there?" asks the dragon.				"Who is there?" asks the dragon.
 
 "Mansplain" you reply						"Mansplain" you reply
@@ -1859,7 +1150,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -1867,7 +1157,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -1877,7 +1166,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
 shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
 "You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
@@ -1890,14 +1178,12 @@ What would you like to do?					What would you like to do?
 
  1. Buy the sword						1.Buy the sword
  2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
 You purchase a gleaming shiny sword, and head out of town.	You purchase a gleaming shiny sword, and head out of town.
 Surely this will keep you safe, no matter what you run into..	Surely this will keep you safe, no matter what you run into..
 
 What would you like to do?					What would you like to do?
 
  1. Now that you have a sword, head out of town			1.Now that you have a sword, head out of town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -1905,7 +1191,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -1935,140 +1220,16 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 21
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input4.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
-shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
-"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
-Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
-Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
-your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
-spent your money on the sword.					spent your money on the sword.
-
-What would you like to do?					What would you like to do?
-
- 1. Buy the sword						1.Buy the sword
- 2. Decline and head out of town				2.Decline and head out of town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Unfortunately the shadow flying overhead was a large		Unfortunately the shadow flying overhead was a large
-hungry dragon, who swooped down and ate you for breakfast.	hungry dragon, who swooped down and ate you for breakfast.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 22
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input5.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
-The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
-to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
-
-What would you like to do?					What would you like to do?
-
- 1. Fling your last coins at the dragon				1.Fling your last coins at the dragon
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. Run for it!							3.Run for it!
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
-That is not a valid choice, please try again		      <
-As you fling the coins at the dragon, the jangling sound they	As you fling the coins at the dragon, the jangling sound they
-the air lets the dragon know where you are.  He turns and bre	the air lets the dragon know where you are.  He turns and bre
-fire at you.							fire at you.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 23
 ===========================================================
@@ -2087,7 +1248,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -2095,7 +1255,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -2105,7 +1264,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -2113,7 +1271,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -2126,7 +1283,6 @@ What would you like to do?					What would you like to do?
  4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
  5. <UNAVAILABLE>						5.<UNAVAILABLE>
  6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
 You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
 The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
 to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
@@ -2149,77 +1305,9 @@ Your file did not match the expected ouput
 Step 4 EC intermediate deadline test 24
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input7.txt
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
-your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
-
-"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
-have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
-one, but choosing is so hard.					one, but choosing is so hard.
-
-What would you like to do?					What would you like to do?
-
- 1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
- 2. Purchase an eclair.						2.Purchase an eclair.
- 3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
-You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
-and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
-
-
-What would you like to do?					What would you like to do?
-
- 1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
-As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
-You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
-and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
-east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
-
-What would you like to do?					What would you like to do?
-
- 1. Go east, out of town					1.Go east, out of town
- 2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
-As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
-something large flies over your head.				something large flies over your head.
-
-What would you like to do?					What would you like to do?
-
- 1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
- 2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
-Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
-down and landed on the road right where you just were.		down and landed on the road right where you just were.
-The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
-
-What would you like to do?					What would you like to do?
-
- 1. Offer the dragon your last coins.				1.Offer the dragon your last coins.
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. <UNAVAILABLE>						3.<UNAVAILABLE>
- 4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
- 5. <UNAVAILABLE>						5.<UNAVAILABLE>
- 6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
-You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
-The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
-to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
-
-What would you like to do?					What would you like to do?
-
- 1. Fling your last coins at the dragon				1.Fling your last coins at the dragon
- 2. <UNAVAILABLE>						2.<UNAVAILABLE>
- 3. Run for it!							3.Run for it!
- 4. <UNAVAILABLE>						4.<UNAVAILABLE>
-That is not a valid choice, please try again		      <
-You start to run, but the remaining coins in your pocket	You start to run, but the remaining coins in your pocket
-jangle loudly.  The dragon hears you and breathes fire		jangle loudly.  The dragon hears you and breathes fire
-at you.								at you.
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected ouput
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 25
 ===========================================================
@@ -2238,7 +1326,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -2246,7 +1333,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -2256,7 +1342,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -2264,7 +1349,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
@@ -2277,7 +1361,6 @@ What would you like to do?					What would you like to do?
  4. Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
  5. <UNAVAILABLE>						5.<UNAVAILABLE>
  6. Ask the dragon if he has heard any good jokes lately.	6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      <
 You squirt the eclair filling right in the dragon's eyes!	You squirt the eclair filling right in the dragon's eyes!
 The dragon can't see anything, but now you need			The dragon can't see anything, but now you need
 to quickly decide how to best take advantage of this situatio	to quickly decide how to best take advantage of this situatio
@@ -2314,7 +1397,6 @@ What would you like to do?					What would you like to do?
  1. Purchase a chocolate croissant.				1.Purchase a chocolate croissant.
  2. Purchase an eclair.						2.Purchase an eclair.
  3. Purchase a muffin.						3.Purchase a muffin.
-That is not a valid choice, please try again		      <
 You pay the baker, who carefully packs your eclair into a box	You pay the baker, who carefully packs your eclair into a box
 and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
 
@@ -2322,7 +1404,6 @@ and hands it to you.  He wishes you a good day.			and hands it to you.  He wishe
 What would you like to do?					What would you like to do?
 
  1. Leave the store						1.Leave the store
-That is not a valid choice, please try again		      <
 As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
 You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
 and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
@@ -2332,7 +1413,6 @@ What would you like to do?					What would you like to do?
 
  1. Go east, out of town					1.Go east, out of town
  2. Go west, into town						2.Go west, into town
-That is not a valid choice, please try again		      <
 As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
 something large flies over your head.				something large flies over your head.
 
@@ -2340,7 +1420,6 @@ What would you like to do?					What would you like to do?
 
  1. Jump off the road and hide behind a large rock		1.Jump off the road and hide behind a large rock
  2. Keep walking						2.Keep walking
-That is not a valid choice, please try again		      <
 Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
 down and landed on the road right where you just were.		down and landed on the road right where you just were.
 The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
