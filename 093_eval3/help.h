@@ -203,7 +203,9 @@ void askUser(vector<line_type1> * v, map<string, long int> * m) {
           break;
         }
       }
-      cout << "That is not a valid choice, please try again" << endl;
+      if (!match) {
+        cout << "That is not a valid choice, please try again" << endl;
+      }
     }
     if (m != NULL) {
       map<string, long int>::iterator it = tmp.m.begin();
