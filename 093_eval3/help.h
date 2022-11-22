@@ -180,17 +180,21 @@ void askUser(vector<line_type1> * v, map<string, long int> * m) {
       }
     }
 
+    if (unavaliable) {
+      // if the choice is unavaliable
+      cout << "That choice is not available at this time, please try again" << endl;
+    }
+    else {
+      //If input does not fit the choices.
+      cout << "That is not a valid choice, please try again" << endl;
+    }
     while (!match) {
-      if (unavaliable) {
-        // if the choice is unavaliable
-        cout << "That choice is not available at this time, please try again" << endl;
-      }
-      else {
-        //If input does not fit the choices.
-        cout << "That is not a valid choice, please try again" << endl;
-      }
       size_t another_input;
       cin >> another_input;
+      if (current_page.vec[another_input - 1].second.second == "<UNAVAILABLE>") {
+        cout << "That choice is not available at this time, please try again" << endl;
+        continue;
+      }
       for (size_t i = 0; i < current_page.vec.size(); i++) {
         if (another_input == i + 1) {
           match = true;
@@ -198,6 +202,7 @@ void askUser(vector<line_type1> * v, map<string, long int> * m) {
           break;
         }
       }
+      cout << "That is not a valid choice, please try again" << endl;
     }
     if (m != NULL) {
       map<string, long int>::iterator it = tmp.m.begin();
