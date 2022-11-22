@@ -179,14 +179,15 @@ void askUser(vector<line_type1> * v, map<string, long int> * m) {
         break;
       }
     }
-
-    if (unavaliable) {
-      // if the choice is unavaliable
-      cout << "That choice is not available at this time, please try again" << endl;
-    }
-    else {
-      //If input does not fit the choices.
-      cout << "That is not a valid choice, please try again" << endl;
+    if (!match) {
+      if (unavaliable) {
+        // if the choice is unavaliable
+        cout << "That choice is not available at this time, please try again" << endl;
+      }
+      else {
+        //If input does not fit the choices.
+        cout << "That is not a valid choice, please try again" << endl;
+      }
     }
     while (!match) {
       size_t another_input;
