@@ -11,14 +11,14 @@
 
 #include "object_class.cpp"
 
-void readStoryFile(char ** argv, vector<line_type1> * v, map<string, long int> * m) {
+void readStoryFile(char ** argv, vector<line_type1> * v) {
   ostringstream path;
   path << argv[1] << "/story.txt";
   ifstream f(path.str().c_str());
   if (!f) {
     cerr << "Cannot open file!!" << endl;
     exit(EXIT_FAILURE);
-  }
+  };
   //I use vector to store the page, and also use the vector inside the line_type1 object to store choices
   string line;
   size_t count = 0;
@@ -50,10 +50,17 @@ void readStoryFile(char ** argv, vector<line_type1> * v, map<string, long int> *
       while (it != (*v).end()) {
         if (word.number == (*it).number) {
           haveNum = true;
-          pair<size_t, string> pair;
-          pair.first = word.destpage;
-          pair.second = *word.text.begin();
-          (*it).vec.push_back(pair);
+          pair<size_t, string> pair1;
+          pair1.first = word.destpage;
+          pair1.second = *word.text.begin();
+          pair<long int, string> pair2;
+          pair2.first = -1;
+          pair2.second = "";
+          pair<pair<long int, string>, pair<size_t, string> > pair3;
+          pair3.first = pair2;
+          pair3.second = pair1;
+
+          (*it).vec.push_back(pair3);
         }
         ++it;
       }
@@ -64,9 +71,6 @@ void readStoryFile(char ** argv, vector<line_type1> * v, map<string, long int> *
     }
     else if (flag == '$') {
       line_type3 word(line);
-      //Update what we remember
-      (*m)[word.variable] = word.value;
-      /*
       vector<line_type1>::iterator it = (*v).begin();
       while (it != (*v).end()) {
         if (word.number == (*it).number) {
@@ -75,49 +79,22 @@ void readStoryFile(char ** argv, vector<line_type1> * v, map<string, long int> *
         }
         ++it;
       }
-      */
     }
     else {
       line_type4 word(line);
       vector<line_type1>::iterator it = (*v).begin();
       while (it != (*v).end()) {
         if (word.number == (*it).number) {
-          map<string, long int>::iterator inner_it = (*m).begin();
-          while (inner_it != (*m).end()) {
-            //if We find the variable
-            if ((*inner_it).first == word.variable) {
-              // If the value is correct
-              if ((*inner_it).second == word.value) {
-                pair<size_t, string> pair;
-                pair.first = word.dest;
-                pair.second = *word.text.begin();
-                (*it).vec.push_back(pair);
-              }
-              else {
-                pair<size_t, string> pair;
-                pair.first = word.dest;
-                pair.second = "<UNAVAILABLE>";
-                (*it).vec.push_back(pair);
-              }
-              break;
-            }
-            ++inner_it;
-          }
-          //if We did not find the variable, the value of it is 0;
-          if (inner_it == (*it).m.end()) {
-            if (word.value == 0) {
-              pair<size_t, string> pair;
-              pair.first = word.dest;
-              pair.second = *word.text.begin();
-              (*it).vec.push_back(pair);
-            }
-            else {
-              pair<size_t, string> pair;
-              pair.first = word.dest;
-              pair.second = "<UNAVAILABLE>";
-              (*it).vec.push_back(pair);
-            }
-          }
+          pair<size_t, string> pair1;
+          pair1.second = *word.text.begin();
+          pair1.first = word.dest;
+          pair<long int, string> pair2;
+          pair2.first = word.value;
+          pair2.second = word.variable;
+          pair<pair<long int, string>, pair<size_t, string> > pair3;
+          pair3.first = pair2;
+          pair3.second = pair1;
+          (*it).vec.push_back(pair3);
           break;
         }
         ++it;
@@ -141,21 +118,23 @@ void checkProblem(vector<line_type1> * v) {
     if ((*it).type == "L") {
       flag_lose = true;
     }
-    vector<pair<size_t, string> > line_type2_vector = (*it).vec;
-    vector<pair<size_t, string> >::iterator it_inner = line_type2_vector.begin();
+    vector<pair<pair<long int, string>, pair<size_t, string> > > line_type2_vector =
+        (*it).vec;
+    vector<pair<pair<long int, string>, pair<size_t, string> > >::iterator it_inner =
+        line_type2_vector.begin();
     while (it_inner != line_type2_vector.end()) {
       //It the page has the choice that references to itself;
-      if ((*it_inner).first == (*it).number) {
+      if ((*it_inner).second.first == (*it).number) {
         ++it_inner;
         continue;
       }
       else {
         // 3a: the choice is not valid
-        if ((*it_inner).first >= (*v).size()) {
+        if ((*it_inner).second.first >= (*v).size()) {
           cerr << "Cannot reach the page in the choice" << endl;
           exit(EXIT_FAILURE);
         }
-        destList[(*it_inner).first] = destList[(*it_inner).first] + 1;
+        destList[(*it_inner).second.first] = destList[(*it_inner).second.first] + 1;
         ++it_inner;
       }
     }
@@ -180,9 +159,10 @@ void checkProblem(vector<line_type1> * v) {
     */
   }
 }
-void askUser(vector<line_type1> * v) {
+void askUser(vector<line_type1> * v, map<string, long int> * m) {
   line_type1 current_page = *(*v).begin();
   current_page.printStory();
+  line_type1 tmp = current_page;
   while (current_page.type == "N") {
     size_t input;
     cin >> input;
@@ -190,11 +170,11 @@ void askUser(vector<line_type1> * v) {
     bool unavaliable = false;
     for (size_t i = 0; i < current_page.vec.size(); i++) {
       if (input == i + 1) {
-        if (current_page.vec[i].second == "<UNAVAILABLE>") {
+        if (current_page.vec[i].second.second == "<UNAVAILABLE>") {
           unavaliable = true;
           break;
         }
-        current_page = (*v)[current_page.vec[i].first];
+        current_page = (*v)[current_page.vec[i].second.first];
         match = true;
         break;
       }
@@ -214,16 +194,54 @@ void askUser(vector<line_type1> * v) {
       for (size_t i = 0; i < current_page.vec.size(); i++) {
         if (another_input == i + 1) {
           match = true;
-          current_page = (*v)[current_page.vec[i].first];
+          current_page = (*v)[current_page.vec[i].second.first];
           break;
         }
       }
     }
+    if (m != NULL) {
+      map<string, long int>::iterator it = tmp.m.begin();
+      //update what we have.
+      while (it != tmp.m.end()) {
+        (*m)[(*it).first] = (*it).second;
+        ++it;
+      }
+      vector<pair<pair<long int, string>, pair<size_t, string> > >::iterator it2 =
+          current_page.vec.begin();
+      while (it2 != current_page.vec.end()) {
+        //if is type2
+        if ((*it2).first.second == "") {
+          ++it2;
+          continue;
+        }
+        //if is type4
+        else {
+          map<string, long int>::iterator it3 = (*m).begin();
+          while (it3 != (*m).end()) {
+            if ((*it3).first == (*it2).first.second) {
+              if ((*it3).second != (*it2).first.first) {
+                (*it2).second.second = "<UNAVAILABLE>";
+              }
+              break;
+            }
+            ++it3;
+          }
+          // If we did not find the variable we have
+          if (it3 == (*m).end()) {
+            if ((*it2).first.first > 0) {
+              (*it2).second.second = "<UNAVAILABLE>";
+            }
+          }
+        }
+        ++it2;
+      }
+    }
+    tmp = current_page;
     current_page.printStory();
-  }
-  // exit(EXIT_SUCCESS);
-}
 
+    // exit(EXIT_SUCCESS);
+  }
+}
 string size_tTostring(size_t num) {
   ostringstream s;
   s << num;
@@ -243,17 +261,17 @@ void getPath(vector<line_type1> * v, size_t index, string path, set<size_t> * vi
   }
   // Check if we can go one of the choice
   for (size_t i = 0; i < (*v)[index].vec.size(); i++) {
-    if ((*visited).find((*v)[index].vec[i].first) != (*visited).end()) {
+    if ((*visited).find((*v)[index].vec[i].second.first) != (*visited).end()) {
       continue;
     }
     else {
       string tmp = path;
       path = path + size_tTostring((*v)[index].number);
-      (*visited).insert((*v)[index].vec[i].first);
+      (*visited).insert((*v)[index].vec[i].second.first);
       path = path + "(" + size_tTostring(1 + i) + "),";
-      getPath(v, (*v)[index].vec[i].first, path, visited);
+      getPath(v, (*v)[index].vec[i].second.first, path, visited);
       path = tmp;
-      (*visited).erase((*v)[index].vec[i].first);
+      (*visited).erase((*v)[index].vec[i].second.first);
     }
   }
 }

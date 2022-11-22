@@ -14,11 +14,10 @@ int main(int argc, char ** argv) {
   vector<line_type1> line_type1_vector;
   vector<line_type1> * v = &line_type1_vector;
   map<string, long int> m;
-
-  readStoryFile(argv, v, &m);
+  readStoryFile(argv, v);
   checkProblem(v);
   //begin the story
-  askUser(v);
+  askUser(v, &m);
   /*
   vector<line_type1>::iterator it = line_type1_vector.begin();
   while (it != line_type1_vector.end()) {

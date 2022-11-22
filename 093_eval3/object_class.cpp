@@ -9,11 +9,12 @@
 using namespace std;
 class line {
  public:
+  int line_type;
   size_t number;
   size_t index;
   map<string, long int> m;
   vector<string> text;
-  vector<pair<size_t, string> > vec;
+  vector<pair<pair<long int, string>, pair<size_t, string> > > vec;
   virtual ~line() {
     text.clear();
     vec.clear();
@@ -115,11 +116,12 @@ class line_type1 : public line {
       cout << "\n";
       cout << "Sorry, you have lost. Better luck next time!\n";
     }
-    vector<pair<size_t, string> >::iterator p_it = vec.begin();
+    vector<pair<pair<long int, string>, pair<size_t, string> > >::iterator p_it =
+        vec.begin();
     // Here, vector is used to get the choices and print them out.
     size_t choice_number = 1;
     while (p_it != vec.end()) {
-      pair<size_t, string> p = *p_it;
+      pair<size_t, string> p = (*p_it).second;
       cout << " " << choice_number << ". " << p.second << "\n";
       ++choice_number;
       ++p_it;

@@ -404,7 +404,7 @@ would display as
 
 1.<UNAVAILABLE>
 2.Squirt the eclair filling in the dragon's eye.
-3.<UNAVAILABLE>
+ .<UNAVAILABLE>
 4.Ask the dragon if he has heard any good jokes lately.
 
 If the user attempts to select an unavailable option, you should print

@@ -14,10 +14,10 @@ using namespace std;
 int main(int argc, char ** argv) {
   vector<line_type1> line_type1_vector;
   vector<line_type1> * v = &line_type1_vector;
-  readStoryFile(argv, v, NULL);
+  readStoryFile(argv, v);
   checkProblem(v);
   //begin the story
-  askUser(v);
+  askUser(v, NULL);
 
   line_type1_vector.clear();
 }
