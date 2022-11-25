@@ -1,4 +1,4 @@
-ec:step1
+step1
 ec:step2
 cyoa-step2 story1 < input1.txt
 ec:step3
